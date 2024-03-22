@@ -23,11 +23,11 @@ jobs:
         GH_TOKEN: ${{ secrets.GH_FINE_GRANTED_PAT }}
       run: >-
         TEAM_ID=$(gh api -X POST /orgs/django-community/teams -f name=${{ inputs.base-team-name }} -f description="People who have access to the project." -f privacy="closed" --jq ".id")
-        echo $TEAM_ID
+        echo ${TEAM_ID}
 
-        gh api -X POST /orgs/django-community/teams -f name=${{ inputs.base-team-name }}-committers -f description="People who have the ability to commit and maintain the project." -f privacy="closed" -F "parent_team_id=$TEAM_ID"
+        gh api -X POST /orgs/django-community/teams -f name="${{ inputs.base-team-name }}-committers" -f description="People who have the ability to commit and maintain the project." -f privacy="closed" -F parent_team_id=${TEAM_ID}
 
-        gh api -X POST /orgs/django-community/teams -f name="${{ inputs.base-team-name }}-maintainers" -f description="People who administrate the project." -f privacy="closed" -F "parent_team_id=$TEAM_ID"
+        gh api -X POST /orgs/django-community/teams -f name="${{ inputs.base-team-name }}-maintainers" -f description="People who administrate the project." -f privacy="closed" -F parent_team_id=${TEAM_ID}
 
         gh api -X PUT "/orgs/django-community/teams/${{ inputs.base-team-name }}/repos/django-community/${{ inputs.repo }}" -f permission="triage"
 
