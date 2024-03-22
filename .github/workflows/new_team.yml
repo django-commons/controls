@@ -22,7 +22,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GH_FINE_GRANTED_PAT }}
       run: >-
-        TEAM_ID=$(gh api -X POST /orgs/django-community/teams -f name=${{ inputs.base-team-name }} -f description='People who have access to the base team.' -f privacy='closed' | jq '.id')
+        new_team=$(gh api -X POST /orgs/django-community/teams -f name=${{ inputs.base-team-name }} -f description='People who have access to the base team.' -f privacy='closed')
+        echo $new_team
+        TEAM_ID=$(echo $new_team | jq '.id')
 
         gh api -X POST /orgs/django-community/teams -f name="${{ inputs.base-team-name }}-committers" -f description='People who have the ability to commit and maintain the project.' -f privacy='closed' -F parent_team_id="$TEAM_ID"
 
