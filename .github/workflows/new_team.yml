@@ -24,7 +24,7 @@ jobs:
       run: |
         TEAM_ID=$(gh api -X POST /orgs/django-community/teams -f name=${{ inputs.base-team-name }}-committers -f description="People who have the ability to commit and maintain the project." -f privacy="closed")
         echo $TEAM_ID
-        TEAM_ID = $(echo TEAM_ID | jq ".id")
+        TEAM_ID = $(echo $TEAM_ID | jq ".id")
 
         gh api -X POST /orgs/django-community/teams -f name=${{ inputs.base-team-name }}-committers -f description="People who have the ability to commit and maintain the project." -f privacy="closed" -F parent_team_id=$TEAM_ID
 
