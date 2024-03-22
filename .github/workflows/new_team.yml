@@ -30,6 +30,6 @@ jobs:
 
         gh api -X PUT "/orgs/django-community/teams/${{ inputs.base-team-name }}/repos/django-community/${{ inputs.repo }}" -f permission="triage"
 
-        gh api -X PUT "/orgs/django-community/teams/${{ inputs.base-team-name }}-committers/repos/django-community/${{ inputs.repo }}" -f permission="write"
+        gh api -X PUT "/orgs/django-community/teams/${{ inputs.base-team-name }}-committers/repos/django-community/${{ inputs.repo }}" -f permission="push"
 
         gh api -X PUT "/orgs/django-community/teams/${{ inputs.base-team-name }}-maintainers/repos/django-community/${{ inputs.repo }}" -f permission="maintain"
