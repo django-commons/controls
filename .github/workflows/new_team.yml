@@ -22,7 +22,7 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GH_FINE_GRANTED_PAT }}
       run: |
-        TEAM_ID=$(gh api -X POST /orgs/django-community/teams -f name='${{ inputs.base-team-name }}-committers' -f description='People who have the ability to commit and maintain the project.' -f privacy='closed' | jq '.id' | tr -d '"')
+        TEAM_ID=$(gh api -X POST /orgs/django-community/teams -f name='${{ inputs.base-team-name }}-committers' -f description='People who have the ability to commit and maintain the project.' -f privacy='closed')
         echo $TEAM_ID
 
         gh api -X POST /orgs/django-community/teams -f name="${{ inputs.base-team-name }}-committers" -f description='People who have the ability to commit and maintain the project.' -f privacy='closed' -F parent_team_id=$TEAM_ID
