@@ -1,0 +1,35 @@
+name: Create new Django Community teams for a project 🐍
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: "The slug of the repository in django-community"
+        required: true
+        type: string
+      base-team-name:
+        description: "The base team name. Typically should match repo"
+        required: true
+        type: string
+
+jobs:
+  create-teams:
+    name: Create teams 📦
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Create teams and assign permissions
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      run: >-
+        TEAM_ID=$(gh api -X POST /orgs/django-community/teams -f name=${{ inputs.base-team-name }} -f description='People who have access to the base team.' -f privacy='closed' | jq '.id')
+
+        gh api -X POST /orgs/django-community/teams -f name="${{ inputs.base-team-name }}-committers" -f description='People who have the ability to commit and maintain the project.' -f privacy='closed' -F parent_team_id="$TEAM_ID"
+
+        gh api -X POST /orgs/django-community/teams -f name="${{ inputs.base-team-name }}-maintainers" -f description='People who administrate the project.' -f privacy='closed' -F parent_team_id=$TEAM_ID
+
+        gh api -X PUT "/orgs/django-community/teams/${{ inputs.base-team-name }}/repos/django-community/${{ inputs.repo }}" -f permission='triage'
+
+        gh api -X PUT "/orgs/django-community/teams/${{ inputs.base-team-name }}-committers/repos/django-community/${{ inputs.repo }}" -f permission='write'
+
+        gh api -X PUT "/orgs/django-community/teams/${{ inputs.base-team-name }}-admins/repos/django-community/${{ inputs.repo }}" -f permission='maintain'
