@@ -20,7 +20,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Create teams and assign permissions
       env:
-        GH_TOKEN: ${{ secrets.GH_FINE_GRANTED_PAT }}
+        GH_TOKEN: ${{ secrets.ORG_CONTROLS_PAT }}
       run: >-
         TEAM_ID=$(gh api -X POST /orgs/django-community/teams -f name=${{ inputs.base-team-name }} -f description="People who have access to the project." -f privacy="closed" --jq ".id")
 
