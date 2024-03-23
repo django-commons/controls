@@ -7,8 +7,9 @@ Django Community packages.
 1. Review new issues/application at https://github.com/django-community/membership/issues/
 2. If they are a real human and are reasonably trustworthy, response with "Approved" and nothing else
 3. The [new_member](https://github.com/django-community/membership/blob/main/.github/workflows/new_member.yml) action will invite and close the issue
+4. Add the member to any relevant teams if requested
 
-1. If they aren't a real human or reasonably trustworthy, close the issue.
+If they aren't a real human or reasonably trustworthy, close the issue.
 
 ## New Project Playbook
 
