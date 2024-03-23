@@ -3,6 +3,13 @@ This repository contains all the information for administrators to manage
 Django Community packages.
 
 
+## New Member Playbook
+1. Review new issues/application at https://github.com/django-community/membership/issues/
+2. If they are a real human and are reasonably trustworthy, response with "Approved" and nothing else
+3. The [new_member](https://github.com/django-community/membership/blob/main/.github/workflows/new_member.yml) action will invite and close the issue
+
+1. If they aren't a real human or reasonably trustworthy, close the issue.
+
 ## New Project Playbook
 
 1. Check if repository meets requirements (TODO: write doc)
