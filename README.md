@@ -13,7 +13,7 @@ Django Commons packages.
 ## New Member Playbook
 
 1. Review new issues/application at https://github.com/django-commons/membership/issues/
-2. If they are a real human and are reasonably trustworthy, response with "Approved" and nothing else
+2. If they are a real human and are reasonably trustworthy, comment "Approved" and nothing else
 3. The [new_member](https://github.com/django-commons/membership/blob/main/.github/workflows/new_member.yml) action will send the invite and close the issue
 4. Add the member to any relevant teams if requested
 
@@ -21,7 +21,7 @@ If they aren't a real human or reasonably trustworthy, close the issue.
 
 ## Team Change Playbook
 
-1. If they are a real human and are reasonably trustworthy, response with "Approved" and nothing else
+1. If they are a real human and are reasonably trustworthy, comment "Approved" and close the issue manually
 2. Add the member to requested team(s)
 
 ## New Repository Admin Playbook
