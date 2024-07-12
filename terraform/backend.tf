@@ -2,11 +2,8 @@
 # https://www.terraform.io/language/settings/backends/configuration
 
 terraform {
+  backend "local" {
+    path = "terraform.tfstate"
+  }
 
-  # Google Cloud Storage
-  # https://www.terraform.io/language/settings/backends/gcs
-#
-#   backend "gcs" {
-#     prefix = "github-organization-management"
-#   }
 }
