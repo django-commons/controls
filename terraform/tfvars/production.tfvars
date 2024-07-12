@@ -1,13 +1,16 @@
 admins = [
   "tim-schilling",
-  "cunla"
+  "williln",
+  "ryancheley",
+  "Stormheg",
+  "cunla",
 ]
 
 organization_secrets = {
-#   "GPG_PASSPHRASE" = {
-#     description = "GPG Passphrase used to encrypt plan.out files"
-#     visibility  = "all"
-#   }
+  #   "GPG_PASSPHRASE" = {
+  #     description = "GPG Passphrase used to encrypt plan.out files"
+  #     visibility  = "all"
+  #   }
 }
 
 repositories = {
