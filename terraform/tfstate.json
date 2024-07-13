@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.5.7",
-  "serial": 29,
+  "serial": 30,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {},
   "resources": [
@@ -105,6 +105,19 @@
             "id": "django-commons:matthiask",
             "role": "member",
             "username": "matthiask"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "nanorepublica",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": null,
+            "etag": "W/\"b2f0f248f8e6b7d47c4c6862abe1069531ffa6d2db127237e0264a301581bb5b\"",
+            "id": "django-commons:nanorepublica",
+            "role": "member",
+            "username": "nanorepublica"
           },
           "sensitive_attributes": [],
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
