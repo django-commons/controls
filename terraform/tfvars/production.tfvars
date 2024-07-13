@@ -5,6 +5,17 @@ admins = [
   "Stormheg",
   "cunla",
 ]
+members = [
+  "gav-fyi",
+  "jcjudkins",
+  "joshuadavidthomas",
+  "matthiask",
+  "nanorepublica",
+  "Natim",
+  "pfouque",
+  "priyapahwa",
+  "testSchilling",
+]
 
 organization_secrets = {
   #   "GPG_PASSPHRASE" = {
