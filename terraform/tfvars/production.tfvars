@@ -143,6 +143,7 @@ team_parents = {
     description = "django-commons security team"
     maintainers = [
       "tim-schilling",
+      "matthiask"
     ]
     members = []
     permission = "push"

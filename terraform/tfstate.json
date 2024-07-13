@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.5.7",
-  "serial": 28,
+  "serial": 29,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {},
   "resources": [
@@ -766,6 +766,27 @@
             "permission": "triage",
             "repository": "django-commons-playground",
             "team_id": "9757678"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "github_team_settings",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "django-community-playground",
+          "schema_version": 0,
+          "attributes": {
+            "id": "T_kwDOCaaRBM4AlOPu",
+            "review_request_delegation": [],
+            "team_id": "9757678",
+            "team_slug": "django-community-playground",
+            "team_uid": "T_kwDOCaaRBM4AlOPu"
           },
           "sensitive_attributes": [],
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
