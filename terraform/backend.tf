@@ -3,7 +3,7 @@
 
 terraform {
   backend "local" {
-    path = "terraform.tfstate"
+    path = "tfstate.json"
   }
 
 }

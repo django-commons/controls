@@ -69,13 +69,13 @@ team_children = {
     members = null
 
     repositories = [
-      "django-community-playground"
+      "django-commons-playground"
     ]
   }
   "django-community-playground-committers" = {
     description     = "django-community-playground committers"
     parent_team_key = "django-community-playground"
-    permission      = "push"
+    permission      = "maintain"
     maintainers = [
       "tim-schilling",
       "williln",
@@ -88,14 +88,14 @@ team_children = {
     ]
 
     repositories = [
-      "django-community-playground"
+      "django-commons-playground"
     ]
   }
 
 }
 
 team_parents = {
-  "admins" = {
+  "Admins" = {
     description = "django-commons administrators"
     maintainers = [
       "tim-schilling",
@@ -119,10 +119,10 @@ team_parents = {
     members = [
       "priyapahwa",
     ]
-    permission = "push"
+    permission = "triage"
 
     repositories = [
-      "django-community-playground",
+      "django-commons-playground",
     ]
 
     review_request_delegation = true

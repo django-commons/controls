@@ -30,10 +30,16 @@ variable "repositories" {
   description = "Map of repositories to create"
   type = map(object({
     description = string
+    allow_auto_merge = optional(bool, false)
+    allow_merge_commit = optional(bool, false)
+    allow_rebase_merge = optional(bool, false)
+    allow_squash_merge = optional(bool, false)
+    allow_update_branch = optional(bool, false)
     enable_branch_protection = optional(bool, true)
     enable_discord_webhook = optional(bool, true)
     enable_datadog_webhook = optional(bool, true)
-    has_discussions = optional(bool, false)
+    has_discussions = optional(bool, true)
+    has_downloads = optional(bool, true)
     is_template = optional(bool, false)
     push_allowances = optional(list(string), [])
     required_status_checks_contexts = optional(list(string), [])
