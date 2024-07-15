@@ -36,8 +36,6 @@ variable "repositories" {
     allow_squash_merge = optional(bool, false)
     allow_update_branch = optional(bool, false)
     enable_branch_protection = optional(bool, true)
-    enable_discord_webhook = optional(bool, true)
-    enable_datadog_webhook = optional(bool, true)
     has_discussions = optional(bool, true)
     has_downloads = optional(bool, true)
     is_template = optional(bool, false)

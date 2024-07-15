@@ -1,3 +1,4 @@
+# Organization admins
 admins = [
   "tim-schilling",
   "williln",
@@ -5,6 +6,7 @@ admins = [
   "Stormheg",
   "cunla",
 ]
+# Organization members
 members = [
   "gav-fyi",
   "jcjudkins",
@@ -24,6 +26,7 @@ organization_secrets = {
   #   }
 }
 
+# Organization repositories
 repositories = {
   # Keep the following repositories in alphabetical order
 
@@ -32,7 +35,6 @@ repositories = {
     enable_branch_protection = false
 
     topics = []
-
     push_allowances = []
   }
 
@@ -41,66 +43,20 @@ repositories = {
     enable_branch_protection = false
 
     topics = []
-
     push_allowances = []
-
     visibility = "public"
   }
 
   "membership" = {
     description = "Membership repository for the django-commons organization."
     visibility  = "public"
-
     topics = []
-
-    push_allowances = [
-    ]
+    push_allowances = []
   }
 
   "django-commons-playground" = {
     description = "A sample project to test things out"
-
     topics = []
-  }
-
-}
-
-team_children = {
-  "django-community-playground-admins" = {
-    description     = "django-community-playground administrators"
-    parent_team_key = "django-community-playground"
-    permission      = "admin"
-    maintainers = [
-      "tim-schilling",
-      "williln",
-      "ryancheley",
-      "Stormheg",
-      "cunla",
-    ]
-    members = null
-
-    repositories = [
-      "django-commons-playground"
-    ]
-  }
-  "django-community-playground-committers" = {
-    description     = "django-community-playground committers"
-    parent_team_key = "django-community-playground"
-    permission      = "maintain"
-    maintainers = [
-      "tim-schilling",
-      "williln",
-      "ryancheley",
-      "Stormheg",
-      "cunla",
-    ]
-    members = [
-      "priyapahwa",
-    ]
-
-    repositories = [
-      "django-commons-playground"
-    ]
   }
 
 }
@@ -153,4 +109,44 @@ team_parents = {
     ]
 
   }
+}
+
+team_children = {
+  "django-community-playground-admins" = {
+    description     = "django-community-playground administrators"
+    parent_team_key = "django-community-playground"
+    permission      = "admin"
+    maintainers = [
+      "tim-schilling",
+      "williln",
+      "ryancheley",
+      "Stormheg",
+      "cunla",
+    ]
+    members = null
+
+    repositories = [
+      "django-commons-playground",
+    ]
+  }
+  "django-community-playground-committers" = {
+    description     = "django-community-playground committers"
+    parent_team_key = "django-community-playground"
+    permission      = "maintain"
+    maintainers = [
+      "tim-schilling",
+      "williln",
+      "ryancheley",
+      "Stormheg",
+      "cunla",
+    ]
+    members = [
+      "priyapahwa",
+    ]
+
+    repositories = [
+      "django-commons-playground"
+    ]
+  }
+
 }
