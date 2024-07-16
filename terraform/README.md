@@ -1,7 +1,7 @@
 GitHub Organization as Terraform
 ================================
 
-Structure
+# Structure
 
 - `variables.tf` - define variable types (classes?), notice there is `variable "repositories" {...` there which has a
   few variables marked as optional with default values. Why I chose to have `has_discussions` as a repo variable
@@ -22,16 +22,6 @@ We can define our "desired/default" repository configuration, and within this co
   non-default values in the `production.tfvars` file.
 - What is determined by users (i.e., variables without default value, like `description`)
 - What is not configured in the infra-as-code (currently, for example, repo-labels).
-
-# How to use?
-
-1. Clone the repository.
-2. From the `terraform/` directory, run `terraform init`.
-3. Create a github-token with the necessary permissions on the organization.
-4. Make changes to `production.tfvars` to reflect the desired state (add/update users, repositories, teams, etc.)
-5. To see what changes between the current state of the GitHub organization and the plan
-   run:  `terraform plan -var-file=tfvars/production.tfvars -var github_token=...`
-6. To apply the changes, run: `terraform apply -var-file=tfvars/production.tfvars -var github_token=...`
 
 # What changes can be made
 
@@ -101,3 +91,16 @@ All changes should be made in `production.tfvars`:
       # ...
     }
     ```
+
+# How to use locally
+
+You might want to try new settings locally before applying them to the repository automation.
+To do so, you can use the following steps:
+
+1. Clone the repository.
+2. From the `terraform/` directory, run `terraform init`.
+3. Create a github-token with the necessary permissions on the organization.
+4. Make changes to `production.tfvars` to reflect the desired state (add/update users, repositories, teams, etc.)
+5. To see what changes between the current state of the GitHub organization and the plan
+   run:  `terraform plan -var-file=tfvars/production.tfvars -var github_token=...`
+6. To apply the changes, run: `terraform apply -var-file=tfvars/production.tfvars -var github_token=...`
