@@ -21,13 +21,12 @@ jobs:
       - name: terraform plan
         uses: dflook/terraform-plan@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TERRAFORM_ACTIONS_GITHUB_TOKEN: ${{ secrets.TERRAFORM_MANAGEMENT_GITHUB_TOKEN }}
+          TERRAFORM_ACTIONS_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           add_github_comment: true
           path: "terraform"
           variables: |
-            github_token = "${{ env.TERRAFORM_ACTIONS_GITHUB_TOKEN }}"
+            github_token = "${{ secrets.TERRAFORM_MANAGEMENT_GITHUB_TOKEN }}"
           var_file: |
             terraform/production/org.tfvars
             terraform/production/repositories.tfvars
