@@ -1,0 +1,29 @@
+name: "Plan org changes and list them in a PR"
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  plan-changes:
+    name: "Org changes plan"
+    runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: write
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: terraform plan
+        uses: dflook/terraform-plan@v1
+        with:
+          path: terraform
+          label: production
+          add_github_comment: true
+          workspace: prod
+          var_file: tfvars/production.tfvars
+          variables: |
+            github_token=${{ secrets.GITHUB_TOKEN }}
