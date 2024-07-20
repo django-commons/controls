@@ -18,7 +18,7 @@ Django Commons packages.
 
 ### Terraform changes to add member to the organization
 
-- Change `production.tfvars`: add the username under `members`, like this:
+- Change `org.tfvars`: add the username under `members`, like this:
   ```terraform
      members = [
        # ...
@@ -36,7 +36,7 @@ Django Commons packages.
 
 ### Terraform changes to add member to the team
 
-- Change `production.tfvars`: find the relevant team under `team_parents` or `team_children`, and edit its members:
+- Change `teams.tfvars`: find the relevant team under `team_parents` or `team_children`, and edit its members:
   ```terraform
   team_children = {
      # ...
@@ -67,7 +67,7 @@ Django Commons packages.
 
 ### Changes in terraform to add a new repository admin
 
-Change `production.tfvars`:
+Change `repositories.tfvars`:
 
 - Find the relevant team under `team_children` and edit its members:
   ```terraform
@@ -117,9 +117,9 @@ Change `production.tfvars`:
 
 ### Terraform changes to add a new project
 
-Changes in `production.tfvars` (Assuming repository name is `repo-name`):
+Assuming repository name is `repo-name`:
 
-1. Add the new repository to the `repositories` section:
+1. In `repositories.tfvars`, Add the new repository to the `repositories` section:
    ```terraform
    repositories = {
       # ...
@@ -142,7 +142,8 @@ Changes in `production.tfvars` (Assuming repository name is `repo-name`):
       }
    }
    ```
-2. Add the new parent team `repo-name` for the repository in the `team_parents` section with the relevant members:
+2. In `teams.tfvars`, add the new parent team `repo-name` for the repository in the `team_parents` section with the
+   relevant members:
    ```terraform
    team_parents = {
       # ...
@@ -207,9 +208,10 @@ Changes in `production.tfvars` (Assuming repository name is `repo-name`):
 6. (TODO: Determine how to handle transferring a PyPI project out of an organization)
 
 ### Terraform changes to remove a project
-1. Remove the repository from the `repositories` section in `production.tfvars`
+
+1. Remove the repository from the `repositories` section in `repositories.tfvars`
 2. Remove the parent team and child teams for the repository from the `team_parents` and `team_children` sections in
-   `production.tfvars`
+   `teams.tfvars`
 3. Create a pull-request to `main` branch, it will trigger terraform to plan the changes in the organization to be
    executed.
    Review the changes and make sure they align with the request.
