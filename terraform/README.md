@@ -99,8 +99,14 @@ To do so, you can use the following steps:
 
 1. Clone the repository.
 2. From the `terraform/` directory, run `terraform init`.
-3. Create a github-token with the necessary permissions on the organization.
+3. Create a github-token with the necessary permissions on the organization (see [permissions documentation][1]).
+    - The `repo` permisison for full control of private repositories.
+    - The `admin:org` permission for full control of orgs and teams, read and write org projects
+    - The `delete_repo` permission to delete repositories
+
 4. Make changes to `production.tfvars` to reflect the desired state (add/update users, repositories, teams, etc.)
 5. To see what changes between the current state of the GitHub organization and the plan
    run:  `terraform plan -var-file=tfvars/production.tfvars -var github_token=...`
 6. To apply the changes, run: `terraform apply -var-file=tfvars/production.tfvars -var github_token=...`
+
+[1]: https://developer.hashicorp.com/terraform/tutorials/it-saas/github-user-teams#configure-your-credentials
