@@ -13,8 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      pull-requests: write
-      contents: read
+      contents: write
 
     steps:
       - name: Checkout code
@@ -32,3 +31,11 @@ jobs:
             terraform/production/org.tfvars
             terraform/production/repositories.tfvars
             terraform/production/teams.tfvars
+
+      - name: Commit changes
+        uses: devops-infra/action-commit-push@v0.9.2
+        with:
+          github_token: "${{ secrets.GITHUB_TOKEN }}"
+          commit_prefix: "[AUTO]"
+          commit_message: "State changes after apply"
+          force: false
