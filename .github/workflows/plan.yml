@@ -21,9 +21,7 @@ jobs:
         uses: dflook/terraform-plan@v1
         with:
           path: terraform
-          label: production
           add_github_comment: true
-          workspace: prod
           var_file: tfvars/production.tfvars
           variables: |
             github_token=${{ secrets.GITHUB_TOKEN }}
