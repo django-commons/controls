@@ -22,6 +22,7 @@ jobs:
         with:
           path: terraform
           add_github_comment: true
-          var_file: tfvars/production.tfvars
+          var_file: production.tfvars
+          workspace: "production"
           variables: |
             github_token=${{ secrets.GITHUB_TOKEN }}
