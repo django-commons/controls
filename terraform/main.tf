@@ -178,7 +178,7 @@ resource "github_team" "children" {
 # Define the team membership for each repository. The members here
 # will have triage permissions.
 resource "github_team_members" "parents" {
-  for_each = var.team_parents
+  for_each = var.teams_repositories
 
   team_id = github_team.parents[each.key].id
 

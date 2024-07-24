@@ -52,39 +52,33 @@ All changes should be made in `production.tfvars`:
      # ...
     }
     ``` 
-- Add/Remove/Update teams by editing the `team_parents`. A team can have the following variables:
+- Add/Remove/Update repository teams by editing the `teams_repositories`. A team can have the following variables:
     ```terraform
-    team_parents = {
-      "Admins" = {
-        description = "django-commons administrators"
-        maintainers = ["tim-schilling",]
+    teams_repositories = {
+      "some-repo" = {
+        description = "some-repo team"
         members = ["cunla",]
-        permission = "admin" # optional, default is null
+        permission = "triage"
         privacy = "closed" # optional, default is "closed"
         repositories = [ # optional, default is []
-          "django-commons/controls",
-          "django-commons/membership",
-          "django-commons/terraform",
+          "django-commons/some-repo",
         ]
         review_request_delegation = false # optional, default is false
       }
       # ...
     }
     ```
-- Add/Remove/Update child-teams by editing the `team_children`. A child-team can have the following variables:
+- Add/Remove/Update privileged repository teams by editing the `teams_repositories_privileged`. A team can have the following variables:
     ```terraform
-    team_children = {
-      "New-Admins" = {
-        description = "django-commons administrators"
-        parent_team_key = "Admins"
-        maintainers = ["tim-schilling",]
+    teams_repositories_privileged = {
+      "some-repo-admins" = {
+        description = "some-repo administrators"
+        parent_team_key = "some-repo"
         members = ["cunla",]
         permission = "admin" # optional, default is null
         privacy = "closed" # optional, default is "closed"
         repositories = [ # optional, default is []
-          "django-commons/controls",
-          "django-commons/membership",
-          "django-commons/terraform",
+          "django-commons/some-repo",
         ]
         review_request_delegation = false # optional, default is false
       }
