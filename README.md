@@ -13,7 +13,7 @@ Django Commons packages.
 
 1. Review new issues/application at https://github.com/django-commons/membership/issues/
 2. If they are not a real human or not reasonably trustworthy, close the issue, asking for more information they are a
-   human and not a spam bot. You can explain that by being a member, they can impact repositories immediately.
+   human and not a spambot. You can explain that by being a member, they can impact repositories immediately.
 3. Add the user's GitHub username to the `members` collection in
    the [`terraform/production/org.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/org.tfvars)
    file.
@@ -39,7 +39,7 @@ Django Commons packages.
    ```
 5. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
    executed. Review the changes and make sure they align with the request.
-6. Merge the pull-request. This will trigger terraform to apply the changes in the organization.
+6. Merge the pull request. This will trigger terraform to apply the changes in the organization.
 
 ## Repository Team Change Playbook
 
@@ -61,11 +61,11 @@ Django Commons packages.
    ```
 3. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
    executed. Review the changes and make sure they align with the request.
-4. Merge the pull-request. This will trigger terraform to apply the changes in the organization.
+4. Merge the pull request. This will trigger terraform to apply the changes in the organization.
 
 ## New Repository Admin or Committer Playbook
 
-1. Confirm with all existing admins that they are okay with the change
+1. Confirm with all existing admins that they approve changes to the repository admins or committers.
 2. If there's disagreement, close the issue and ask for the admins to come to a consensus
 3. For the requested repository's team(s), in
    the [`terraform/production/repositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/repositories.tfvars)
@@ -85,12 +85,12 @@ Django Commons packages.
    ```
 4. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
    executed. Review the changes and make sure they align with the request.
-5. Merge the pull-request. This will trigger terraform to apply the changes in the organization.
+5. Merge the pull request. This will trigger terraform to apply the changes in the organization.
 
 ## New Project Playbook
 
 1. Check if repository
-   meets [inbound requirements](https://github.com/django-commons/membership/blob/main/incoming_repo_requirements.md)
+   meets [inbound requirements](https://github.com/django-commons/membership/blob/main/incoming_repo_requirements.md).
 2. Confirm who will be the admins and maintainers for the repository
 3. PyPI project owner must add you (Django Commons admin) as owner in PyPI
 4. (TODO: Determine how this works with transferring out of an org and into the Django Commons org)
@@ -117,7 +117,7 @@ Assuming repository name is `repo-name`:
 1.
 
 In [`terraform/production/respositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/respositories.tfvars),
-Add the new repository to the `repositories` section:
+add the new repository to the `repositories` section:
 
 ```terraform
 repositories = {
@@ -166,4 +166,4 @@ repositories = {
 3. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
    executed.
    Review the changes and make sure they align with the request.
-4. Merge the pull-request. This will trigger terraform to apply the changes in the organization.
+4. Merge the pull request. This will trigger terraform to apply the changes in the organization.
