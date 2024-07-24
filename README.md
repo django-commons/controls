@@ -141,13 +141,6 @@ Assuming repository name is `repo-name`:
          repositories = [
            "repo-name",
          ]
-         maintainers = [
-           "tim-schilling",
-           "williln",
-           "ryancheley",
-           "Stormheg",
-           "cunla",
-         ]
      }
    }
    ```
@@ -164,13 +157,6 @@ Assuming repository name is `repo-name`:
            "username",
          ]
          permission = "admin"
-         maintainers = [
-           "tim-schilling",
-           "williln",
-           "ryancheley",
-           "Stormheg",
-           "cunla",
-         ]
      }
      "repo-name-committers" = {
          description = "repo-name committers team"
@@ -179,13 +165,6 @@ Assuming repository name is `repo-name`:
            # Leave empty unless there are committers ready to be designated
          ]
          permission = "push"
-         maintainers = [
-           "tim-schilling",
-           "williln",
-           "ryancheley",
-           "Stormheg",
-           "cunla",
-         ]
      }
    }
    ```

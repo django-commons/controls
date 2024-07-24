@@ -1,6 +1,7 @@
 teams_organization = {
   "Admins" = {
     description = "django-commons administrators"
+    # Use maintainers for organizational teams
     maintainers = [
       "tim-schilling",
       "williln",
@@ -8,15 +9,14 @@ teams_organization = {
       "Stormheg",
       "cunla",
     ]
-    members = null
   }
   "security-team" = {
     description = "django-commons security team"
+    # Use maintainers for organizational teams
     maintainers = [
       "tim-schilling",
       "matthiask"
     ]
-    members = []
     permission = "push"
 
     repositories = [
@@ -27,14 +27,12 @@ teams_organization = {
 teams_repositories = {
   "django-community-playground" = {
     description = "django-community-playground team"
-    maintainers = [
+    members = [
       "tim-schilling",
       "williln",
       "ryancheley",
       "Stormheg",
       "cunla",
-    ]
-    members = [
       "priyapahwa",
     ]
     permission = "triage"
@@ -53,14 +51,13 @@ teams_repositories_privileged = {
     description     = "django-community-playground administrators"
     parent_team_key = "django-community-playground"
     permission      = "admin"
-    maintainers = [
+    members = [
       "tim-schilling",
       "williln",
       "ryancheley",
       "Stormheg",
       "cunla",
     ]
-    members = null
 
     repositories = [
       "django-commons-playground",
@@ -70,13 +67,6 @@ teams_repositories_privileged = {
     description     = "django-community-playground committers"
     parent_team_key = "django-community-playground"
     permission      = "maintain"
-    maintainers = [
-      "tim-schilling",
-      "williln",
-      "ryancheley",
-      "Stormheg",
-      "cunla",
-    ]
     members = [
       "priyapahwa",
     ]
