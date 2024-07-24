@@ -192,20 +192,20 @@ resource "github_team_members" "parents" {
 
   team_id = github_team.parents[each.key].id
 
-  dynamic "members" {
+  dynamic "member" {
     for_each = each.value.members
 
     content {
-      username = members.value
+      username = member.value
       role     = "member"
     }
   }
 
-  dynamic "members" {
+  dynamic "member" {
     for_each = each.value.maintainers
 
     content {
-      username = members.value
+      username = member.value
       role     = "maintainer"
     }
   }
@@ -216,20 +216,20 @@ resource "github_team_members" "children" {
 
   team_id = github_team.children[each.key].id
 
-  dynamic "members" {
+  dynamic "member" {
     for_each = each.value.members
 
     content {
-      username = members.value
+      username = member.value
       role     = "member"
     }
   }
 
-  dynamic "members" {
+  dynamic "member" {
     for_each = each.value.maintainers
 
     content {
-      username = members.value
+      username = member.value
       role     = "maintainer"
     }
   }
