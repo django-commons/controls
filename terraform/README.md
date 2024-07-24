@@ -42,6 +42,7 @@ All changes should be made in `production.tfvars`:
         enable_branch_protection = true # optional, default is true
         has_discussions = true # optional, default is true
         has_downloads = true # optional, default is true
+        has_wiki = false # optional, default is false
         is_template = false # optional, default is false
         push_allowances = []
         required_status_checks_contexts = [] # optional, default is []
