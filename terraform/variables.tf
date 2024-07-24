@@ -52,8 +52,21 @@ variable "repositories" {
   }))
 }
 
+variable "teams_organization" {
+  description = "Map of Django Commons organization teams to manage"
+  type = map(object({
+    description = string
+    maintainers = optional(set(string), [])
+    members = optional(set(string), [])
+    permission = optional(string, null)
+    privacy = optional(string, "closed")
+    repositories = optional(set(string), [])
+    review_request_delegation = optional(bool, false)
+  }))
+}
+
 variable "teams_repositories" {
-  description = "Map of repository teams and Django Commons organization teams to manage"
+  description = "Map of repository teams to manage"
   type = map(object({
     description = string
     maintainers = optional(set(string), [])

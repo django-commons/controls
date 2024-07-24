@@ -154,7 +154,7 @@ resource "github_repository" "this" {
 
 # Create the base teams for each repository and the organization teams for Django Commons.
 resource "github_team" "parents" {
-  for_each = var.teams_repositories
+  for_each = concat(var.teams_repositories, var.teams_organization)
 
   name        = each.key
   description = each.value.description
