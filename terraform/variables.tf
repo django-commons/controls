@@ -18,14 +18,6 @@ variable "members" {
   default = []
 }
 
-variable "organization_secrets" {
-  description = "Map of secrets to add to the organization"
-  type = map(object({
-    description = string
-    visibility  = string
-  }))
-}
-
 variable "repositories" {
   description = "Map of repositories to create"
   type = map(object({
@@ -44,15 +36,11 @@ variable "repositories" {
     required_status_checks_contexts = optional(list(string), [])
     template = optional(string)
     topics = optional(list(string))
-
-    # In most cases, the visibility of your organizations repository should be private.
-    # However, we are keeping our code public to encourage others to learn from our work.
-
     visibility = optional(string, "public")
   }))
 }
 
-variable "teams_organization" {
+variable "organization_teams" {
   description = "Map of Django Commons organization teams to manage"
   type = map(object({
     description = string
@@ -87,5 +75,13 @@ variable "teams_repositories_privileged" {
     permission = optional(string, null)
     parent_team_key = string
     repositories = optional(set(string), [])
+  }))
+}
+
+variable "organization_secrets" {
+  description = "Map of secrets to add to the organization"
+  type = map(object({
+    description = string
+    visibility  = string
   }))
 }

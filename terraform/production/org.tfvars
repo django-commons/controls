@@ -19,9 +19,37 @@ members = [
   "testSchilling",
 ]
 
-organization_secrets = {
-  #   "GPG_PASSPHRASE" = {
-  #     description = "GPG Passphrase used to encrypt plan.out files"
-  #     visibility  = "all"
-  #   }
+organization_teams = {
+  "Admins" = {
+    description = "django-commons administrators"
+    # Use maintainers for organizational teams
+    maintainers = [
+      "tim-schilling",
+      "williln",
+      "ryancheley",
+      "Stormheg",
+      "cunla",
+    ]
+  }
+  "security-team" = {
+    description = "django-commons security team"
+    # Use maintainers for organizational teams
+    maintainers = [
+      "tim-schilling",
+      "matthiask"
+    ]
+    permission = "push"
+
+    repositories = [
+    ]
+  }
 }
+
+################ GitHub Organization Secrets, not used at the moment #############
+#
+# organization_secrets = {
+#     "GPG_PASSPHRASE" = {
+#       description = "GPG Passphrase used to encrypt plan.out files"
+#       visibility  = "all"
+#     }
+# }

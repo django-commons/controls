@@ -1,28 +1,4 @@
-teams_organization = {
-  "Admins" = {
-    description = "django-commons administrators"
-    # Use maintainers for organizational teams
-    maintainers = [
-      "tim-schilling",
-      "williln",
-      "ryancheley",
-      "Stormheg",
-      "cunla",
-    ]
-  }
-  "security-team" = {
-    description = "django-commons security team"
-    # Use maintainers for organizational teams
-    maintainers = [
-      "tim-schilling",
-      "matthiask"
-    ]
-    permission = "push"
 
-    repositories = [
-    ]
-  }
-}
 
 teams_repositories = {
   "django-community-playground" = {
