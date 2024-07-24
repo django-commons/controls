@@ -38,6 +38,7 @@ variable "repositories" {
     enable_branch_protection = optional(bool, true)
     has_discussions = optional(bool, true)
     has_downloads = optional(bool, true)
+    has_wiki = optional(bool, false)
     is_template = optional(bool, false)
     push_allowances = optional(list(string), [])
     required_status_checks_contexts = optional(list(string), [])

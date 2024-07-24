@@ -118,14 +118,14 @@ resource "github_repository" "this" {
   has_discussions             = each.value.has_discussions
   has_issues                  = true
   has_projects                = true
-  has_wiki                    = false
+  has_wiki                    = each.value.has_wiki
   is_template                 = each.value.is_template
   name                        = each.key
   squash_merge_commit_message = "BLANK"
   squash_merge_commit_title   = "PR_TITLE"
   topics                      = each.value.topics
   visibility                  = each.value.visibility
-  vulnerability_alerts        = false
+  vulnerability_alerts        = true
 
   dynamic "template" {
     for_each = each.value.template != null ? [each.value.template] : []
