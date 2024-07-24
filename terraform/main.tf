@@ -182,22 +182,24 @@ resource "github_team_members" "parents" {
 
   team_id = github_team.parents[each.key].id
 
-  dynamic "member" {
+  dynamic "members" {
     for_each = each.value.members
 
     content {
-      username = member.value
+      # members here references the dynamic name, not the looped entity.
+      username = members.value
       role     = "member"
     }
   }
 
   # Maintainer here means the maintainer role for the team.
   # It's not a maintainer of the repo.
-  dynamic "member" {
+  dynamic "members" {
     for_each = each.value.maintainers
 
     content {
-      username = member.value
+      # members here references the dynamic name, not the looped entity.
+      username = members.value
       role     = "maintainer"
     }
   }
@@ -211,22 +213,24 @@ resource "github_team_members" "children" {
 
   team_id = github_team.children[each.key].id
 
-  dynamic "member" {
+  dynamic "members" {
     for_each = each.value.members
 
     content {
-      username = member.value
+      # members here references the dynamic name, not the looped entity.
+      username = members.value
       role     = "member"
     }
   }
 
   # Maintainer here means the maintainer role for the team.
   # It's not a maintainer of the repo.
-  dynamic "member" {
+  dynamic "members" {
     for_each = each.value.maintainers
 
     content {
-      username = member.value
+      # members here references the dynamic name, not the looped entity.
+      username = members.value
       role     = "maintainer"
     }
   }
