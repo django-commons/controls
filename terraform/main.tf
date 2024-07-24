@@ -255,9 +255,19 @@ resource "github_team_repository" "parents" {
 
 # GitHub Team Settings Resource
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_settings
-#
-# This can be used to enable automatic PR review requests
-# GitHub docs: https://docs.github.com/en/organizations/organizing-members-into-teams/managing-code-review-settings-for-your-team#configuring-auto-assignment
+
+# This is used to enable automatic PR review requests
+resource "github_team_settings" "this" {
+  for_each = local.review_request_delegations
+
+  review_request_delegation {
+    algorithm    = "LOAD_BALANCE"
+    member_count = 2
+    notify       = false
+  }
+
+  team_id = github_team.parents[each.key].id
+}
 
 # Random Password Resource
 # https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password
