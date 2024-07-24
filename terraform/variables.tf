@@ -37,6 +37,10 @@ variable "repositories" {
     template = optional(string)
     topics = optional(list(string))
     visibility = optional(string, "public")
+    skip_team_creation = optional(bool, false) # Do not create teams for repository
+    admins = optional(set(string), []) # Members of the repository admin team and the committers team
+    committers = optional(set(string), []) # Members of the repository committers team
+    members = optional(set(string), []) # Members of the repository team with triage permissions
   }))
 }
 
@@ -50,31 +54,6 @@ variable "organization_teams" {
     privacy = optional(string, "closed")
     repositories = optional(set(string), [])
     review_request_delegation = optional(bool, false)
-  }))
-}
-
-variable "teams_repositories" {
-  description = "Map of repository teams to manage"
-  type = map(object({
-    description = string
-    maintainers = optional(set(string), [])
-    members = optional(set(string), [])
-    permission = optional(string, null)
-    privacy = optional(string, "closed")
-    repositories = optional(set(string), [])
-    review_request_delegation = optional(bool, false)
-  }))
-}
-
-variable "teams_repositories_privileged" {
-  description = "Map of repository teams with elevated permissions to manage"
-  type = map(object({
-    description     = string
-    maintainers = optional(set(string), [])
-    members = optional(set(string), [])
-    permission = optional(string, null)
-    parent_team_key = string
-    repositories = optional(set(string), [])
   }))
 }
 

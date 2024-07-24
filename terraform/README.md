@@ -7,7 +7,7 @@ GitHub Organization as Terraform
   few variables marked as optional with default values. Why I chose to have `has_discussions` as a repo variable
   while `has_issues` as a constant - I am embarrassed to say I don't have a better answer than laziness :smile: - I just
   figured if this is the path we want to take, we can continue adding to it.
-- `production.tfvars` - instances, should strictly follow the types in `variables.tf`.
+- `production/*.tfvars` - instances, should strictly follow the types in `variables.tf`.
 - `main.tf` - build configuration based on instances values from `production.tfvars` (or, if not defined explicitly,
   then default value from `variables.tf`)
 - `tfstate.json` - Current state file, pulled using `terraform import ..`
@@ -25,7 +25,7 @@ We can define our "desired/default" repository configuration, and within this co
 
 # What changes can be made
 
-All changes should be made in `production.tfvars`:
+All changes should be made in `production/*.tfvars`:
 
 - Add/Remove organization admins by editing the `admins` list.
 - Add/Remove organization members by editing the `members` list.
@@ -49,41 +49,11 @@ All changes should be made in `production.tfvars`:
         template = "" # optional, default is ""
         topics = []
         visibility  = "public" # optional, default is "public"
+        skip_team_creation = optional(bool, false) # Do not create teams for repository
+        admins = optional(set(string), []) # Members of the repository admin team
+        committers = optional(set(string), []) # Members of the repository committers team
       }
      # ...
-    }
-    ``` 
-- Add/Remove/Update repository teams by editing the `teams_repositories`. A team can have the following variables:
-    ```terraform
-    teams_repositories = {
-      "some-repo" = {
-        description = "some-repo team"
-        members = ["cunla",]
-        permission = "triage"
-        privacy = "closed" # optional, default is "closed"
-        repositories = [ # optional, default is []
-          "django-commons/some-repo",
-        ]
-        review_request_delegation = false # optional, default is false
-      }
-      # ...
-    }
-    ```
-- Add/Remove/Update privileged repository teams by editing the `teams_repositories_privileged`. A team can have the following variables:
-    ```terraform
-    teams_repositories_privileged = {
-      "some-repo-admins" = {
-        description = "some-repo administrators"
-        parent_team_key = "some-repo"
-        members = ["cunla",]
-        permission = "admin" # optional, default is null
-        privacy = "closed" # optional, default is "closed"
-        repositories = [ # optional, default is []
-          "django-commons/some-repo",
-        ]
-        review_request_delegation = false # optional, default is false
-      }
-      # ...
     }
     ```
 
@@ -99,9 +69,9 @@ To do so, you can use the following steps:
     - The `admin:org` permission for full control of orgs and teams, read and write org projects
     - The `delete_repo` permission to delete repositories
 
-4. Make changes to `production.tfvars` to reflect the desired state (add/update users, repositories, teams, etc.)
+4. Make changes to `production/*.tfvars` to reflect the desired state (add/update users, repositories, teams, etc.)
 5. To see what changes between the current state of the GitHub organization and the plan
-   run:  `terraform plan -var-file=tfvars/production.tfvars -var github_token=...`
-6. To apply the changes, run: `terraform apply -var-file=tfvars/production.tfvars -var github_token=...`
+   run:  `terraform plan -var-file=production/org.tfvars -var-file=production/repositories.tfvars -var github_token=...`
+6. To apply the changes, run: `terraform apply -var-file=production/org.tfvars -var-file=production/repositories.tfvars -var github_token=...`
 
 [1]: https://developer.hashicorp.com/terraform/tutorials/it-saas/github-user-teams#configure-your-credentials

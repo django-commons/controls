@@ -46,10 +46,10 @@ organization_teams = {
 }
 
 ################ GitHub Organization Secrets, not used at the moment #############
-#
-# organization_secrets = {
+
+organization_secrets = {
 #     "GPG_PASSPHRASE" = {
 #       description = "GPG Passphrase used to encrypt plan.out files"
 #       visibility  = "all"
 #     }
-# }
+}

@@ -34,4 +34,3 @@ jobs:
           var_file: |
             terraform/production/org.tfvars
             terraform/production/repositories.tfvars
-            terraform/production/teams.tfvars
