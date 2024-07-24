@@ -139,23 +139,8 @@ resource "github_repository" "this" {
 
 # GitHub Repository File Resource
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_file
-#
-# resource "github_repository_file" "security_policy" {
-#   for_each = var.repositories
-#
-#   branch              = "main"
-#   content = templatefile("${path.module}/markdown/SECURITY.md.tpl", { repository = each.key })
-#   file                = "SECURITY.md"
-#   repository          = each.key
-#   commit_message      = "Update SECURITY.md"
-#   commit_author       = "Open Source Infrastructure as Code Service Account"
-#   commit_email        = "github-sa@osinfra.io"
-#   overwrite_on_create = true
-#
-#   depends_on = [
-#     github_branch_protection.this
-#   ]
-# }
+# This could be used to generate a file such as a security template.
+# See https://github.com/osinfra-io/ for an example
 
 
 # Github Team Resource
@@ -167,6 +152,7 @@ resource "github_repository" "this" {
 # To get the team ids, you can run the following curl command with a token that has the read:org scope against your own organization.
 # curl -H "Authorization: token $GITHUB_READ_ORG_TOKEN" https://api.github.com/orgs/osinfra-io/teams
 
+# Create the base teams for each repository.
 resource "github_team" "parents" {
   for_each = var.team_parents
 
@@ -175,6 +161,7 @@ resource "github_team" "parents" {
   privacy     = each.value.privacy
 }
 
+# Create the children teams for each repository.
 resource "github_team" "children" {
   for_each = var.team_children
 
@@ -187,6 +174,8 @@ resource "github_team" "children" {
 # GitHub Team Membership Resource
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_members
 
+# Define the teams for each repository. The members here
+# will have triage permissions.
 resource "github_team_members" "parents" {
   for_each = var.team_parents
 
@@ -201,6 +190,8 @@ resource "github_team_members" "parents" {
     }
   }
 
+  # Maintainer here means the maintainer role for the team.
+  # It's not a maintainer of the repo.
   dynamic "member" {
     for_each = each.value.maintainers
 
@@ -211,6 +202,9 @@ resource "github_team_members" "parents" {
   }
 }
 
+
+# Define the privileged teams for each repository. The members here
+# will have commit or maintainer permissions depending on the team.
 resource "github_team_members" "children" {
   for_each = var.team_children
 
@@ -225,6 +219,8 @@ resource "github_team_members" "children" {
     }
   }
 
+  # Maintainer here means the maintainer role for the team.
+  # It's not a maintainer of the repo.
   dynamic "member" {
     for_each = each.value.maintainers
 
@@ -238,6 +234,7 @@ resource "github_team_members" "children" {
 # Github Team Repository Resource
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_repository
 
+# Create the appropriate permissions for the repository teams.
 resource "github_team_repository" "children" {
   for_each = local.child_team_repositories
 
@@ -246,6 +243,7 @@ resource "github_team_repository" "children" {
   permission = each.value.permission
 }
 
+# Create the elevated permissions for the repositories' privileged teams.
 resource "github_team_repository" "parents" {
   for_each = local.parent_team_repositories
 
@@ -256,22 +254,14 @@ resource "github_team_repository" "parents" {
 
 # GitHub Team Settings Resource
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_settings
-
-resource "github_team_settings" "this" {
-  for_each = local.review_request_delegations
-
-  review_request_delegation {
-    algorithm    = "LOAD_BALANCE"
-    member_count = 2
-    notify       = false
-  }
-
-  team_id = github_team.parents[each.key].id
-}
+#
+# This can be used to enable automatic PR review requests
+# GitHub docs: https://docs.github.com/en/organizations/organizing-members-into-teams/managing-code-review-settings-for-your-team#configuring-auto-assignment
 
 # Random Password Resource
 # https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password
 
+# This is necessary to set a GitHub org secret
 resource "random_password" "this" {
   for_each = var.organization_secrets
   length   = 32
@@ -285,6 +275,8 @@ resource "random_password" "this" {
 # Time Rotating Resource
 # https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/rotating
 
+# This is necessary to use random_password, which is needed
+# to set a GitHub org secret
 resource "time_rotating" "this" {
   rotation_days = 5
 }
