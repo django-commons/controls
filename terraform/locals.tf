@@ -12,14 +12,14 @@ locals {
     if repository.enable_branch_protection
   }
 
-  child_team_repositories = {
+  privileged_repository_team_permissions = {
 
     for repository in flatten([
-      for team_child_key, team_child in var.team_children : [
-        for repository in team_child.repositories : {
-          team_child = team_child_key
+      for team_key, team in var.teams_repositories_privileged : [
+        for repository in team.repositories : {
+          team_child = team_key
           repository = repository
-          permission = team_child.permission
+          permission = team.permission
         }
       ]
     ]) : "${repository.team_child}-${repository.repository}" => repository
@@ -30,22 +30,22 @@ locals {
     for user in var.members : user => "member"
   }
 
-  parent_team_repositories = {
+  repository_team_permissions = {
 
     for repository in flatten([
-      for team_parent_key, team_parent in var.team_parents : [
-        for repository in team_parent.repositories : {
-          team_parent = team_parent_key
+      for team_key, team in var.teams_repositories : [
+        for repository in team.repositories : {
+          team_parent = team_key
           repository  = repository
-          permission  = team_parent.permission
+          permission  = team.permission
         }
       ]
     ]) : "${repository.team_parent}-${repository.repository}" => repository
   }
 
   review_request_delegations = {
-    for team_parent_key, team_parent in var.team_parents : team_parent_key => team_parent
-    if team_parent.review_request_delegation
+    for team_key, team in var.teams_repositories : team_key => team
+    if team.review_request_delegation
   }
 
   users = merge(local.admins, local.members)

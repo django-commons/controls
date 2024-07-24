@@ -1,5 +1,4 @@
-
-team_parents = {
+teams_organization = {
   "Admins" = {
     description = "django-commons administrators"
     maintainers = [
@@ -11,7 +10,21 @@ team_parents = {
     ]
     members = null
   }
+  "security-team" = {
+    description = "django-commons security team"
+    maintainers = [
+      "tim-schilling",
+      "matthiask"
+    ]
+    members = []
+    permission = "push"
 
+    repositories = [
+    ]
+  }
+}
+
+teams_repositories = {
   "django-community-playground" = {
     description = "django-community-playground team"
     maintainers = [
@@ -33,23 +46,9 @@ team_parents = {
     review_request_delegation = true
   }
 
-  "security-team" = {
-    description = "django-commons security team"
-    maintainers = [
-      "tim-schilling",
-      "matthiask"
-    ]
-    members = []
-    permission = "push"
-
-    repositories = [
-
-    ]
-
-  }
 }
 
-team_children = {
+teams_repositories_privileged = {
   "django-community-playground-admins" = {
     description     = "django-community-playground administrators"
     parent_team_key = "django-community-playground"

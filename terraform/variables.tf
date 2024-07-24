@@ -52,20 +52,8 @@ variable "repositories" {
   }))
 }
 
-variable "team_children" {
-  description = "Map of child teams to create"
-  type = map(object({
-    description     = string
-    maintainers = optional(set(string), [])
-    members = optional(set(string), [])
-    permission = optional(string, null)
-    parent_team_key = string
-    repositories = optional(set(string), [])
-  }))
-}
-
-variable "team_parents" {
-  description = "Map of parent teams to create"
+variable "teams_repositories" {
+  description = "Map of repository teams and Django Commons organization teams to manage"
   type = map(object({
     description = string
     maintainers = optional(set(string), [])
@@ -74,5 +62,17 @@ variable "team_parents" {
     privacy = optional(string, "closed")
     repositories = optional(set(string), [])
     review_request_delegation = optional(bool, false)
+  }))
+}
+
+variable "teams_repositories_privileged" {
+  description = "Map of repository teams with elevated permissions to manage"
+  type = map(object({
+    description     = string
+    maintainers = optional(set(string), [])
+    members = optional(set(string), [])
+    permission = optional(string, null)
+    parent_team_key = string
+    repositories = optional(set(string), [])
   }))
 }

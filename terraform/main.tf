@@ -152,18 +152,19 @@ resource "github_repository" "this" {
 # To get the team ids, you can run the following curl command with a token that has the read:org scope against your own organization.
 # curl -H "Authorization: token $GITHUB_READ_ORG_TOKEN" https://api.github.com/orgs/osinfra-io/teams
 
-# Create the base teams for each repository.
+# Create the base teams for each repository and the organization teams for Django Commons.
 resource "github_team" "parents" {
-  for_each = var.team_parents
+  for_each = var.teams_repositories
 
   name        = each.key
   description = each.value.description
   privacy     = each.value.privacy
 }
 
-# Create the children teams for each repository.
+# Create the privileged teams for each repository,
+# such committers or maintainers.
 resource "github_team" "children" {
-  for_each = var.team_children
+  for_each = var.teams_repositories_privileged
 
   description    = each.value.description
   name           = each.key
@@ -174,7 +175,7 @@ resource "github_team" "children" {
 # GitHub Team Membership Resource
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_members
 
-# Define the teams for each repository. The members here
+# Define the team membership for each repository. The members here
 # will have triage permissions.
 resource "github_team_members" "parents" {
   for_each = var.team_parents
@@ -203,10 +204,10 @@ resource "github_team_members" "parents" {
 }
 
 
-# Define the privileged teams for each repository. The members here
+# Define the privileged team membership for each repository. The members here
 # will have commit or maintainer permissions depending on the team.
 resource "github_team_members" "children" {
-  for_each = var.team_children
+  for_each = var.teams_repositories_privileged
 
   team_id = github_team.children[each.key].id
 
@@ -234,18 +235,18 @@ resource "github_team_members" "children" {
 # Github Team Repository Resource
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_repository
 
-# Create the appropriate permissions for the repository teams.
+# Create the elevated permissions for the repositories' privileged teams.
 resource "github_team_repository" "children" {
-  for_each = local.child_team_repositories
+  for_each = local.privileged_repository_team_permissions
 
   team_id    = github_team.children[each.value.team_child].id
   repository = each.value.repository
   permission = each.value.permission
 }
 
-# Create the elevated permissions for the repositories' privileged teams.
+# Create the appropriate permissions for the repository teams.
 resource "github_team_repository" "parents" {
-  for_each = local.parent_team_repositories
+  for_each = local.repository_team_permissions
 
   team_id    = github_team.parents[each.value.team_parent].id
   repository = each.value.repository
