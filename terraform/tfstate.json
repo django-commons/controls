@@ -1,0 +1,851 @@
+{
+  "version": 4,
+  "terraform_version": "1.5.7",
+  "serial": 45,
+  "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "github_actions_organization_secret",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": []
+    },
+    {
+      "mode": "managed",
+      "type": "github_membership",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "Natim",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": null,
+            "etag": "W/\"68caaa2a1f43f8105fc4f2b11539ab0a4274703153c2003ec2c3a5b4ef9ce6c7\"",
+            "id": "django-commons:Natim",
+            "role": "member",
+            "username": "Natim"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "Stormheg",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": null,
+            "etag": "W/\"6213547b039be42df8cb11807508ced8ff28c328528a11ab0e26d66e6d78af31\"",
+            "id": "django-commons:Stormheg",
+            "role": "admin",
+            "username": "Stormheg"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "cunla",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": null,
+            "etag": "W/\"9359ff5dc674c7a5f666266818ba0976714f1a09e3a0422ac379aafea7adeed4\"",
+            "id": "django-commons:cunla",
+            "role": "admin",
+            "username": "cunla"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "gav-fyi",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": null,
+            "etag": "W/\"cfb584ec4e3496693ac6d7a7afe2592209ef3970f4f53c0e9b1e7885a63f93b6\"",
+            "id": "django-commons:gav-fyi",
+            "role": "member",
+            "username": "gav-fyi"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "jcjudkins",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": null,
+            "etag": "W/\"ebbf5aa3bb02451b568616140a51580ec56f433d065c5e003a502362dd808add\"",
+            "id": "django-commons:jcjudkins",
+            "role": "member",
+            "username": "jcjudkins"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "joshuadavidthomas",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": null,
+            "etag": "W/\"405875598c46e245e59326fca4937f09dda150a215fffb0c61908d08f7d437d7\"",
+            "id": "django-commons:joshuadavidthomas",
+            "role": "member",
+            "username": "joshuadavidthomas"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "matthiask",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": null,
+            "etag": "W/\"41d15a470cac92785493809b1fe7c6a6b3e21180aa1c20be2feaa185c63bb292\"",
+            "id": "django-commons:matthiask",
+            "role": "member",
+            "username": "matthiask"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "nanorepublica",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": null,
+            "etag": "W/\"b2f0f248f8e6b7d47c4c6862abe1069531ffa6d2db127237e0264a301581bb5b\"",
+            "id": "django-commons:nanorepublica",
+            "role": "member",
+            "username": "nanorepublica"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "pfouque",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": null,
+            "etag": "W/\"0571b46dbaa3e06d741cd6ac213d57c36f154725636eee4f93f566f31d307651\"",
+            "id": "django-commons:pfouque",
+            "role": "member",
+            "username": "pfouque"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "priyapahwa",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": null,
+            "etag": "W/\"804a24a7934e528c0c8c7c6501308f4471d73d5ed38e24a17457f535e1d1f634\"",
+            "id": "django-commons:priyapahwa",
+            "role": "member",
+            "username": "priyapahwa"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "ryancheley",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": null,
+            "etag": "W/\"d4049c77383fa1d8f3415168a07c78f11ca78cfa89f1c927b679b25aa5231dcb\"",
+            "id": "django-commons:ryancheley",
+            "role": "admin",
+            "username": "ryancheley"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "testSchilling",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": null,
+            "etag": "W/\"031db6d5f4a2df778bba9d4177ee9adc7f19f75d9de9b00052e6284895753703\"",
+            "id": "django-commons:testSchilling",
+            "role": "member",
+            "username": "testSchilling"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "tim-schilling",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": null,
+            "etag": "W/\"260d3a31af83c84f08c409b8ae8457ac2cbc2054c6769e7161e36ecb59601060\"",
+            "id": "django-commons:tim-schilling",
+            "role": "admin",
+            "username": "tim-schilling"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "williln",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": null,
+            "etag": "W/\"ab687b07552879a71ff6f83c6b7981a86a89dbf8f12d681db1824e939e0ef153\"",
+            "id": "django-commons:williln",
+            "role": "admin",
+            "username": "williln"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "github_repository",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": ".github",
+          "schema_version": 1,
+          "attributes": {
+            "allow_auto_merge": false,
+            "allow_merge_commit": false,
+            "allow_rebase_merge": false,
+            "allow_squash_merge": false,
+            "allow_update_branch": false,
+            "archive_on_destroy": null,
+            "archived": false,
+            "auto_init": false,
+            "default_branch": "main",
+            "delete_branch_on_merge": false,
+            "description": "",
+            "etag": "W/\"1b93e4b77f56afa8f82793bdd73f5ba75a49c5c5a4f666d10218be75adef2a2b\"",
+            "full_name": "django-commons/.github",
+            "git_clone_url": "git://github.com/django-commons/.github.git",
+            "gitignore_template": null,
+            "has_discussions": false,
+            "has_downloads": true,
+            "has_issues": true,
+            "has_projects": true,
+            "has_wiki": true,
+            "homepage_url": "",
+            "html_url": "https://github.com/django-commons/.github",
+            "http_clone_url": "https://github.com/django-commons/.github.git",
+            "id": ".github",
+            "ignore_vulnerability_alerts_during_read": null,
+            "is_template": false,
+            "license_template": null,
+            "merge_commit_message": "",
+            "merge_commit_title": "",
+            "name": ".github",
+            "node_id": "R_kgDOLkyRSQ",
+            "pages": [],
+            "primary_language": "",
+            "private": false,
+            "repo_id": 776769865,
+            "security_and_analysis": [
+              {
+                "advanced_security": [],
+                "secret_scanning": [
+                  {
+                    "status": "disabled"
+                  }
+                ],
+                "secret_scanning_push_protection": [
+                  {
+                    "status": "disabled"
+                  }
+                ]
+              }
+            ],
+            "squash_merge_commit_message": "",
+            "squash_merge_commit_title": "",
+            "ssh_clone_url": "git@github.com:django-commons/.github.git",
+            "svn_url": "https://github.com/django-commons/.github",
+            "template": [],
+            "topics": [],
+            "visibility": "public",
+            "vulnerability_alerts": false,
+            "web_commit_signoff_required": false
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        },
+        {
+          "index_key": "controls",
+          "schema_version": 1,
+          "attributes": {
+            "allow_auto_merge": false,
+            "allow_merge_commit": false,
+            "allow_rebase_merge": false,
+            "allow_squash_merge": false,
+            "allow_update_branch": false,
+            "archive_on_destroy": null,
+            "archived": false,
+            "auto_init": false,
+            "default_branch": "main",
+            "delete_branch_on_merge": false,
+            "description": "The controls for managing Django Commons projects",
+            "etag": "W/\"2904577e11d0752a0dd0d33dccfad6cbdecaef68554143a74c4a8b71296b8487\"",
+            "full_name": "django-commons/controls",
+            "git_clone_url": "git://github.com/django-commons/controls.git",
+            "gitignore_template": null,
+            "has_discussions": false,
+            "has_downloads": true,
+            "has_issues": true,
+            "has_projects": true,
+            "has_wiki": true,
+            "homepage_url": "",
+            "html_url": "https://github.com/django-commons/controls",
+            "http_clone_url": "https://github.com/django-commons/controls.git",
+            "id": "controls",
+            "ignore_vulnerability_alerts_during_read": null,
+            "is_template": false,
+            "license_template": null,
+            "merge_commit_message": "",
+            "merge_commit_title": "",
+            "name": "controls",
+            "node_id": "R_kgDOLkDK8g",
+            "pages": [],
+            "primary_language": "",
+            "private": false,
+            "repo_id": 775998194,
+            "security_and_analysis": [
+              {
+                "advanced_security": [],
+                "secret_scanning": [
+                  {
+                    "status": "disabled"
+                  }
+                ],
+                "secret_scanning_push_protection": [
+                  {
+                    "status": "disabled"
+                  }
+                ]
+              }
+            ],
+            "squash_merge_commit_message": "",
+            "squash_merge_commit_title": "",
+            "ssh_clone_url": "git@github.com:django-commons/controls.git",
+            "svn_url": "https://github.com/django-commons/controls",
+            "template": [],
+            "topics": [],
+            "visibility": "public",
+            "vulnerability_alerts": false,
+            "web_commit_signoff_required": false
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        },
+        {
+          "index_key": "django-commons-playground",
+          "schema_version": 1,
+          "attributes": {
+            "allow_auto_merge": false,
+            "allow_merge_commit": false,
+            "allow_rebase_merge": false,
+            "allow_squash_merge": false,
+            "allow_update_branch": false,
+            "archive_on_destroy": null,
+            "archived": false,
+            "auto_init": false,
+            "default_branch": "main",
+            "delete_branch_on_merge": false,
+            "description": "A sample project to test things out",
+            "etag": "W/\"fc80aa6c9b3ef87f460913e9aa0e2d9dc37a6f744647390c091d98bc2cd66dea\"",
+            "full_name": "django-commons/django-commons-playground",
+            "git_clone_url": "git://github.com/django-commons/django-commons-playground.git",
+            "gitignore_template": null,
+            "has_discussions": false,
+            "has_downloads": true,
+            "has_issues": true,
+            "has_projects": true,
+            "has_wiki": true,
+            "homepage_url": "",
+            "html_url": "https://github.com/django-commons/django-commons-playground",
+            "http_clone_url": "https://github.com/django-commons/django-commons-playground.git",
+            "id": "django-commons-playground",
+            "ignore_vulnerability_alerts_during_read": null,
+            "is_template": false,
+            "license_template": null,
+            "merge_commit_message": "",
+            "merge_commit_title": "",
+            "name": "django-commons-playground",
+            "node_id": "R_kgDOLkANrg",
+            "pages": [],
+            "primary_language": "Python",
+            "private": false,
+            "repo_id": 775949742,
+            "security_and_analysis": [
+              {
+                "advanced_security": [],
+                "secret_scanning": [
+                  {
+                    "status": "disabled"
+                  }
+                ],
+                "secret_scanning_push_protection": [
+                  {
+                    "status": "disabled"
+                  }
+                ]
+              }
+            ],
+            "squash_merge_commit_message": "",
+            "squash_merge_commit_title": "",
+            "ssh_clone_url": "git@github.com:django-commons/django-commons-playground.git",
+            "svn_url": "https://github.com/django-commons/django-commons-playground",
+            "template": [],
+            "topics": [],
+            "visibility": "public",
+            "vulnerability_alerts": false,
+            "web_commit_signoff_required": false
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        },
+        {
+          "index_key": "membership",
+          "schema_version": 1,
+          "attributes": {
+            "allow_auto_merge": false,
+            "allow_merge_commit": false,
+            "allow_rebase_merge": false,
+            "allow_squash_merge": false,
+            "allow_update_branch": false,
+            "archive_on_destroy": null,
+            "archived": false,
+            "auto_init": false,
+            "default_branch": "main",
+            "delete_branch_on_merge": false,
+            "description": "",
+            "etag": "W/\"fe64192cf880ca2292a4ac8b0e9cd75087401fc870c3c5c7f4c3fda2f29aad22\"",
+            "full_name": "django-commons/membership",
+            "git_clone_url": "git://github.com/django-commons/membership.git",
+            "gitignore_template": null,
+            "has_discussions": true,
+            "has_downloads": true,
+            "has_issues": true,
+            "has_projects": true,
+            "has_wiki": true,
+            "homepage_url": "",
+            "html_url": "https://github.com/django-commons/membership",
+            "http_clone_url": "https://github.com/django-commons/membership.git",
+            "id": "membership",
+            "ignore_vulnerability_alerts_during_read": null,
+            "is_template": false,
+            "license_template": null,
+            "merge_commit_message": "",
+            "merge_commit_title": "",
+            "name": "membership",
+            "node_id": "R_kgDOLklIpA",
+            "pages": [],
+            "primary_language": "",
+            "private": false,
+            "repo_id": 776554660,
+            "security_and_analysis": [
+              {
+                "advanced_security": [],
+                "secret_scanning": [
+                  {
+                    "status": "disabled"
+                  }
+                ],
+                "secret_scanning_push_protection": [
+                  {
+                    "status": "disabled"
+                  }
+                ]
+              }
+            ],
+            "squash_merge_commit_message": "",
+            "squash_merge_commit_title": "",
+            "ssh_clone_url": "git@github.com:django-commons/membership.git",
+            "svn_url": "https://github.com/django-commons/membership",
+            "template": [],
+            "topics": [],
+            "visibility": "public",
+            "vulnerability_alerts": false,
+            "web_commit_signoff_required": false
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "github_team",
+      "name": "org_teams",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "Admins",
+          "schema_version": 0,
+          "attributes": {
+            "create_default_maintainer": false,
+            "description": "",
+            "etag": "W/\"edeb1adc95c341b74155a478bb2b9ded90cc7ecfb784acd0949f0f88ed585c51\"",
+            "id": "9763562",
+            "ldap_dn": "",
+            "members_count": 5,
+            "name": "Admins",
+            "node_id": "T_kwDOCaaRBM4AlPrq",
+            "parent_team_id": "",
+            "parent_team_read_id": "",
+            "parent_team_read_slug": "",
+            "privacy": "closed",
+            "slug": "admins"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "github_team",
+      "name": "repo_admin_team",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "django-commons-playground",
+          "schema_version": 0,
+          "attributes": {
+            "create_default_maintainer": false,
+            "description": "",
+            "etag": "W/\"60023badcf8137bb0bfcf49338ae57bba04d4f585abc4837524affcb4136ede5\"",
+            "id": "9757650",
+            "ldap_dn": "",
+            "members_count": 5,
+            "name": "django-commons-playground-admins",
+            "node_id": "T_kwDOCaaRBM4AlOPS",
+            "parent_team_id": "9757678",
+            "parent_team_read_id": "9757678",
+            "parent_team_read_slug": "django-commons-playground",
+            "privacy": "closed",
+            "slug": "django-commons-playground-admins"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "github_team",
+      "name": "repo_committer_team",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "django-commons-playground",
+          "schema_version": 0,
+          "attributes": {
+            "create_default_maintainer": false,
+            "description": "",
+            "etag": "W/\"4c7a8be401ca97fa6325d2aa4d4bf448064a360fd8a368ae7cf250b40d12b788\"",
+            "id": "9757668",
+            "ldap_dn": "",
+            "members_count": 6,
+            "name": "django-commons-playground-committers",
+            "node_id": "T_kwDOCaaRBM4AlOPk",
+            "parent_team_id": "9757678",
+            "parent_team_read_id": "9757678",
+            "parent_team_read_slug": "django-commons-playground",
+            "privacy": "closed",
+            "slug": "django-commons-playground-committers"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "github_team",
+      "name": "repo_team",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "django-commons-playground",
+          "schema_version": 0,
+          "attributes": {
+            "create_default_maintainer": false,
+            "description": "",
+            "etag": "W/\"1b9c7dec4afb7d7ab0a2785b53d7f537a4d34b279fc1f03893f75c09413bd336\"",
+            "id": "9757678",
+            "ldap_dn": "",
+            "members_count": 6,
+            "name": "django-commons-playground",
+            "node_id": "T_kwDOCaaRBM4AlOPu",
+            "parent_team_id": "",
+            "parent_team_read_id": "",
+            "parent_team_read_slug": "",
+            "privacy": "closed",
+            "slug": "django-commons-playground"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "github_team_members",
+      "name": "org_team_members",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "Admins",
+          "schema_version": 0,
+          "attributes": {
+            "id": "9763562",
+            "members": [
+              {
+                "role": "maintainer",
+                "username": "Stormheg"
+              },
+              {
+                "role": "maintainer",
+                "username": "cunla"
+              },
+              {
+                "role": "maintainer",
+                "username": "ryancheley"
+              },
+              {
+                "role": "maintainer",
+                "username": "tim-schilling"
+              },
+              {
+                "role": "maintainer",
+                "username": "williln"
+              }
+            ],
+            "team_id": "9763562"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "github_team_members",
+      "name": "repo_admin_members",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "django-commons-playground",
+          "schema_version": 0,
+          "attributes": {
+            "id": "9757650",
+            "members": [
+              {
+                "role": "maintainer",
+                "username": "Stormheg"
+              },
+              {
+                "role": "maintainer",
+                "username": "cunla"
+              },
+              {
+                "role": "maintainer",
+                "username": "ryancheley"
+              },
+              {
+                "role": "maintainer",
+                "username": "tim-schilling"
+              },
+              {
+                "role": "maintainer",
+                "username": "williln"
+              }
+            ],
+            "team_id": "9757650"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "github_team_members",
+      "name": "repo_committer_team_members",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "django-commons-playground",
+          "schema_version": 0,
+          "attributes": {
+            "id": "9757668",
+            "members": [
+              {
+                "role": "maintainer",
+                "username": "Stormheg"
+              },
+              {
+                "role": "maintainer",
+                "username": "cunla"
+              },
+              {
+                "role": "maintainer",
+                "username": "ryancheley"
+              },
+              {
+                "role": "maintainer",
+                "username": "tim-schilling"
+              },
+              {
+                "role": "maintainer",
+                "username": "williln"
+              },
+              {
+                "role": "member",
+                "username": "priyapahwa"
+              }
+            ],
+            "team_id": "9757668"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "github_team_members",
+      "name": "repo_team_members",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "django-commons-playground",
+          "schema_version": 0,
+          "attributes": {
+            "id": "9757678",
+            "members": [
+              {
+                "role": "maintainer",
+                "username": "Stormheg"
+              },
+              {
+                "role": "maintainer",
+                "username": "cunla"
+              },
+              {
+                "role": "maintainer",
+                "username": "ryancheley"
+              },
+              {
+                "role": "maintainer",
+                "username": "tim-schilling"
+              },
+              {
+                "role": "maintainer",
+                "username": "williln"
+              },
+              {
+                "role": "member",
+                "username": "priyapahwa"
+              }
+            ],
+            "team_id": "9757678"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "github_team_repository",
+      "name": "repo_admin_team_access",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "django-commons-playground",
+          "schema_version": 0,
+          "attributes": {
+            "etag": "W/\"3993a06d298b6b2f996a4dc2e0bea9e8a4cac3b14f5f202263e52c89398f66fc\"",
+            "id": "9757650:django-commons-playground",
+            "permission": "admin",
+            "repository": "django-commons-playground",
+            "team_id": "9757650"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "github_team_repository",
+      "name": "repo_committer_team_access",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "django-commons-playground",
+          "schema_version": 0,
+          "attributes": {
+            "etag": "W/\"8059d2bfd583f22009db85d9b03c38faa2039416b0e5ed3c7651967314f37132\"",
+            "id": "9757668:django-commons-playground",
+            "permission": "maintain",
+            "repository": "django-commons-playground",
+            "team_id": "9757668"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "github_team_repository",
+      "name": "repo_team_access",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "django-commons-playground",
+          "schema_version": 0,
+          "attributes": {
+            "etag": "W/\"5eb93e6ede47d339fe46c6e87e5831b4293538f2e1aba8efb4eaf2ef51e812f5\"",
+            "id": "9757678:django-commons-playground",
+            "permission": "triage",
+            "repository": "django-commons-playground",
+            "team_id": "9757678"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "github_team_settings",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "django-commons-playground",
+          "schema_version": 0,
+          "attributes": {
+            "id": "T_kwDOCaaRBM4AlOPu",
+            "review_request_delegation": [],
+            "team_id": "django-commons-playground",
+            "team_slug": "django-commons-playground",
+            "team_uid": "T_kwDOCaaRBM4AlOPu"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

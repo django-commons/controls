@@ -9,43 +9,141 @@ Django Commons packages.
 - [New project](#new-project-playbook)
 - [Remove project](#remove-project-playbook)
 
-
 ## New Member Playbook
 
 1. Review new issues/application at https://github.com/django-commons/membership/issues/
-2. If they are a real human and are reasonably trustworthy, comment "Approved" and nothing else
-3. The [new_member](https://github.com/django-commons/membership/blob/main/.github/workflows/new_member.yml) action will send the invite and close the issue
-4. Add the member to any relevant teams if requested
+2. If they are not a real human or not reasonably trustworthy, close the issue, asking for more information they are a
+   human and not a spambot. You can explain that by being a member, they can impact repositories immediately.
+3. Add the user's GitHub username to the `members` collection in
+   the [`terraform/production/org.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/org.tfvars)
+   file.
+   ```terraform
+     members = [
+       # ...
+       "new_user"
+     ] 
+   ```
+4. If they requested to be on specific repository team(s), in
+   the [`terraform/production/repositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/repositories.tfvars)
+   file, add them to the `members` collection.
+   ```terraform 
+     repositories = {
+       "[REPOSITORY]" = {
+         # ...
+         members = [
+           # ...
+           "new_user"
+         ]
+       }
+     }
+   ```
+5. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
+   executed. Review the changes and make sure they align with the request.
+6. Merge the pull request. This will trigger terraform to apply the changes in the organization.
 
-If they aren't a real human or reasonably trustworthy, close the issue.
+## Repository Team Change Playbook
 
-## Team Change Playbook
+1. If they are not a real human or not reasonably trustworthy, close the issue, asking for more information if they are
+   a human and not a spambot. You can explain that by being a member, they can impact repositories immediately.
+2. For the requested repository's team(s), in
+   the [`terraform/production/repositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/repositories.tfvars)
+   file, add them to the `members` collection.
+   ```terraform
+     repositories = {
+       "[REPOSITORY]" = {
+         # ...
+         members = [
+           # ...
+           "new_user"
+         ]
+       }
+     }
+   ```
+3. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
+   executed. Review the changes and make sure they align with the request.
+4. Merge the pull request. This will trigger terraform to apply the changes in the organization.
 
-1. If they are a real human and are reasonably trustworthy, comment "Approved" and close the issue manually
-2. Add the member to requested team(s)
+## New Repository Admin or Committer Playbook
 
-## New Repository Admin Playbook
-
-1. Confirm with all existing admins that they are okay with the prospective admin
+1. Confirm with all existing admins that they approve changes to the repository admins or committers.
 2. If there's disagreement, close the issue and ask for the admins to come to a consensus
-3. If there's agreement, add the prospective admin to the [repo]-admins team
+3. For the requested repository's team(s), in
+   the [`terraform/production/repositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/repositories.tfvars)
+   file, for the repository's key under `repositories`, add them to the `admins` collection for the
+   correct team. There will be two privileged teams for each repository, `*-admins` and `*-committers`, the user should
+   be added to the requested team.
+   ```terraform
+     repositories = {
+       "[REPOSITORY]" = {
+         # ...
+         admins = [
+           # ...
+           "new_user"
+         ]
+       }
+     }
+   ```
+4. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
+   executed. Review the changes and make sure they align with the request.
+5. Merge the pull request. This will trigger terraform to apply the changes in the organization.
 
 ## New Project Playbook
 
-1. Check if repository meets [inbound requirements](https://github.com/django-commons/membership/blob/main/incoming_repo_requirements.md)
+1. Check if repository
+   meets [inbound requirements](https://github.com/django-commons/membership/blob/main/incoming_repo_requirements.md).
 2. Confirm who will be the admins and maintainers for the repository
 3. PyPI project owner must add you (Django Commons admin) as owner in PyPI
-4. (TODO: Determine how this works with transfering out of an org and into the Django Commons org)
-5. [Add repository owner to Django Commons as member](https://github.com/orgs/django-commons/people) (they'll be added to a team later)
-6. Share link ([https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository)) with repo owner to transfer repo
+4. (TODO: Determine how this works with transferring out of an org and into the Django Commons org)
+5. [Add repository owner to Django Commons as member](#new-member-playbook) (they'll be added
+   to a team later)
+6. Share
+   link ([https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository))
+   with repo owner to transfer repo
 7. Wait for repository transferred in
-8. [Run new team action](https://github.com/django-commons/controls/actions/workflows/new_team.yml)
-9. Invite repository admins to [repo]-admins team, repository maintainers to [repo]-committers team
-10. Configure environments pypi and testpypi
-11. For pypi environment, add Deployment protection rule with reviewers as [repo]-admins and enable "Allow administrators to bypass configured protection rules"
-12. Under Actions > General > "Fork pull request workflows from outside collaborators", set "Require approval for first-time contributors"
-13. Add previous repository owner to [repo]-admins team
-14. Set a calender event or reminder for 30 days in the future to remove previous repository owner from team
+8. [Make Terraform changes to add new project](#terraform-changes-to-add-a-new-project)
+9. [Configure environments](https://docs.github.com/en/actions/administering-github-actions/managing-environments-for-deployment#creating-an-environment)
+   pypi and testpypi in the repository to
+   enable [publishing packages via GitHub Actions](https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/#)
+10. For pypi environment, add Deployment protection rule with reviewers as [repo]-admins and enable "Allow
+    administrators to bypass configured protection rules"
+11. Under Actions > General > "Fork pull request workflows from outside collaborators", set "Require approval for
+    first-time contributors"
+12. Set a calendar event or reminder for 30 days in the future to remove previous repository owner from team
+
+### Terraform changes to add a new project
+
+Assuming repository name is `repo-name`:
+
+1. In [`terraform/production/respositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/respositories.tfvars),
+   add the new repository to the `repositories` section:
+
+```terraform
+repositories = {
+   # ...
+   "repo-name" = {
+      description = "repo description"
+      allow_auto_merge = false # optional, default is false
+      allow_merge_commit = false # optional, default is false
+      allow_rebase_merge = false # optional, default is false
+      allow_squash_merge = false # optional, default is false
+      allow_update_branch = false # optional, default is false
+      enable_branch_protection = true # optional, default is true
+      has_discussions = true # optional, default is true
+      has_downloads = true # optional, default is true
+      has_wiki = false # optional, default is false
+      is_template = false # optional, default is false
+      push_allowances = []
+      required_status_checks_contexts = [] # optional, default is []
+      template = "" # optional, default is ""
+      topics = []
+      visibility = "public" # optional, default is "public"
+      skip_team_creation = false # Optional, default is false => create 3 teams for the repository
+      admins = [] # Members of the repository's admin and repository teams. Have admin permissions
+      committers = [] # Members of the repository's committers and repository teams. Have write permissions
+      members = [] # Members of the repository team. Have triage permissions
+   }
+}
+```
 
 ## Remove Project Playbook
 
@@ -53,6 +151,17 @@ If they aren't a real human or reasonably trustworthy, close the issue.
 2. Add new Owner(s) to project in PyPI
 3. [Transfer GitHub repo to new owner or Org](https://github.com/orgs/django-commons/people)
 4. Wait for repository to be transferred out.
-5. [Delete top-level team for repository](https://github.com/orgs/django-commons/teams) (the delete will cascade to the sub-teams)
-6. Remove all Django Commons members from PyPI project (except any that are staying on from step 2)
-7. (TODO: Determine how to handle transferring a PyPI project out of an organization)
+5. Remove all Django Commons members from PyPI project (except any that are staying on from step 2)
+6. (TODO: Determine how to handle transferring a PyPI project out of an organization)
+
+### Terraform changes to remove a project
+
+1. Remove the repository from the `repositories` section
+   in [`terraform/production/respositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/respositories.tfvars)
+2. Remove the parent team and child teams for the repository from the `teams_repositories`
+   and `teams_repositories_privileged` sections in
+   [`terraform/production/teams.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/teams.tfvars)
+3. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
+   executed.
+   Review the changes and make sure they align with the request.
+4. Merge the pull request. This will trigger terraform to apply the changes in the organization.
