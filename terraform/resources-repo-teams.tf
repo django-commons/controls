@@ -16,7 +16,7 @@ resource "github_team_members" "repo_team_members" {
     # Add the admins and committers as members because this is the parent
     # team for the organization. If the team is mentioned in a discussion,
     # they too should be notified.
-    for_each = concat(each.value.members, each.value.committers, each.value.admins)
+    for_each = setunion(each.value.members, each.value.committers, each.value.admins)
 
     content {
       # members here references the dynamic name, not the looped entity.
