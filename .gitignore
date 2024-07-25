@@ -1,2 +1,5 @@
 *.backup
 notes.txt
+.terraform
+.terraform.lock.hcl
+.idea
