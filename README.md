@@ -114,10 +114,8 @@ Django Commons packages.
 
 Assuming repository name is `repo-name`:
 
-1.
-
-In [`terraform/production/respositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/respositories.tfvars),
-add the new repository to the `repositories` section:
+1. In [`terraform/production/respositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/respositories.tfvars),
+   add the new repository to the `repositories` section:
 
 ```terraform
 repositories = {
@@ -140,9 +138,9 @@ repositories = {
       topics = []
       visibility = "public" # optional, default is "public"
       skip_team_creation = false # Optional, default is false => create 3 teams for the repository
-      admins = [] # Members of the repository admin team and the committers team
-      committers = [] # Members of the repository committers team
-      members = [] # Members of the repository team with triage permissions, not committers nor admins
+      admins = [] # Members of the repository's admin and repository teams. Have admin permissions
+      committers = [] # Members of the repository's committers and repository teams. Have write permissions
+      members = [] # Members of the repository team. Have triage permissions
    }
 }
 ```
