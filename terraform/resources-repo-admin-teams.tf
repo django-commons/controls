@@ -8,6 +8,7 @@ resource "github_team" "repo_admin_team" {
   privacy        = "closed"
 }
 
+# Add the people to the team
 resource "github_team_members" "repo_admin_members" {
   for_each = {for k, v in var.repositories : k => v if v.skip_team_creation == false}
 
@@ -17,13 +18,13 @@ resource "github_team_members" "repo_admin_members" {
     for_each = each.value.admins
 
     content {
-      # members here references the dynamic name, not the looped entity.
       username = members.value
-      role     = "maintainer"
+      role     = "member"
     }
   }
 }
 
+# Define the team's permissions for the repositories
 resource "github_team_repository" "repo_admin_team_access" {
   for_each   = {for k, v in var.repositories : k => v if v.skip_team_creation == false}
   repository = each.key

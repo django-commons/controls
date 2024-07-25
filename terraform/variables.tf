@@ -38,9 +38,9 @@ variable "repositories" {
     topics = optional(list(string))
     visibility = optional(string, "public")
     skip_team_creation = optional(bool, false) # Do not create teams for repository
-    admins = optional(set(string), []) # Members of the repository admin team and the committers team
-    committers = optional(set(string), []) # Members of the repository committers team
-    members = optional(set(string), []) # Members of the repository team with triage permissions
+    admins = optional(set(string), []) # Members of the repository admin and repository teams. Have admin permissions
+    committers = optional(set(string), []) # Members of the repository committers and repository teams. Have write permissions
+    members = optional(set(string), []) # Members of the repository team. Have triage permissions
   }))
 }
 
