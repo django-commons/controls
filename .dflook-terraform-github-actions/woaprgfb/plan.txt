@@ -1,0 +1,45 @@
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # github_membership.this["danielm-cfa"] will be created
+  + resource "github_membership" "this" {
+      + downgrade_on_destroy = false
+      + etag                 = (known after apply)
+      + id                   = (known after apply)
+      + role                 = "member"
+      + username             = "danielm-cfa"
+    }
+
+  # github_repository.this["controls"] will be updated in-place
+  ~ resource "github_repository" "this" {
+      ~ allow_squash_merge          = false -> true
+      ~ delete_branch_on_merge      = false -> true
+        id                          = "controls"
+      + merge_commit_message        = "PR_TITLE"
+      + merge_commit_title          = "MERGE_MESSAGE"
+        name                        = "controls"
+      + squash_merge_commit_message = "BLANK"
+      + squash_merge_commit_title   = "PR_TITLE"
+        # (31 unchanged attributes hidden)
+
+        # (1 unchanged block hidden)
+    }
+
+  # github_team_members.repo_team_members["django-commons-playground"] will be updated in-place
+  ~ resource "github_team_members" "repo_team_members" {
+        id      = "9757678"
+        # (1 unchanged attribute hidden)
+
+      + members {
+          + role     = "member"
+          + username = "danielm-cfa"
+        }
+
+        # (6 unchanged blocks hidden)
+    }
+
+Plan: 1 to add, 2 to change, 0 to destroy.

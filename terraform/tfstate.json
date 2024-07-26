@@ -1,7 +1,7 @@
 {
   "version": 4,
-  "terraform_version": "1.5.7",
-  "serial": 68,
+  "terraform_version": "1.9.3",
+  "serial": 72,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {},
   "resources": [
@@ -49,6 +49,19 @@
           },
           "sensitive_attributes": [],
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "danielm-cfa",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": false,
+            "etag": "W/\"9302770559069a4020e9d9bcab5cfa7df9833711bbc4b4cb03c7165830f7fec3\"",
+            "id": "django-commons:danielm-cfa",
+            "role": "member",
+            "username": "danielm-cfa"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
         },
         {
           "index_key": "gav-fyi",
@@ -303,7 +316,7 @@
             "default_branch": "main",
             "delete_branch_on_merge": true,
             "description": "The controls for managing Django Commons projects",
-            "etag": "W/\"ee6de8efb99f04d670a66b31acc8e560cafe66ef93b563c7ec6b68f7ef437989\"",
+            "etag": "W/\"0307888d7181630f50567da3bac6a269c35f3765b821f5ad4ca8c547f9f63ae4\"",
             "full_name": "django-commons/controls",
             "git_clone_url": "git://github.com/django-commons/controls.git",
             "gitignore_template": null,
@@ -713,23 +726,23 @@
             "id": "9757650",
             "members": [
               {
-                "role": "member",
+                "role": "maintainer",
                 "username": "Stormheg"
               },
               {
-                "role": "member",
+                "role": "maintainer",
                 "username": "cunla"
               },
               {
-                "role": "member",
+                "role": "maintainer",
                 "username": "ryancheley"
               },
               {
-                "role": "member",
+                "role": "maintainer",
                 "username": "tim-schilling"
               },
               {
-                "role": "member",
+                "role": "maintainer",
                 "username": "williln"
               }
             ],
@@ -738,7 +751,8 @@
           "sensitive_attributes": [],
           "private": "bnVsbA==",
           "dependencies": [
-            "github_team.repo_admin_team"
+            "github_team.repo_admin_team",
+            "github_team.repo_team"
           ]
         }
       ]
@@ -784,28 +798,32 @@
             "id": "9757678",
             "members": [
               {
-                "role": "member",
+                "role": "maintainer",
                 "username": "Stormheg"
               },
               {
-                "role": "member",
+                "role": "maintainer",
                 "username": "cunla"
+              },
+              {
+                "role": "maintainer",
+                "username": "ryancheley"
+              },
+              {
+                "role": "maintainer",
+                "username": "tim-schilling"
+              },
+              {
+                "role": "maintainer",
+                "username": "williln"
+              },
+              {
+                "role": "member",
+                "username": "danielm-cfa"
               },
               {
                 "role": "member",
                 "username": "priyapahwa"
-              },
-              {
-                "role": "member",
-                "username": "ryancheley"
-              },
-              {
-                "role": "member",
-                "username": "tim-schilling"
-              },
-              {
-                "role": "member",
-                "username": "williln"
               }
             ],
             "team_id": "9757678"
