@@ -3,7 +3,7 @@ repositories = {
   # Keep the following repositories in alphabetical order
 
   ".github" = {
-    description = "A Special Repository."
+    description              = "A Special Repository."
     enable_branch_protection = false
 
     topics = []
@@ -12,18 +12,18 @@ repositories = {
   }
 
   "controls" = {
-    description = "The controls for managing Django Commons projects"
+    description              = "The controls for managing Django Commons projects"
     enable_branch_protection = false
 
     topics = []
     push_allowances = []
-    visibility = "public"
+    visibility         = "public"
     skip_team_creation = true
   }
 
   "membership" = {
-    description = "Membership repository for the django-commons organization."
-    visibility  = "public"
+    description        = "Membership repository for the django-commons organization."
+    visibility         = "public"
     topics = []
     push_allowances = []
     skip_team_creation = true
@@ -46,6 +46,7 @@ repositories = {
     ]
     # People with GitHub triage repo permissions
     members = [
+      "danielm-cfa",
     ]
   }
 }
