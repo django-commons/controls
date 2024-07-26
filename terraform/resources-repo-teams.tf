@@ -21,7 +21,7 @@ resource "github_team_members" "repo_team_members" {
     content {
       # members here references the dynamic name, not the looped entity.
       username = members.value
-      role     = "member"
+      role     = contains(var.admins, members.value) ? "maintainer" : "member"
     }
   }
 }
