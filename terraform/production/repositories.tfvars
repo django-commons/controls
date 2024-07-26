@@ -46,7 +46,6 @@ repositories = {
     ]
     # People with GitHub triage repo permissions
     members = [
-      "danielm-cfa",
     ]
   }
 }
