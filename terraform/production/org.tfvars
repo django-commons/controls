@@ -17,6 +17,7 @@ members = [
   "pfouque",
   "priyapahwa",
   "testSchilling",
+  "danielm-cfa",
 ]
 
 organization_teams = {
@@ -41,6 +42,7 @@ organization_teams = {
     permission = "push"
 
     repositories = [
+      "django-commons-playground",
     ]
   }
 }
@@ -48,8 +50,8 @@ organization_teams = {
 ################ GitHub Organization Secrets, not used at the moment #############
 
 organization_secrets = {
-#     "GPG_PASSPHRASE" = {
-#       description = "GPG Passphrase used to encrypt plan.out files"
-#       visibility  = "all"
-#     }
+  #     "GPG_PASSPHRASE" = {
+  #       description = "GPG Passphrase used to encrypt plan.out files"
+  #       visibility  = "all"
+  #     }
 }
