@@ -23,8 +23,6 @@ resource "github_repository" "this" {
   has_wiki                    = each.value.has_wiki
   is_template                 = each.value.is_template
   name                        = each.key
-  squash_merge_commit_message = "BLANK"
-  squash_merge_commit_title   = "PR_TITLE"
   topics                      = each.value.topics
   visibility                  = each.value.visibility
   vulnerability_alerts        = true
