@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.9.3",
-  "serial": 98,
+  "serial": 101,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {},
   "resources": [
@@ -306,8 +306,8 @@
           "schema_version": 1,
           "attributes": {
             "allow_auto_merge": false,
-            "allow_merge_commit": false,
-            "allow_rebase_merge": false,
+            "allow_merge_commit": true,
+            "allow_rebase_merge": true,
             "allow_squash_merge": true,
             "allow_update_branch": true,
             "archive_on_destroy": true,
@@ -316,7 +316,7 @@
             "default_branch": "main",
             "delete_branch_on_merge": true,
             "description": "The controls for managing Django Commons projects",
-            "etag": "W/\"ea2861ea815a93f58cb6de87bdeadf4180c8867141f15b04bed786ba41e1580b\"",
+            "etag": "W/\"35dfa2e1e4b4863722d8d5c4264b6c909161422017a07748e6a1c886325e84a5\"",
             "full_name": "django-commons/controls",
             "git_clone_url": "git://github.com/django-commons/controls.git",
             "gitignore_template": null,
@@ -440,8 +440,8 @@
           "schema_version": 1,
           "attributes": {
             "allow_auto_merge": false,
-            "allow_merge_commit": false,
-            "allow_rebase_merge": false,
+            "allow_merge_commit": true,
+            "allow_rebase_merge": true,
             "allow_squash_merge": true,
             "allow_update_branch": true,
             "archive_on_destroy": true,
