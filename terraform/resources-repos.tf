@@ -10,8 +10,12 @@ resource "github_repository" "this" {
 
   allow_auto_merge       = each.value.allow_auto_merge
   allow_merge_commit     = each.value.allow_merge_commit
+  merge_commit_title = "MERGE_MESSAGE"
+  merge_commit_message = "PR_BODY"
   allow_rebase_merge     = each.value.allow_rebase_merge
   allow_squash_merge     = each.value.allow_squash_merge
+  squash_merge_commit_title = "COMMIT_OR_PR_TITLE"
+  squash_merge_commit_message = "COMMIT_MESSAGES"
   allow_update_branch    = each.value.allow_update_branch
   archive_on_destroy     = true
   delete_branch_on_merge = each.value.delete_branch_on_merge
