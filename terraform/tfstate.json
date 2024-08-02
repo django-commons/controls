@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.9.3",
-  "serial": 85,
+  "serial": 88,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {},
   "resources": [
@@ -316,7 +316,7 @@
             "default_branch": "main",
             "delete_branch_on_merge": true,
             "description": "The controls for managing Django Commons projects",
-            "etag": "W/\"8d18d5a76e6ea8e73ae49919b12c12d6d456f2a9512a3bfd3ecb646f4f7f7ad1\"",
+            "etag": "W/\"65ff4d3689a0ef454874af56f71ee3be29a52b0cdae6962d295593e4a6ec8fa0\"",
             "full_name": "django-commons/controls",
             "git_clone_url": "git://github.com/django-commons/controls.git",
             "gitignore_template": null,
@@ -450,7 +450,7 @@
             "default_branch": "main",
             "delete_branch_on_merge": true,
             "description": "Membership repository for the django-commons organization.",
-            "etag": "W/\"2c38c2155b7a46b349607bc0db1c9597a54996ef8cc83fbe40c9a73ede9cea98\"",
+            "etag": "W/\"6c755c191beaa31c597f04acf81d7860da7806f9518e7fff801e308e73e99d44\"",
             "full_name": "django-commons/membership",
             "git_clone_url": "git://github.com/django-commons/membership.git",
             "gitignore_template": null,
