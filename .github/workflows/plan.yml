@@ -13,7 +13,10 @@ jobs:
 
     permissions:
       pull-requests: write
+      # These are necessary due to GitHub's API as per:
+      # https://github.com/integrations/terraform-provider-github/issues/679#issuecomment-2068196839
       contents: write
+      administration: read
 
     steps:
       - name: Checkout code
