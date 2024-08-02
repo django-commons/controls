@@ -13,7 +13,6 @@ repositories = {
 
   "controls" = {
     description              = "The controls for managing Django Commons projects"
-    enable_branch_protection = false
     allow_merge_commit = true
     allow_rebase_merge = true
     allow_squash_merge = true
