@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.9.3",
-  "serial": 79,
+  "serial": 85,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {},
   "resources": [
@@ -88,6 +88,19 @@
           },
           "sensitive_attributes": [],
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "maerteijn",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": false,
+            "etag": "W/\"6da4c0ad04dc5ff2e82f25a6c570e15bd72bc6e05daf976fbf17eb4636f5848b\"",
+            "id": "django-commons:maerteijn",
+            "role": "member",
+            "username": "maerteijn"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
         },
         {
           "index_key": "matthiask",
@@ -275,8 +288,8 @@
                 ]
               }
             ],
-            "squash_merge_commit_message": "BLANK",
-            "squash_merge_commit_title": "PR_TITLE",
+            "squash_merge_commit_message": "COMMIT_MESSAGES",
+            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
             "ssh_clone_url": "git@github.com:django-commons/.github.git",
             "svn_url": "https://github.com/django-commons/.github",
             "template": [],
@@ -295,15 +308,15 @@
             "allow_auto_merge": false,
             "allow_merge_commit": false,
             "allow_rebase_merge": false,
-            "allow_squash_merge": false,
+            "allow_squash_merge": true,
             "allow_update_branch": false,
             "archive_on_destroy": true,
             "archived": false,
             "auto_init": false,
             "default_branch": "main",
-            "delete_branch_on_merge": false,
+            "delete_branch_on_merge": true,
             "description": "The controls for managing Django Commons projects",
-            "etag": "W/\"cc201558ab379c35404a005ca7dce2b56902f8033180a7d0d1a8652aaf712bee\"",
+            "etag": "W/\"8d18d5a76e6ea8e73ae49919b12c12d6d456f2a9512a3bfd3ecb646f4f7f7ad1\"",
             "full_name": "django-commons/controls",
             "git_clone_url": "git://github.com/django-commons/controls.git",
             "gitignore_template": null,
@@ -319,8 +332,8 @@
             "ignore_vulnerability_alerts_during_read": null,
             "is_template": false,
             "license_template": null,
-            "merge_commit_message": "",
-            "merge_commit_title": "",
+            "merge_commit_message": "PR_TITLE",
+            "merge_commit_title": "MERGE_MESSAGE",
             "name": "controls",
             "node_id": "R_kgDOLkDK8g",
             "pages": [],
@@ -342,8 +355,8 @@
                 ]
               }
             ],
-            "squash_merge_commit_message": "",
-            "squash_merge_commit_title": "",
+            "squash_merge_commit_message": "COMMIT_MESSAGES",
+            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
             "ssh_clone_url": "git@github.com:django-commons/controls.git",
             "svn_url": "https://github.com/django-commons/controls",
             "template": [],
@@ -409,8 +422,8 @@
                 ]
               }
             ],
-            "squash_merge_commit_message": "BLANK",
-            "squash_merge_commit_title": "PR_TITLE",
+            "squash_merge_commit_message": "COMMIT_MESSAGES",
+            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
             "ssh_clone_url": "git@github.com:django-commons/django-commons-playground.git",
             "svn_url": "https://github.com/django-commons/django-commons-playground",
             "template": [],
@@ -437,7 +450,7 @@
             "default_branch": "main",
             "delete_branch_on_merge": true,
             "description": "Membership repository for the django-commons organization.",
-            "etag": "W/\"6df7f249f208f48312c2c17aff4b4e4407b73b11e27893e8b8911e5e90961248\"",
+            "etag": "W/\"2c38c2155b7a46b349607bc0db1c9597a54996ef8cc83fbe40c9a73ede9cea98\"",
             "full_name": "django-commons/membership",
             "git_clone_url": "git://github.com/django-commons/membership.git",
             "gitignore_template": null,
@@ -476,8 +489,8 @@
                 ]
               }
             ],
-            "squash_merge_commit_message": "BLANK",
-            "squash_merge_commit_title": "PR_TITLE",
+            "squash_merge_commit_message": "COMMIT_MESSAGES",
+            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
             "ssh_clone_url": "git@github.com:django-commons/membership.git",
             "svn_url": "https://github.com/django-commons/membership",
             "template": [],
@@ -503,7 +516,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "django-commons administrators",
-            "etag": "W/\"cf7bd1ca1fca3750864a2b760797c4a47f7ced36ca48e3a4b7a30ffc7e32a1d7\"",
+            "etag": "W/\"48d9dfe6bea4ca491be0c1c5475e3195d56aeeaf28f87faa8fdc88c4417bc9cf\"",
             "id": "9763562",
             "ldap_dn": "",
             "members_count": 5,
@@ -524,7 +537,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "django-commons security team",
-            "etag": "W/\"a1cae8ebf8241b6c1d996ec47e146059a85acd1b8c92155f22c58b99452e6e17\"",
+            "etag": "W/\"771f934df9368b01faf230ad1e9f94f1578bf2d0f13b3f7b457f548969752170\"",
             "id": "10641823",
             "ldap_dn": "",
             "members_count": 2,
@@ -553,7 +566,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Admin team for the django-commons-playground repository",
-            "etag": "W/\"1ab4143245751a3eae38b676a1acc06dff57da6d292b4f5a507b0658bff9fd8c\"",
+            "etag": "W/\"2ebdfdb6ce050a64492ba5b464fd5a9cfdf71fc84fe42147722e22e7b2c53d76\"",
             "id": "9757650",
             "ldap_dn": "",
             "members_count": 5,
@@ -585,7 +598,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Committers team for the django-commons-playground repository",
-            "etag": "W/\"3787cfdf046d625bc1dee5742f01f5812c5af3f8c08149a0f12634094d4b6ffd\"",
+            "etag": "W/\"7a225b3af7ad39a1cd4b14291a082767f146dc2a0cbd1e59422e22be3e48164f\"",
             "id": "9757668",
             "ldap_dn": "",
             "members_count": 1,
@@ -617,7 +630,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Main team for the django-commons-playground repository",
-            "etag": "W/\"b007368c77f25147bbe0a9f405aded680fe947c39b2619d3f494f21e37f657c8\"",
+            "etag": "W/\"2511a591bdb9c45f8814ce01b3811d3df7b6d64c9df8e22537b2421eac2ba7a1\"",
             "id": "9757678",
             "ldap_dn": "",
             "members_count": 6,
