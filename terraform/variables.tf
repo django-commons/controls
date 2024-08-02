@@ -26,7 +26,7 @@ variable "repositories" {
     allow_merge_commit = optional(bool, false)
     allow_rebase_merge = optional(bool, false)
     allow_squash_merge = optional(bool, true)
-    allow_update_branch = optional(bool, false)
+    allow_update_branch = optional(bool, true)
     enable_branch_protection = optional(bool, true)
     has_discussions = optional(bool, true)
     has_downloads = optional(bool, true)
@@ -39,7 +39,8 @@ variable "repositories" {
     visibility = optional(string, "public")
     skip_team_creation = optional(bool, false) # Do not create teams for repository
     admins = optional(set(string), []) # Members of the repository's admin and repository teams. Have admin permissions
-    committers = optional(set(string), []) # Members of the repository's committers and repository teams. Have write permissions
+    committers = optional(set(string), [])
+    # Members of the repository's committers and repository teams. Have write permissions
     members = optional(set(string), []) # Members of the repository team. Have triage permissions
   }))
 }
