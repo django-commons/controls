@@ -17,6 +17,7 @@ members = [
   "pfouque",
   "priyapahwa",
   "testSchilling",
+  "maerteijn",
 ]
 
 organization_teams = {
