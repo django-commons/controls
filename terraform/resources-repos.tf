@@ -8,24 +8,24 @@ resource "github_repository" "this" {
 
   for_each = var.repositories
 
-  allow_auto_merge            = each.value.allow_auto_merge
-  allow_merge_commit          = each.value.allow_merge_commit
-  allow_rebase_merge          = each.value.allow_rebase_merge
-  allow_squash_merge          = each.value.allow_squash_merge
-  allow_update_branch         = each.value.allow_update_branch
-  archive_on_destroy          = true
-  delete_branch_on_merge      = true
-  description                 = each.value.description
-  has_downloads               = each.value.has_downloads
-  has_discussions             = each.value.has_discussions
-  has_issues                  = true
-  has_projects                = true
-  has_wiki                    = each.value.has_wiki
-  is_template                 = each.value.is_template
-  name                        = each.key
-  topics                      = each.value.topics
-  visibility                  = each.value.visibility
-  vulnerability_alerts        = true
+  allow_auto_merge       = each.value.allow_auto_merge
+  allow_merge_commit     = each.value.allow_merge_commit
+  allow_rebase_merge     = each.value.allow_rebase_merge
+  allow_squash_merge     = each.value.allow_squash_merge
+  allow_update_branch    = each.value.allow_update_branch
+  archive_on_destroy     = true
+  delete_branch_on_merge = each.value.delete_branch_on_merge
+  description            = each.value.description
+  has_downloads          = each.value.has_downloads
+  has_discussions        = each.value.has_discussions
+  has_issues             = true
+  has_projects           = true
+  has_wiki               = each.value.has_wiki
+  is_template            = each.value.is_template
+  name                   = each.key
+  topics                 = each.value.topics
+  visibility             = each.value.visibility
+  vulnerability_alerts   = true
 
   dynamic "template" {
     for_each = each.value.template != null ? [each.value.template] : []

@@ -27,6 +27,7 @@ variable "repositories" {
     allow_rebase_merge = optional(bool, false)
     allow_squash_merge = optional(bool, true)
     allow_update_branch = optional(bool, true)
+    delete_branch_on_merge = optional(bool, true)
     enable_branch_protection = optional(bool, true)
     has_discussions = optional(bool, true)
     has_downloads = optional(bool, true)

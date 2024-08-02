@@ -6,20 +6,6 @@ terraform {
     github = {
       source = "integrations/github"
     }
-
-    # Random Provider
-    # https://registry.terraform.io/providers/hashicorp/random/latest/docs
-
-    random = {
-      source = "hashicorp/random"
-    }
-
-    # Time Provider
-    # https://registry.terraform.io/providers/hashicorp/time/latest/docs
-
-    time = {
-      source = "hashicorp/time"
-    }
   }
 }
 
