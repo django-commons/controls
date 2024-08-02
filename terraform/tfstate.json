@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.9.3",
-  "serial": 93,
+  "serial": 95,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {},
   "resources": [
@@ -316,7 +316,7 @@
             "default_branch": "main",
             "delete_branch_on_merge": true,
             "description": "The controls for managing Django Commons projects",
-            "etag": "W/\"b18603626f19f95967688effb022c8a4e89787ba38d62bcc65cb5d2d195bf251\"",
+            "etag": "W/\"312b9849a32911763a28d044423d2f70b3a8352f77a1d37492b6c86a0cdceece\"",
             "full_name": "django-commons/controls",
             "git_clone_url": "git://github.com/django-commons/controls.git",
             "gitignore_template": null,
