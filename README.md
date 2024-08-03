@@ -112,38 +112,68 @@ Django Commons packages.
 
 ### Terraform changes to add a new project
 
+#### Using the GitHub UI
+
+1. Transfer the existing repository to the Django Commons organization using the GitHub UI, so old information is
+   preserved.
+2. Make sure the there are no teams `repo-name`, `repo-name-admins` and `repo-name-committers` in the Django Commons
+   organization. Teams can be viewed [here](https://github.com/orgs/django-commons/teams). The teams will be created by
+   the terraform apply process.
+
+#### Locally
+
 Assuming repository name is `repo-name`:
 
-1. In [`terraform/production/respositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/respositories.tfvars),
-   add the new repository to the `repositories` section:
+1.
+In [`terraform/production/respositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/respositories.tfvars),
+add the new repository to the `repositories` section:
 
 ```terraform
 repositories = {
-   # ...
-   "repo-name" = {
-      description = "repo description"
-      allow_auto_merge = false # optional, default is false
-      allow_merge_commit = false # optional, default is false
-      allow_rebase_merge = false # optional, default is false
-      allow_squash_merge = false # optional, default is false
-      allow_update_branch = false # optional, default is false
-      enable_branch_protection = true # optional, default is true
-      has_discussions = true # optional, default is true
-      has_downloads = true # optional, default is true
-      has_wiki = false # optional, default is false
-      is_template = false # optional, default is false
-      push_allowances = []
-      required_status_checks_contexts = [] # optional, default is []
-      template = "" # optional, default is ""
-      topics = []
-      visibility = "public" # optional, default is "public"
-      skip_team_creation = false # Optional, default is false => create 3 teams for the repository
-      admins = [] # Members of the repository's admin and repository teams. Have admin permissions
-      committers = [] # Members of the repository's committers and repository teams. Have write permissions
-      members = [] # Members of the repository team. Have triage permissions
-   }
+  # ...
+  "repo-name" = {
+    description = "repo description"
+    allow_auto_merge = false # optional, default is false
+    allow_merge_commit = false # optional, default is false
+    allow_rebase_merge = false # optional, default is false
+    allow_squash_merge = true # optional, default is true
+    allow_update_branch = true # optional, default is true
+    delete_branch_on_merge = true # optional, default is true
+    has_discussions = true # optional, default is true
+    has_downloads = true # optional, default is true
+    has_wiki = false # optional, default is false
+    is_template = false # optional, default is false
+    push_allowances = []
+    template = "" # optional, default is ""
+    topics = []
+    visibility = "public" # optional, default is "public"
+    skip_team_creation = optional(bool, false) # Do not create teams for repository
+    admins = optional(set(string), []) # Members of the repository admin team
+    committers = optional(set(string), []) # Members of the repository committers team
+    enable_branch_protection = true # optional, default is true
+    required_status_checks_contexts = [] # optional, default is []
+    admins = [] # Members of the repository's admin and repository teams. Have admin permissions
+    committers = [] # Members of the repository's committers and repository teams. Have write permissions
+    members = [] # Members of the repository team. Have triage permissions
+  }
 }
 ```
+
+2. import the repository into the terraform state by
+   running `terraform import -var-file=production/org.tfvars -var-file=production/repositories.tfvars -var github_token=... 'github_repository.this["repo-name"]' django-commons/repo-name`
+3. Run `terraform plan -var-file=production/org.tfvars -var-file=production/repositories.tfvars -var github_token=...`
+   to see the changes that will be made.
+
+4. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
+   executed.
+   Review the changes and make sure they align with the request.
+5. Merge the pull request. This will trigger terraform to apply the changes in the organization.
+
+The expected changes:
+
+- New teams `repo-name`, `repo-name-admins`, `repo-name-committers` with the relevant members based on the
+  repository's description.
+- The repository changes are accepted by the project maintainers.
 
 ## Remove Project Playbook
 
@@ -158,10 +188,12 @@ repositories = {
 
 1. Remove the repository from the `repositories` section
    in [`terraform/production/respositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/respositories.tfvars)
-2. Remove the parent team and child teams for the repository from the `teams_repositories`
-   and `teams_repositories_privileged` sections in
-   [`terraform/production/teams.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/teams.tfvars)
-3. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
+2. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
    executed.
    Review the changes and make sure they align with the request.
-4. Merge the pull request. This will trigger terraform to apply the changes in the organization.
+3. Merge the pull request. This will trigger terraform to apply the changes in the organization.
+
+The expected changes:
+
+- The repository will be removed from the organization.
+- The repository's teams will be removed from the organization.
