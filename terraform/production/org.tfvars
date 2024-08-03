@@ -41,10 +41,6 @@ organization_teams = {
       "matthiask"
     ]
     permission = "push"
-
-    repositories = [
-      "django-commons-playground",
-    ]
   }
 }
 

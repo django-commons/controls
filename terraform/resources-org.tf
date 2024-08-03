@@ -32,19 +32,16 @@ resource "github_team_members" "org_team_members" {
     for_each = each.value.members
 
     content {
-      # members here references the dynamic name, not the looped entity.
       username = members.value
       role     = "member"
     }
   }
 
-  # Maintainer here means the maintainer role for the team.
-  # It's not a maintainer of the repo.
+  # Maintainer here means the maintainer role for the team. It's not a maintainer of the repo.
   dynamic "members" {
     for_each = each.value.maintainers
 
     content {
-      # members here references the dynamic name, not the looped entity.
       username = members.value
       role     = "maintainer"
     }
