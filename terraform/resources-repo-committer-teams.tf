@@ -19,7 +19,7 @@ resource "github_team_members" "repo_committer_team_members" {
 
     content {
       username = members.value
-      role     = contains(var.admins, members.value) ? "maintainer" : "member"
+      role     = contains(each.value.admins, members.value) ? "maintainer" : "member"
     }
   }
 }
