@@ -56,8 +56,10 @@ repositories = {
   "django-tasks-scheduler" = {
     description = "Schedule async tasks using redis pub/sub."
 
-    admins = [] # Members of the repository's admin and repository teams. Have admin permissions
-    committers = [] # Members of the repository's committers and repository teams. Have write permissions
-    members = [] # Members of the repository team. Have triage permissions
+    admins = [
+      "cunla",
+    ]
+    committers = []
+    members = []
   }
 }
