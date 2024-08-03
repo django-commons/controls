@@ -133,6 +133,7 @@ repositories = {
   # ...
   "repo-name" = {
     description = "repo description"
+    homepage_url = "" # optional, default is ""
     allow_auto_merge = false # optional, default is false
     allow_merge_commit = false # optional, default is false
     allow_rebase_merge = false # optional, default is false
