@@ -60,7 +60,6 @@ variable "organization_teams" {
     members = optional(set(string), [])
     permission = optional(string, null)
     privacy = optional(string, "closed")
-    repositories = optional(set(string), [])
     review_request_delegation = optional(bool, false)
   }))
 }

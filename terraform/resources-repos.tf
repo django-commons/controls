@@ -2,10 +2,6 @@
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository
 
 resource "github_repository" "this" {
-
-  # Ensure GitHub repository is Private
-  # checkov:skip=CKV_GIT_1: Public is ok for us since we are an open source project
-
   for_each = var.repositories
 
   allow_auto_merge            = each.value.allow_auto_merge
@@ -62,7 +58,7 @@ resource "github_repository" "this" {
 #   required_pull_request_reviews {
 #     dismiss_stale_reviews           = true
 #     require_code_owner_reviews      = true
-#     required_approving_review_count = 1
+#     required_approving_review_count = github_repository.this[each.key].required_approving_review_count
 #   }
 #
 #   required_status_checks {
