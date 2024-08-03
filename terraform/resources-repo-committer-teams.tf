@@ -10,7 +10,10 @@ resource "github_team" "repo_committer_team" {
 
 # Add the people to the team
 resource "github_team_members" "repo_committer_team_members" {
-  for_each = {for k, v in var.repositories : k => v if v.skip_team_creation == false}
+  for_each = {
+    for k, v in var.repositories : k => v
+    if v.skip_team_creation == false && length(v.committers) > 0
+  }
 
   team_id = github_team.repo_committer_team[each.key].id
 
@@ -23,6 +26,7 @@ resource "github_team_members" "repo_committer_team_members" {
     }
   }
 }
+
 # Define the team's permissions for the repositories
 resource "github_team_repository" "repo_committer_team_access" {
   for_each   = {for k, v in var.repositories : k => v if v.skip_team_creation == false}
