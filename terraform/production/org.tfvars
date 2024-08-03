@@ -18,6 +18,7 @@ members = [
   "priyapahwa",
   "testSchilling",
   "maerteijn",
+  "g-nie",
 ]
 
 organization_teams = {
@@ -40,10 +41,6 @@ organization_teams = {
       "matthiask"
     ]
     permission = "push"
-
-    repositories = [
-      "django-commons-playground",
-    ]
   }
 }
 

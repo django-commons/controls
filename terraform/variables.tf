@@ -28,12 +28,12 @@ variable "repositories" {
     allow_squash_merge = optional(bool, true)
     allow_update_branch = optional(bool, true)
     delete_branch_on_merge = optional(bool, true)
-    enable_branch_protection = optional(bool, true)
     has_discussions = optional(bool, true)
     has_downloads = optional(bool, true)
     has_wiki = optional(bool, false)
     is_template = optional(bool, false)
     push_allowances = optional(list(string), [])
+    enable_branch_protection = optional(bool, true)
     required_status_checks_contexts = optional(list(string), [])
     template = optional(string)
     topics = optional(list(string))
@@ -43,6 +43,12 @@ variable "repositories" {
     committers = optional(set(string), [])
     # Members of the repository's committers and repository teams. Have write permissions
     members = optional(set(string), []) # Members of the repository team. Have triage permissions
+
+    # The following are valid combinations for the merge commit title and message: PR_TITLE and PR_BODY, PR_TITLE and BLANK, MERGE_MESAGE and PR_TITLE. (invalid_merge_commit_setting_combo)}]
+    merge_commit_title = optional(string, "PR_TITLE")
+    merge_commit_message = optional(string, "PR_BODY")
+    squash_merge_commit_title = optional(string, "PR_TITLE")
+    squash_merge_commit_message = optional(string, "PR_BODY")
   }))
 }
 
@@ -54,7 +60,6 @@ variable "organization_teams" {
     members = optional(set(string), [])
     permission = optional(string, null)
     privacy = optional(string, "closed")
-    repositories = optional(set(string), [])
     review_request_delegation = optional(bool, false)
   }))
 }

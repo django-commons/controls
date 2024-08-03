@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.9.3",
-  "serial": 106,
+  "serial": 124,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {},
   "resources": [
@@ -16,7 +16,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": null,
-            "etag": "W/\"6bddefdd485cc3e7d7d71b817620a92ef6a239dd68e1ffc07ed428f79af49ddc\"",
+            "etag": "W/\"6fd5d8f720014dd48fcf1c46153acfba522b63940c91b59858110623e8398986\"",
             "id": "django-commons:Natim",
             "role": "member",
             "username": "Natim"
@@ -29,7 +29,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": null,
-            "etag": "W/\"4d7841c6aab7ce944dfc02d946e3f1145888796a59cfb28cb1977ab537d7e366\"",
+            "etag": "W/\"2a0c3f113c3c391dd2e570f3d2c310faa3913c6d3b044e5d1332846e8cb14bdd\"",
             "id": "django-commons:Stormheg",
             "role": "admin",
             "username": "Stormheg"
@@ -42,7 +42,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": null,
-            "etag": "W/\"0d98ef003185335dd007fa3ca1ca67d3d8a54a7e7ba27dbae90c3407643ac83b\"",
+            "etag": "W/\"a3c10fc75649b3e5e48c8279e7e7c51d1ea69eda1ece022200317e226a312071\"",
             "id": "django-commons:cunla",
             "role": "admin",
             "username": "cunla"
@@ -51,11 +51,24 @@
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
         },
         {
+          "index_key": "g-nie",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": false,
+            "etag": "W/\"d07490183c520a765d967aa18b22909b5246d065db809fc6cd524489855d2831\"",
+            "id": "django-commons:g-nie",
+            "role": "member",
+            "username": "g-nie"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        },
+        {
           "index_key": "gav-fyi",
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": null,
-            "etag": "W/\"1830da984aeaf0a633c85b2627cb608869421f092d9fb887728b05cd89982d1a\"",
+            "etag": "W/\"9567d31fa1587885214042bb836419552aa0626b3b12004f06a023e7e4d05b94\"",
             "id": "django-commons:gav-fyi",
             "role": "member",
             "username": "gav-fyi"
@@ -68,7 +81,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": null,
-            "etag": "W/\"24fb076ac584c86eeb0c5e7ec603a9185d3a2d40b416b65f825bf10be8c050ff\"",
+            "etag": "W/\"120214bdad851e35a35db5f478f95218ad1e9716cc2898d207627ce686451dbc\"",
             "id": "django-commons:jcjudkins",
             "role": "member",
             "username": "jcjudkins"
@@ -81,7 +94,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": null,
-            "etag": "W/\"141fd5e4541af50720cb3d6f8cc0191f26f5518bceaaf92f9ebc01749b540376\"",
+            "etag": "W/\"472ca67b6a77605e75ce0176d5d1973315336d7953d03deccf27be97c8b9c9a1\"",
             "id": "django-commons:joshuadavidthomas",
             "role": "member",
             "username": "joshuadavidthomas"
@@ -94,7 +107,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": false,
-            "etag": "W/\"6da4c0ad04dc5ff2e82f25a6c570e15bd72bc6e05daf976fbf17eb4636f5848b\"",
+            "etag": "W/\"bc6c8cd7644606fff4e5e6e4ac9be2980249a8a29f2bfec87fc1be52a0a4c0f8\"",
             "id": "django-commons:maerteijn",
             "role": "member",
             "username": "maerteijn"
@@ -107,7 +120,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": null,
-            "etag": "W/\"cb2003f6c210c7858946e46479b28a510ddca2f64106a2b4e86a8d256c215927\"",
+            "etag": "W/\"f5c48cbaa30bcc6f24130e870d5b7a17438804f93944a25866e082a806fe408c\"",
             "id": "django-commons:matthiask",
             "role": "member",
             "username": "matthiask"
@@ -120,7 +133,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": null,
-            "etag": "W/\"669d5435881b535771e5e25c0b7500845fea31b3eb3349e307f6881198d5ca4b\"",
+            "etag": "W/\"90aa34d56320bccba1b230cf83f083741d3b628e4a53dc4b6501e11737de2bb7\"",
             "id": "django-commons:nanorepublica",
             "role": "member",
             "username": "nanorepublica"
@@ -133,7 +146,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": null,
-            "etag": "W/\"ae8a138292059fd499c0044e875de1e3c871b880b96535b722e2b2a6d6a00df9\"",
+            "etag": "W/\"6cf68db52f17f985b9a194f44f7960f6327a4c4597c5d2046b93a388cecc217c\"",
             "id": "django-commons:pfouque",
             "role": "member",
             "username": "pfouque"
@@ -146,7 +159,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": null,
-            "etag": "W/\"688dc8b5a9b8f987593e77eb2d3fe8d8861dc0fce9b0458b6d7c1581cc3babdd\"",
+            "etag": "W/\"2771ecea10a1124901f2a8f9eb1b4a682da0d531c514a2f1e04bb45a65297926\"",
             "id": "django-commons:priyapahwa",
             "role": "member",
             "username": "priyapahwa"
@@ -159,7 +172,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": null,
-            "etag": "W/\"08e589e6ff74319709d6dd179eeb9d86cb8d685e059b20e69490407ddfc240f6\"",
+            "etag": "W/\"c76df4ee75da5c7dfb80147f0105564d2bd971e0d0009c1951de58b8cc265fef\"",
             "id": "django-commons:ryancheley",
             "role": "admin",
             "username": "ryancheley"
@@ -172,7 +185,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": null,
-            "etag": "W/\"3fc5e97f2d799e0e02dc2a98f0729696826e98c2dc36f2187d07bb51ac092a54\"",
+            "etag": "W/\"82cd5e50d842e40b67e012cc543d511651cc95ef4b1acfc0a2b0d76a004525eb\"",
             "id": "django-commons:testSchilling",
             "role": "member",
             "username": "testSchilling"
@@ -185,7 +198,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": null,
-            "etag": "W/\"243b05b7a75268aec1bde3c541b2f20799076e7579f6a6196ec5d6a15c555cea\"",
+            "etag": "W/\"3e0f1264752f25dbf6ca43ecb381b03dc8623251cedbcf0e900dcdb7f3d744a0\"",
             "id": "django-commons:tim-schilling",
             "role": "admin",
             "username": "tim-schilling"
@@ -198,7 +211,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": null,
-            "etag": "W/\"75b58b81b087d561124eaa9cc36e231a5d43fd5daeb21b95b0b8758c2afa5abd\"",
+            "etag": "W/\"0fb7a97ee78d9b4282447813247a4ff786b4628597f2cf7dcc6c195a01835c61\"",
             "id": "django-commons:williln",
             "role": "admin",
             "username": "williln"
@@ -249,7 +262,7 @@
             "default_branch": "main",
             "delete_branch_on_merge": true,
             "description": "A Special Repository.",
-            "etag": "W/\"5a0c60c08fe82868cb7686e70ebc7af0da27c1fc9f1e0dbf9bf6ee06799a3a49\"",
+            "etag": "W/\"6e8d1b409822b71df44cf88ea993127bf3178aea2dedf34fe5079fef96216de5\"",
             "full_name": "django-commons/.github",
             "git_clone_url": "git://github.com/django-commons/.github.git",
             "gitignore_template": null,
@@ -266,7 +279,7 @@
             "is_template": false,
             "license_template": null,
             "merge_commit_message": "PR_BODY",
-            "merge_commit_title": "MERGE_MESSAGE",
+            "merge_commit_title": "PR_TITLE",
             "name": ".github",
             "node_id": "R_kgDOLkyRSQ",
             "pages": [],
@@ -288,8 +301,8 @@
                 ]
               }
             ],
-            "squash_merge_commit_message": "COMMIT_MESSAGES",
-            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
+            "squash_merge_commit_message": "PR_BODY",
+            "squash_merge_commit_title": "PR_TITLE",
             "ssh_clone_url": "git@github.com:django-commons/.github.git",
             "svn_url": "https://github.com/django-commons/.github",
             "template": [],
@@ -316,7 +329,7 @@
             "default_branch": "main",
             "delete_branch_on_merge": true,
             "description": "The controls for managing Django Commons projects",
-            "etag": "W/\"f21535f354352d4b0866f09e46da800223b87f556d5273c34d4313beb23f79f8\"",
+            "etag": "W/\"928b94f5ee1edd45a256703afdbe0f1361a2bc68e0bdf6301737101e7e1c47c5\"",
             "full_name": "django-commons/controls",
             "git_clone_url": "git://github.com/django-commons/controls.git",
             "gitignore_template": null,
@@ -333,7 +346,7 @@
             "is_template": false,
             "license_template": null,
             "merge_commit_message": "PR_BODY",
-            "merge_commit_title": "MERGE_MESSAGE",
+            "merge_commit_title": "PR_TITLE",
             "name": "controls",
             "node_id": "R_kgDOLkDK8g",
             "pages": [],
@@ -355,8 +368,8 @@
                 ]
               }
             ],
-            "squash_merge_commit_message": "COMMIT_MESSAGES",
-            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
+            "squash_merge_commit_message": "PR_BODY",
+            "squash_merge_commit_title": "PR_TITLE",
             "ssh_clone_url": "git@github.com:django-commons/controls.git",
             "svn_url": "https://github.com/django-commons/controls",
             "template": [],
@@ -383,7 +396,7 @@
             "default_branch": "main",
             "delete_branch_on_merge": true,
             "description": "A sample project to test things out",
-            "etag": "W/\"0eebf545a46a1bb36ece7cef57f8d80a85c4c015f0ecbf5270b57c9a9af46f1b\"",
+            "etag": "W/\"2b033ab9a5ea7736097c8cdf1b49b4744ef00ad68525ebe0faa0756cae00e4d1\"",
             "full_name": "django-commons/django-commons-playground",
             "git_clone_url": "git://github.com/django-commons/django-commons-playground.git",
             "gitignore_template": null,
@@ -400,7 +413,7 @@
             "is_template": false,
             "license_template": null,
             "merge_commit_message": "PR_BODY",
-            "merge_commit_title": "MERGE_MESSAGE",
+            "merge_commit_title": "PR_TITLE",
             "name": "django-commons-playground",
             "node_id": "R_kgDOLkANrg",
             "pages": [],
@@ -422,8 +435,8 @@
                 ]
               }
             ],
-            "squash_merge_commit_message": "COMMIT_MESSAGES",
-            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
+            "squash_merge_commit_message": "PR_BODY",
+            "squash_merge_commit_title": "PR_TITLE",
             "ssh_clone_url": "git@github.com:django-commons/django-commons-playground.git",
             "svn_url": "https://github.com/django-commons/django-commons-playground",
             "template": [],
@@ -450,7 +463,7 @@
             "default_branch": "main",
             "delete_branch_on_merge": true,
             "description": "Membership repository for the django-commons organization.",
-            "etag": "W/\"6c755c191beaa31c597f04acf81d7860da7806f9518e7fff801e308e73e99d44\"",
+            "etag": "W/\"cf8b4bb2a73b9c28f08791921c2dc9a03681c5e8b0fb6bb1c7fa55c81b3f358f\"",
             "full_name": "django-commons/membership",
             "git_clone_url": "git://github.com/django-commons/membership.git",
             "gitignore_template": null,
@@ -467,7 +480,7 @@
             "is_template": false,
             "license_template": null,
             "merge_commit_message": "PR_BODY",
-            "merge_commit_title": "MERGE_MESSAGE",
+            "merge_commit_title": "PR_TITLE",
             "name": "membership",
             "node_id": "R_kgDOLklIpA",
             "pages": [],
@@ -489,8 +502,8 @@
                 ]
               }
             ],
-            "squash_merge_commit_message": "COMMIT_MESSAGES",
-            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
+            "squash_merge_commit_message": "PR_BODY",
+            "squash_merge_commit_title": "PR_TITLE",
             "ssh_clone_url": "git@github.com:django-commons/membership.git",
             "svn_url": "https://github.com/django-commons/membership",
             "template": [],
@@ -516,7 +529,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "django-commons administrators",
-            "etag": "W/\"48d9dfe6bea4ca491be0c1c5475e3195d56aeeaf28f87faa8fdc88c4417bc9cf\"",
+            "etag": "W/\"a260a69e8f0ac71aae9fd15b98f318640adf30e9174af462aa734ca1872fadf6\"",
             "id": "9763562",
             "ldap_dn": "",
             "members_count": 5,
@@ -537,7 +550,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "django-commons security team",
-            "etag": "W/\"771f934df9368b01faf230ad1e9f94f1578bf2d0f13b3f7b457f548969752170\"",
+            "etag": "W/\"e7196c4655cc4c85656aed02fa84ae029b1bed9feb097ee10fe469c9cad2bfff\"",
             "id": "10641823",
             "ldap_dn": "",
             "members_count": 2,
@@ -566,7 +579,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Admin team for the django-commons-playground repository",
-            "etag": "W/\"2ebdfdb6ce050a64492ba5b464fd5a9cfdf71fc84fe42147722e22e7b2c53d76\"",
+            "etag": "W/\"6b8cb5f8172fafde445ff434226bcf0075cfbcb78757c3ecf45a11ce07ba6566\"",
             "id": "9757650",
             "ldap_dn": "",
             "members_count": 5,
@@ -598,7 +611,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Committers team for the django-commons-playground repository",
-            "etag": "W/\"7a225b3af7ad39a1cd4b14291a082767f146dc2a0cbd1e59422e22be3e48164f\"",
+            "etag": "W/\"eb63b08b8f7272cb4ddc3056d26613fffaf9d792cc91f5d9f953c07c18f5778c\"",
             "id": "9757668",
             "ldap_dn": "",
             "members_count": 1,
@@ -630,7 +643,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Main team for the django-commons-playground repository",
-            "etag": "W/\"2511a591bdb9c45f8814ce01b3811d3df7b6d64c9df8e22537b2421eac2ba7a1\"",
+            "etag": "W/\"c0759d17499a3e6ef05253e716caeb165823b4aaa7baad6d75a5f69b378c33c2\"",
             "id": "9757678",
             "ldap_dn": "",
             "members_count": 6,
@@ -842,7 +855,7 @@
           "index_key": "django-commons-playground",
           "schema_version": 0,
           "attributes": {
-            "etag": "W/\"f3f2c3292d90b378cb14ac13c5c91d7b5a371a0247d19cd517473fbd00524ab7\"",
+            "etag": "W/\"1d64f0e65e2f687d6d6e42d2e840afaf180f412e41cdb3d186b18b454d8bf753\"",
             "id": "9757650:django-commons-playground",
             "permission": "admin",
             "repository": "django-commons-playground",
@@ -867,7 +880,7 @@
           "index_key": "django-commons-playground",
           "schema_version": 0,
           "attributes": {
-            "etag": "W/\"fa6687687849d31f400cf3efe59388f4720050ddf8cb8ac977cbf0aac2550d21\"",
+            "etag": "W/\"9e46b89963f17bd4ed0599f7810012f34d0c85996509949311d86cefb8ae8d0c\"",
             "id": "9757668:django-commons-playground",
             "permission": "maintain",
             "repository": "django-commons-playground",
@@ -892,7 +905,7 @@
           "index_key": "django-commons-playground",
           "schema_version": 0,
           "attributes": {
-            "etag": "W/\"4def4b5914ffd1ab0f21e8982a925ccb781eaec2132e3ebb3613036756e9e571\"",
+            "etag": "W/\"627cb78d48f172f21bc73e89090788dc3fe62cd20edecb0192c85871d1d7f0ad\"",
             "id": "9757678:django-commons-playground",
             "permission": "triage",
             "repository": "django-commons-playground",
