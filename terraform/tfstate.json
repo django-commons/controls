@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.9.3",
-  "serial": 123,
+  "serial": 124,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {},
   "resources": [
@@ -441,6 +441,84 @@
             "svn_url": "https://github.com/django-commons/django-commons-playground",
             "template": [],
             "topics": [],
+            "visibility": "public",
+            "vulnerability_alerts": true,
+            "web_commit_signoff_required": false
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        },
+        {
+          "index_key": "django-tasks-scheduler",
+          "schema_version": 1,
+          "attributes": {
+            "allow_auto_merge": false,
+            "allow_merge_commit": true,
+            "allow_rebase_merge": true,
+            "allow_squash_merge": true,
+            "allow_update_branch": false,
+            "archive_on_destroy": null,
+            "archived": false,
+            "auto_init": false,
+            "default_branch": "master",
+            "delete_branch_on_merge": false,
+            "description": "Schedule async tasks using redis pub/sub.",
+            "etag": "W/\"eafd212fb05626bb9b6c36a2e1c22f85eca859f6249f96d8ad860a3f1b832f48\"",
+            "full_name": "django-commons/django-tasks-scheduler",
+            "git_clone_url": "git://github.com/django-commons/django-tasks-scheduler.git",
+            "gitignore_template": null,
+            "has_discussions": true,
+            "has_downloads": true,
+            "has_issues": true,
+            "has_projects": true,
+            "has_wiki": true,
+            "homepage_url": "https://django-tasks-scheduler.readthedocs.io/",
+            "html_url": "https://github.com/django-commons/django-tasks-scheduler",
+            "http_clone_url": "https://github.com/django-commons/django-tasks-scheduler.git",
+            "id": "django-tasks-scheduler",
+            "ignore_vulnerability_alerts_during_read": null,
+            "is_template": false,
+            "license_template": null,
+            "merge_commit_message": "PR_TITLE",
+            "merge_commit_title": "MERGE_MESSAGE",
+            "name": "django-tasks-scheduler",
+            "node_id": "R_kgDOJzK5Kg",
+            "pages": [],
+            "primary_language": "Python",
+            "private": false,
+            "repo_id": 657635626,
+            "security_and_analysis": [
+              {
+                "advanced_security": [],
+                "secret_scanning": [
+                  {
+                    "status": "disabled"
+                  }
+                ],
+                "secret_scanning_push_protection": [
+                  {
+                    "status": "disabled"
+                  }
+                ]
+              }
+            ],
+            "squash_merge_commit_message": "COMMIT_MESSAGES",
+            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
+            "ssh_clone_url": "git@github.com:django-commons/django-tasks-scheduler.git",
+            "svn_url": "https://github.com/django-commons/django-tasks-scheduler",
+            "template": [],
+            "topics": [
+              "background-jobs",
+              "django",
+              "django-application",
+              "job-queue",
+              "python",
+              "redis",
+              "redis-queue",
+              "scheduled-jobs",
+              "scheduled-tasks",
+              "task-queue"
+            ],
             "visibility": "public",
             "vulnerability_alerts": true,
             "web_commit_signoff_required": false
