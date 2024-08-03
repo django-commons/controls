@@ -19,7 +19,6 @@ repositories = {
     allow_squash_merge = true
     topics = []
     push_allowances = []
-    visibility         = "public"
     skip_team_creation = true
   }
 
