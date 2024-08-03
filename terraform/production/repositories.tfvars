@@ -14,12 +14,12 @@ repositories = {
   "controls" = {
     description              = "The controls for managing Django Commons projects"
     enable_branch_protection = false
-    allow_merge_commit = true
-    allow_rebase_merge = true
-    allow_squash_merge = true
+    allow_merge_commit       = true
+    allow_rebase_merge       = true
+    allow_squash_merge       = true
     topics = []
     push_allowances = []
-    skip_team_creation = true
+    skip_team_creation       = true
   }
 
   "membership" = {
@@ -51,5 +51,13 @@ repositories = {
     # People with GitHub triage repo permissions
     members = [
     ]
+  }
+
+  "django-tasks-scheduler" = {
+    description = "Schedule async tasks using redis pub/sub."
+
+    admins = [] # Members of the repository's admin and repository teams. Have admin permissions
+    committers = [] # Members of the repository's committers and repository teams. Have write permissions
+    members = [] # Members of the repository team. Have triage permissions
   }
 }

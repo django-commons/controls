@@ -50,8 +50,6 @@ All changes should be made in `production/*.tfvars`:
       topics = []
       visibility = "public" # optional, default is "public"
       skip_team_creation = optional(bool, false) # Do not create teams for repository
-      admins = optional(set(string), []) # Members of the repository admin team
-      committers = optional(set(string), []) # Members of the repository committers team
       enable_branch_protection = true # optional, default is true
       required_status_checks_contexts = [] # optional, default is []
       admins = [] # Members of the repository's admin and repository teams. Have admin permissions
