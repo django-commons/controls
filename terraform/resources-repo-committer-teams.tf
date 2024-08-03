@@ -31,7 +31,7 @@ resource "github_team_members" "repo_committer_team_members" {
 resource "github_team_repository" "repo_committer_team_access" {
   for_each = {
     for k, v in var.repositories : k => v
-    if v.skip_team_creation == false && length(v.committers) > 0
+    if v.skip_team_creation == false
   }
   repository = each.key
   team_id    = github_team.repo_committer_team[each.key].id
