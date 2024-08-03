@@ -30,6 +30,7 @@ variable "repositories" {
     delete_branch_on_merge = optional(bool, true)
     has_discussions = optional(bool, true)
     has_downloads = optional(bool, true)
+    homepage_url = optional(string, "")
     has_wiki = optional(bool, false)
     is_template = optional(bool, false)
     push_allowances = optional(list(string), [])

@@ -54,7 +54,8 @@ repositories = {
   }
 
   "django-tasks-scheduler" = {
-    description = "Schedule async tasks using redis pub/sub."
+    description  = "Schedule async tasks using redis pub/sub."
+    homepage_url = "https://django-tasks-scheduler.readthedocs.io/"
 
     admins = [
       "cunla",
