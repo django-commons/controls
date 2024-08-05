@@ -1,6 +1,6 @@
 # Create the main repository team for Django Commons.
 resource "github_team" "repo_team" {
-  for_each = {for k, v in var.repositories : k => v if v.skip_team_creation == false}
+  for_each = { for k, v in var.repositories : k => v if v.skip_team_creation == false }
 
   name        = each.key
   description = "Main team for the ${each.key} repository"
@@ -8,7 +8,7 @@ resource "github_team" "repo_team" {
 }
 # Add the people to the team
 resource "github_team_members" "repo_team_members" {
-  for_each = {for k, v in var.repositories : k => v if v.skip_team_creation == false}
+  for_each = { for k, v in var.repositories : k => v if v.skip_team_creation == false }
 
   team_id = github_team.repo_team[each.key].id
 
@@ -27,7 +27,7 @@ resource "github_team_members" "repo_team_members" {
 }
 # Define the team's permissions for the repositories
 resource "github_team_repository" "repo_team_access" {
-  for_each   = {for k, v in var.repositories : k => v if v.skip_team_creation == false}
+  for_each   = { for k, v in var.repositories : k => v if v.skip_team_creation == false }
   repository = each.key
   team_id    = github_team.repo_team[each.key].id
   permission = "triage"
@@ -37,7 +37,7 @@ resource "github_team_repository" "repo_team_access" {
 
 # This is used to enable automatic PR review requests
 resource "github_team_settings" "this" {
-  for_each = {for k, v in var.repositories : k => v if v.skip_team_creation == false}
+  for_each = { for k, v in var.repositories : k => v if v.skip_team_creation == false }
 
   review_request_delegation {
     algorithm    = "LOAD_BALANCE"
