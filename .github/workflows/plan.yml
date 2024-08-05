@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: terraform fmt
-        uses: dflook/terraform-fmt@2ec321e
+        uses: dflook/terraform-fmt@2ec321e746af7edf90e43513dda2086a92a07b4c
         with:
           path: "terraform"
 
