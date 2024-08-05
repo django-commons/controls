@@ -27,6 +27,7 @@ jobs:
           commit_prefix: "[AUTO]"
           commit_message: "Format code"
           force: false
+          target_branch: "${{ github.event.pull_request.head.ref }}"
 
   plan-changes:
     name: "Org changes plan"
