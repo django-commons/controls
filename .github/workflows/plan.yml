@@ -15,6 +15,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: "${{ github.event.pull_request.head.ref }}"
+
+
       - name: terraform fmt
         uses: dflook/terraform-fmt@2ec321e746af7edf90e43513dda2086a92a07b4c
         with:
