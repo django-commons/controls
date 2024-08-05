@@ -10,6 +10,7 @@ GitHub Organization as Terraform
 - `production/*.tfvars` - instances, should strictly follow the types in `variables.tf`.
 - `main.tf` - build configuration based on instances values from `production.tfvars` (or, if not defined explicitly,
   then default value from `variables.tf`)
+- `resources-*.tf` - define resources, like `github_repository`, `github_team`, etc.
 - `tfstate.json` - Current state file, pulled using `terraform import ..`
 
 # Why Terraform?
@@ -34,24 +35,27 @@ All changes should be made in `production/*.tfvars`:
     repositories = {
       "repo-name" = {
         description = "repo description"
+        homepage_url = "" # optional, default is ""
         allow_auto_merge = false # optional, default is false
         allow_merge_commit = false # optional, default is false
         allow_rebase_merge = false # optional, default is false
-        allow_squash_merge = false # optional, default is false
-        allow_update_branch = false # optional, default is false
-        enable_branch_protection = true # optional, default is true
+        allow_squash_merge = true # optional, default is true
+        allow_update_branch = true # optional, default is true
+        delete_branch_on_merge = true # optional, default is true
         has_discussions = true # optional, default is true
         has_downloads = true # optional, default is true
         has_wiki = false # optional, default is false
         is_template = false # optional, default is false
         push_allowances = []
-        required_status_checks_contexts = [] # optional, default is []
         template = "" # optional, default is ""
         topics = []
-        visibility  = "public" # optional, default is "public"
+        visibility = "public" # optional, default is "public"
         skip_team_creation = optional(bool, false) # Do not create teams for repository
-        admins = optional(set(string), []) # Members of the repository admin team
-        committers = optional(set(string), []) # Members of the repository committers team
+        enable_branch_protection = true # optional, default is true
+        required_status_checks_contexts = [] # optional, default is []
+        admins = [] # Members of the repository's admin and repository teams. Have admin permissions
+        committers = [] # Members of the repository's committers and repository teams. Have write permissions
+        members = [] # Members of the repository team. Have triage permissions
       }
      # ...
     }
@@ -72,6 +76,7 @@ To do so, you can use the following steps:
 4. Make changes to `production/*.tfvars` to reflect the desired state (add/update users, repositories, teams, etc.)
 5. To see what changes between the current state of the GitHub organization and the plan
    run:  `terraform plan -var-file=production/org.tfvars -var-file=production/repositories.tfvars -var github_token=...`
-6. To apply the changes, run: `terraform apply -var-file=production/org.tfvars -var-file=production/repositories.tfvars -var github_token=...`
+6. To apply the changes,
+   run: `terraform apply -var-file=production/org.tfvars -var-file=production/repositories.tfvars -var github_token=...`
 
 [1]: https://developer.hashicorp.com/terraform/tutorials/it-saas/github-user-teams#configure-your-credentials

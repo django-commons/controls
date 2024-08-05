@@ -4,6 +4,7 @@
 resource "github_repository" "this" {
   for_each = var.repositories
 
+  homepage_url                = each.value.homepage_url
   allow_auto_merge            = each.value.allow_auto_merge
   allow_merge_commit          = each.value.allow_merge_commit
   merge_commit_title          = each.value.merge_commit_title
