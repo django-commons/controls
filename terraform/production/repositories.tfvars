@@ -17,7 +17,7 @@ repositories = {
     allow_merge_commit       = true
     allow_rebase_merge       = true
     allow_squash_merge       = true
-    topics            = []
+    topics                   = []
     push_allowances          = []
     skip_team_creation       = true
   }
