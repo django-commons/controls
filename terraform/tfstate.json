@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.9.3",
-  "serial": 124,
+  "serial": 135,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {},
   "resources": [
@@ -55,7 +55,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": false,
-            "etag": "W/\"d07490183c520a765d967aa18b22909b5246d065db809fc6cd524489855d2831\"",
+            "etag": "W/\"b159adcdbec9df7a9bf7f51ee7e8a605781020c87328b521e1b3e9cacc7d30df\"",
             "id": "django-commons:g-nie",
             "role": "member",
             "username": "g-nie"
@@ -329,7 +329,7 @@
             "default_branch": "main",
             "delete_branch_on_merge": true,
             "description": "The controls for managing Django Commons projects",
-            "etag": "W/\"928b94f5ee1edd45a256703afdbe0f1361a2bc68e0bdf6301737101e7e1c47c5\"",
+            "etag": "W/\"3066e07924f614bad587caf2766211cc6fbf15d76b48d472279eab747d5d4a1d\"",
             "full_name": "django-commons/controls",
             "git_clone_url": "git://github.com/django-commons/controls.git",
             "gitignore_template": null,
@@ -453,17 +453,17 @@
           "schema_version": 1,
           "attributes": {
             "allow_auto_merge": false,
-            "allow_merge_commit": true,
-            "allow_rebase_merge": true,
+            "allow_merge_commit": false,
+            "allow_rebase_merge": false,
             "allow_squash_merge": true,
-            "allow_update_branch": false,
-            "archive_on_destroy": null,
+            "allow_update_branch": true,
+            "archive_on_destroy": true,
             "archived": false,
             "auto_init": false,
             "default_branch": "master",
-            "delete_branch_on_merge": false,
+            "delete_branch_on_merge": true,
             "description": "Schedule async tasks using redis pub/sub.",
-            "etag": "W/\"eafd212fb05626bb9b6c36a2e1c22f85eca859f6249f96d8ad860a3f1b832f48\"",
+            "etag": "W/\"2eee90bf3db4458c0e728f00bb0e2a17d1eba17e668dfa798cbed0d2cf3e07e2\"",
             "full_name": "django-commons/django-tasks-scheduler",
             "git_clone_url": "git://github.com/django-commons/django-tasks-scheduler.git",
             "gitignore_template": null,
@@ -471,7 +471,7 @@
             "has_downloads": true,
             "has_issues": true,
             "has_projects": true,
-            "has_wiki": true,
+            "has_wiki": false,
             "homepage_url": "https://django-tasks-scheduler.readthedocs.io/",
             "html_url": "https://github.com/django-commons/django-tasks-scheduler",
             "http_clone_url": "https://github.com/django-commons/django-tasks-scheduler.git",
@@ -502,8 +502,8 @@
                 ]
               }
             ],
-            "squash_merge_commit_message": "COMMIT_MESSAGES",
-            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
+            "squash_merge_commit_message": "PR_BODY",
+            "squash_merge_commit_title": "PR_TITLE",
             "ssh_clone_url": "git@github.com:django-commons/django-tasks-scheduler.git",
             "svn_url": "https://github.com/django-commons/django-tasks-scheduler",
             "template": [],
@@ -541,7 +541,7 @@
             "default_branch": "main",
             "delete_branch_on_merge": true,
             "description": "Membership repository for the django-commons organization.",
-            "etag": "W/\"cf8b4bb2a73b9c28f08791921c2dc9a03681c5e8b0fb6bb1c7fa55c81b3f358f\"",
+            "etag": "W/\"8fea413c0d31bc7f0c48cc31b36bf053c47bba00e1ae57b784833cfe14332e9f\"",
             "full_name": "django-commons/membership",
             "git_clone_url": "git://github.com/django-commons/membership.git",
             "gitignore_template": null,
@@ -607,7 +607,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "django-commons administrators",
-            "etag": "W/\"a260a69e8f0ac71aae9fd15b98f318640adf30e9174af462aa734ca1872fadf6\"",
+            "etag": "W/\"58abb4c9fb61eec644d11bba90b4a64e0091a979dcce9fe8c725312a50ed82ed\"",
             "id": "9763562",
             "ldap_dn": "",
             "members_count": 5,
@@ -628,7 +628,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "django-commons security team",
-            "etag": "W/\"e7196c4655cc4c85656aed02fa84ae029b1bed9feb097ee10fe469c9cad2bfff\"",
+            "etag": "W/\"aba147d706905b42908f9dec03a251bc156937024ab28305b737f892649c27d7\"",
             "id": "10641823",
             "ldap_dn": "",
             "members_count": 2,
@@ -657,7 +657,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Admin team for the django-commons-playground repository",
-            "etag": "W/\"6b8cb5f8172fafde445ff434226bcf0075cfbcb78757c3ecf45a11ce07ba6566\"",
+            "etag": "W/\"153ff7aa64c9f819521c84f355ef38a0f6bd4ca0bf5aaaee77e09b57adda96e2\"",
             "id": "9757650",
             "ldap_dn": "",
             "members_count": 5,
@@ -671,6 +671,30 @@
           },
           "sensitive_attributes": [],
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ==",
+          "dependencies": [
+            "github_team.repo_team"
+          ]
+        },
+        {
+          "index_key": "django-tasks-scheduler",
+          "schema_version": 0,
+          "attributes": {
+            "create_default_maintainer": false,
+            "description": "Admin team for the django-tasks-scheduler repository",
+            "etag": "W/\"d65ef7a49171debbaa1178027e0f89545f3f8b0b49ff8493b9a6a3b354dfffc5\"",
+            "id": "10707221",
+            "ldap_dn": "",
+            "members_count": 0,
+            "name": "django-tasks-scheduler-admins",
+            "node_id": "T_kwDOCaaRBM4Ao2EV",
+            "parent_team_id": "10707217",
+            "parent_team_read_id": "10707217",
+            "parent_team_read_slug": "django-tasks-scheduler",
+            "privacy": "closed",
+            "slug": "django-tasks-scheduler-admins"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
           "dependencies": [
             "github_team.repo_team"
           ]
@@ -689,7 +713,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Committers team for the django-commons-playground repository",
-            "etag": "W/\"eb63b08b8f7272cb4ddc3056d26613fffaf9d792cc91f5d9f953c07c18f5778c\"",
+            "etag": "W/\"d5393cf3083ff5822260c0077dc4e2b890577516001f08b555fe5f4cf9b60272\"",
             "id": "9757668",
             "ldap_dn": "",
             "members_count": 1,
@@ -703,6 +727,30 @@
           },
           "sensitive_attributes": [],
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ==",
+          "dependencies": [
+            "github_team.repo_team"
+          ]
+        },
+        {
+          "index_key": "django-tasks-scheduler",
+          "schema_version": 0,
+          "attributes": {
+            "create_default_maintainer": false,
+            "description": "Committers team for the django-tasks-scheduler repository",
+            "etag": "W/\"43e1791ab0207050bcbc6ce4801a9215ab79eff5eff8d5098410cf68dcacb76f\"",
+            "id": "10707220",
+            "ldap_dn": "",
+            "members_count": 0,
+            "name": "django-tasks-scheduler-committers",
+            "node_id": "T_kwDOCaaRBM4Ao2EU",
+            "parent_team_id": "10707217",
+            "parent_team_read_id": "10707217",
+            "parent_team_read_slug": "django-tasks-scheduler",
+            "privacy": "closed",
+            "slug": "django-tasks-scheduler-committers"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
           "dependencies": [
             "github_team.repo_team"
           ]
@@ -721,7 +769,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Main team for the django-commons-playground repository",
-            "etag": "W/\"c0759d17499a3e6ef05253e716caeb165823b4aaa7baad6d75a5f69b378c33c2\"",
+            "etag": "W/\"f58e3967f83e48da471c65d02c99018836803510e7e7e5320ce37207cf42d573\"",
             "id": "9757678",
             "ldap_dn": "",
             "members_count": 6,
@@ -735,6 +783,27 @@
           },
           "sensitive_attributes": [],
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "django-tasks-scheduler",
+          "schema_version": 0,
+          "attributes": {
+            "create_default_maintainer": false,
+            "description": "Main team for the django-tasks-scheduler repository",
+            "etag": "W/\"fe52713f706b10683f5dc626be0d83b0971ee146442920363bccad60d0a060a4\"",
+            "id": "10707217",
+            "ldap_dn": "",
+            "members_count": 0,
+            "name": "django-tasks-scheduler",
+            "node_id": "T_kwDOCaaRBM4Ao2ER",
+            "parent_team_id": "",
+            "parent_team_read_id": "",
+            "parent_team_read_slug": "",
+            "privacy": "closed",
+            "slug": "django-tasks-scheduler"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
         }
       ]
     },
@@ -845,6 +914,26 @@
             "github_team.repo_admin_team",
             "github_team.repo_team"
           ]
+        },
+        {
+          "index_key": "django-tasks-scheduler",
+          "schema_version": 0,
+          "attributes": {
+            "id": "10707221",
+            "members": [
+              {
+                "role": "maintainer",
+                "username": "cunla"
+              }
+            ],
+            "team_id": "10707221"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "github_team.repo_admin_team",
+            "github_team.repo_team"
+          ]
         }
       ]
     },
@@ -920,6 +1009,25 @@
           "dependencies": [
             "github_team.repo_team"
           ]
+        },
+        {
+          "index_key": "django-tasks-scheduler",
+          "schema_version": 0,
+          "attributes": {
+            "id": "10707217",
+            "members": [
+              {
+                "role": "maintainer",
+                "username": "cunla"
+              }
+            ],
+            "team_id": "10707217"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "github_team.repo_team"
+          ]
         }
       ]
     },
@@ -941,6 +1049,23 @@
           },
           "sensitive_attributes": [],
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ==",
+          "dependencies": [
+            "github_team.repo_admin_team",
+            "github_team.repo_team"
+          ]
+        },
+        {
+          "index_key": "django-tasks-scheduler",
+          "schema_version": 0,
+          "attributes": {
+            "etag": "W/\"be10f6c6ab418b80dcf1665abc74d17898ab3cc1aca974e307beea6de9442fcb\"",
+            "id": "10707221:django-tasks-scheduler",
+            "permission": "admin",
+            "repository": "django-tasks-scheduler",
+            "team_id": "10707221"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
           "dependencies": [
             "github_team.repo_admin_team",
             "github_team.repo_team"
@@ -970,6 +1095,23 @@
             "github_team.repo_committer_team",
             "github_team.repo_team"
           ]
+        },
+        {
+          "index_key": "django-tasks-scheduler",
+          "schema_version": 0,
+          "attributes": {
+            "etag": "W/\"20edbe8064d7180b115fe9adbc760db62fd57e2ea6504b3501960dfb56f43492\"",
+            "id": "10707220:django-tasks-scheduler",
+            "permission": "maintain",
+            "repository": "django-tasks-scheduler",
+            "team_id": "10707220"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "github_team.repo_committer_team",
+            "github_team.repo_team"
+          ]
         }
       ]
     },
@@ -991,6 +1133,22 @@
           },
           "sensitive_attributes": [],
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ==",
+          "dependencies": [
+            "github_team.repo_team"
+          ]
+        },
+        {
+          "index_key": "django-tasks-scheduler",
+          "schema_version": 0,
+          "attributes": {
+            "etag": "W/\"5406461888f548896459a0a669466c059297d94ffdd6f030f923e99b6eb6b41a\"",
+            "id": "10707217:django-tasks-scheduler",
+            "permission": "triage",
+            "repository": "django-tasks-scheduler",
+            "team_id": "10707217"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
           "dependencies": [
             "github_team.repo_team"
           ]
@@ -1018,6 +1176,28 @@
             "team_id": "9757678",
             "team_slug": "django-commons-playground",
             "team_uid": "T_kwDOCaaRBM4AlOPu"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "github_team.repo_team"
+          ]
+        },
+        {
+          "index_key": "django-tasks-scheduler",
+          "schema_version": 0,
+          "attributes": {
+            "id": "T_kwDOCaaRBM4Ao2ER",
+            "review_request_delegation": [
+              {
+                "algorithm": "LOAD_BALANCE",
+                "member_count": 2,
+                "notify": false
+              }
+            ],
+            "team_id": "10707217",
+            "team_slug": "django-tasks-scheduler",
+            "team_uid": "T_kwDOCaaRBM4Ao2ER"
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
