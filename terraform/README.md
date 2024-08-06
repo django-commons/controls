@@ -83,14 +83,14 @@ To do so, you can use the following steps:
 
 The repository is configured to run `terraform plan` on every new pull-request as well as an update to a pull-request
 and list the expected changes as a comment on the pull-request.
-Once the pull-request is merged to the `main` branch, `terraform apply` is run to apply the changes to the GitHub, and
+Once the pull-request is merged to the `main` branch, `terraform apply` applies the changes to the GitHub organization, and
 the updated current state is committed to the `main` branch.
 To achieve this, the workflows use `TERRAFORM_MANAGEMENT_GITHUB_TOKEN` secret to plan/apply terraform changes.
 
 `TERRAFORM_MANAGEMENT_GITHUB_TOKEN` is a fine-grained personal access token with permissions the following permissions
 required (see documentation [here][2]):
 
-- The `repo` permisison for full control of private repositories.
+- The `repo` permission for full control of private repositories
 - The `admin:org` permission for full control of orgs and teams, read and write org projects
 - The `delete_repo` permission to delete repositories
 - Additionally, the token should have permissions to write content to the repository (see, [here][3])
