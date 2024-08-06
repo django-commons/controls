@@ -79,4 +79,24 @@ To do so, you can use the following steps:
 6. To apply the changes,
    run: `terraform apply -var-file=production/org.tfvars -var-file=production/repositories.tfvars -var github_token=...`
 
+# Integration with GitHub Actions
+
+The repository is configured to run `terraform plan` on every new pull-request as well as an update to a pull-request
+and list the expected changes as a comment on the pull-request.
+Once the pull-request is merged to the `main` branch, `terraform apply` is run to apply the changes to the GitHub, and
+the updated current state is committed to the `main` branch.
+To achieve this, the workflows use `TERRAFORM_MANAGEMENT_GITHUB_TOKEN` secret to plan/apply terraform changes.
+
+`TERRAFORM_MANAGEMENT_GITHUB_TOKEN` is a fine-grained personal access token with permissions the following permissions
+required (see documentation [here][2]):
+
+- The `repo` permisison for full control of private repositories.
+- The `admin:org` permission for full control of orgs and teams, read and write org projects
+- The `delete_repo` permission to delete repositories
+- Additionally, the token should have permissions to write content to the repository (see, [here][3])
+
 [1]: https://developer.hashicorp.com/terraform/tutorials/it-saas/github-user-teams#configure-your-credentials
+
+[2]: https://developer.hashicorp.com/terraform/tutorials/it-saas/github-user-teams#configure-your-credentials
+
+[3]: https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository 
