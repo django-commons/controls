@@ -20,6 +20,7 @@ members = [
   "maerteijn",
   "g-nie",
   "Mogost",
+  "browniebroke",
 ]
 
 organization_teams = {
