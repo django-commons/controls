@@ -8,7 +8,7 @@ repositories = {
 
     topics             = []
     push_allowances    = []
-    skip_team_creation = true
+    is_django_commons_repo = true
   }
 
   "controls" = {
@@ -19,7 +19,7 @@ repositories = {
     allow_squash_merge       = true
     topics                   = []
     push_allowances          = []
-    skip_team_creation       = true
+    is_django_commons_repo       = true
   }
 
   "membership" = {
@@ -30,7 +30,7 @@ repositories = {
     allow_squash_merge = true
     topics             = []
     push_allowances    = []
-    skip_team_creation = true
+    is_django_commons_repo = true
   }
 
   "django-commons-playground" = {

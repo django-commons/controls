@@ -50,7 +50,7 @@ All changes should be made in `production/*.tfvars`:
         template = "" # optional, default is ""
         topics = []
         visibility = "public" # optional, default is "public"
-        skip_team_creation = optional(bool, false) # Do not create teams for repository
+        is_django_commons_repo = optional(bool, false) # Do not create teams for repository
         enable_branch_protection = true # optional, default is true
         required_status_checks_contexts = [] # optional, default is []
         admins = [] # Members of the repository's admin and repository teams. Have admin permissions
