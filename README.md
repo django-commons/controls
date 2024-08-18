@@ -158,15 +158,10 @@ repositories = {
 }
 ```
 
-2. Import the repository into the terraform state by
-   running `terraform import -var-file=production/org.tfvars -var-file=production/repositories.tfvars -var github_token=... 'github_repository.this["repo-name"]' repo-name`
-3. Run `terraform plan -var-file=production/org.tfvars -var-file=production/repositories.tfvars -var github_token=...`
-   to see the changes that will be made.
-
-4. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
+2. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
    executed.
    Review the changes and make sure they align with the request.
-5. Merge the pull request. This will trigger terraform to apply the changes in the organization.
+3. Merge the pull request. This will trigger terraform to apply the changes in the organization.
 
 The expected changes:
 
