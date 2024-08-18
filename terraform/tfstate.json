@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.9.4",
-  "serial": 142,
+  "serial": 143,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {},
   "resources": [
@@ -55,7 +55,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": false,
-            "etag": "W/\"bb572db94ce98f2c2465108c6b94bda09589ac4125c3059710b84954211fe4e6\"",
+            "etag": "W/\"f07e7b364a754f8e963a20658ff1870fcd0e3a4ecdd80709ca2a32059e7c1391\"",
             "id": "django-commons:browniebroke",
             "role": "member",
             "username": "browniebroke"
@@ -355,7 +355,7 @@
             "default_branch": "main",
             "delete_branch_on_merge": true,
             "description": "The controls for managing Django Commons projects",
-            "etag": "W/\"db1b3859cc27b58acb486baef6fc9ab898ff3297378b764e6320b6652c180c44\"",
+            "etag": "W/\"6c083e99f7392245e7ab9db04c2f265653fde49dd84c14c74c3b516b553650bd\"",
             "full_name": "django-commons/controls",
             "git_clone_url": "git://github.com/django-commons/controls.git",
             "gitignore_template": null,
@@ -633,7 +633,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "django-commons administrators",
-            "etag": "W/\"5a1c63ca25c3e43902fce41426eedb89a98951e67258d0eddd5e60082eb0184b\"",
+            "etag": "W/\"7e413d76516719c4f2511d5ffc09be01e0aff8880f57d98f17e195b7d973b078\"",
             "id": "9763562",
             "ldap_dn": "",
             "members_count": 5,
@@ -654,7 +654,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "django-commons security team",
-            "etag": "W/\"e3cfb6959e85d3be84bfca080b4fecc6307f79a4f5278c5ccc081a29d6056ec5\"",
+            "etag": "W/\"b9c4227400056be9c3578d0f71d637293d26df87dbad32141f152b87099e8177\"",
             "id": "10641823",
             "ldap_dn": "",
             "members_count": 2,
@@ -683,7 +683,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Admin team for the django-commons-playground repository",
-            "etag": "W/\"5f576a8565bd603ec211c2a9910bcef9971ef63df2d3fa67e36df09d6d04c218\"",
+            "etag": "W/\"0a851833ddaee5c377f150d5cb5cd4429aa87f2c62b40d7aa354ecbd9336ba2a\"",
             "id": "9757650",
             "ldap_dn": "",
             "members_count": 5,
@@ -707,7 +707,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Admin team for the django-tasks-scheduler repository",
-            "etag": "W/\"9ec13b8c4a9b8a709cb89313f704c605ca24b6fef3efd67bc504015d6769fb91\"",
+            "etag": "W/\"63eeae022dd6b2ae0ba882cdb9c4eb717989a4a241313c01b0f4d0dcf31baa82\"",
             "id": "10707221",
             "ldap_dn": "",
             "members_count": 1,
@@ -739,7 +739,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Committers team for the django-commons-playground repository",
-            "etag": "W/\"57436075a11075515d684d7459b963276fffbda8af958b1b779600564777eb2e\"",
+            "etag": "W/\"f4168028486a28d69c8c50319e88f086a693229c1a9f96ed62bc4f9d2e9cf576\"",
             "id": "9757668",
             "ldap_dn": "",
             "members_count": 1,
@@ -763,7 +763,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Committers team for the django-tasks-scheduler repository",
-            "etag": "W/\"02db48852f31fbe247950aa05c9f66c2f432c7a5e62c2706fe40490b08b5c96a\"",
+            "etag": "W/\"017a8d34e190e0e0496be75b4ed56b7d4be212c2a1edde205c58c34bdcd886a9\"",
             "id": "10707220",
             "ldap_dn": "",
             "members_count": 0,
@@ -795,7 +795,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Main team for the django-commons-playground repository",
-            "etag": "W/\"723af1d73c3bbca967ee8ae36bec7451471504580830050dc8c036c0c7690e3c\"",
+            "etag": "W/\"43dc1d9634c3fc4a5ef1aac303eef8f2ae164e50b12b564a72cf20cb7bbbd7c0\"",
             "id": "9757678",
             "ldap_dn": "",
             "members_count": 6,
@@ -816,7 +816,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Main team for the django-tasks-scheduler repository",
-            "etag": "W/\"45bfc62ea4e5a0a5e95b3b3fbde676693d7d719812779b4ca89389faad57dfe9\"",
+            "etag": "W/\"fa8d0739aad80ae1af0ac2a8dbc6bdfe2e316c99be4c7613b4f48f79fefec1de\"",
             "id": "10707217",
             "ldap_dn": "",
             "members_count": 1,
