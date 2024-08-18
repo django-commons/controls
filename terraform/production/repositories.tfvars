@@ -1,6 +1,5 @@
 # Organization repositories
 repositories = {
-  # Keep the following repositories in alphabetical order
 
   ".github" = {
     description              = "A Special Repository."
@@ -56,6 +55,15 @@ repositories = {
   "django-tasks-scheduler" = {
     description  = "Schedule async tasks using redis pub/sub."
     homepage_url = "https://django-tasks-scheduler.readthedocs.io/"
+
+    admins = [
+      "cunla",
+    ]
+    committers = []
+    members    = []
+  }
+  "playground2" = {
+    description  = "Tests"
 
     admins = [
       "cunla",
