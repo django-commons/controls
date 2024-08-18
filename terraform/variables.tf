@@ -39,7 +39,7 @@ variable "repositories" {
     template                        = optional(string)
     topics                          = optional(list(string))
     visibility                      = optional(string, "public")
-    skip_team_creation              = optional(bool, false)     # Do not create teams for repository
+    is_django_commons_repo          = optional(bool, false)     # Do not create teams for repository
     admins                          = optional(set(string), []) # Members of the repository's admin and repository teams. Have admin permissions
     committers                      = optional(set(string), [])
     # Members of the repository's committers and repository teams. Have write permissions
