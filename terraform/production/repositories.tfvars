@@ -5,8 +5,8 @@ repositories = {
     description              = "A Special Repository."
     enable_branch_protection = false
 
-    topics = []
-    push_allowances = []
+    topics                 = []
+    push_allowances        = []
     is_django_commons_repo = true
   }
 
@@ -16,8 +16,8 @@ repositories = {
     allow_merge_commit       = true
     allow_rebase_merge       = true
     allow_squash_merge       = true
-    topics = []
-    push_allowances = []
+    topics                   = []
+    push_allowances          = []
     is_django_commons_repo   = true
   }
 
@@ -34,7 +34,7 @@ repositories = {
 
   "django-commons-playground" = {
     description = "A sample project to test things out"
-    topics = []
+    topics      = []
     # People with GitHub admin repo permissions
     admins = [
       "tim-schilling",
@@ -60,7 +60,7 @@ repositories = {
       "cunla",
     ]
     committers = []
-    members = []
+    members    = []
   }
 
   "playground2" = {
@@ -70,6 +70,6 @@ repositories = {
       "cunla",
     ]
     committers = []
-    members = []
+    members    = []
   }
 }
