@@ -63,7 +63,7 @@ repositories = {
     members    = []
   }
   "playground2" = {
-    description  = "Tests"
+    description = "Tests"
 
     admins = [
       "cunla",
