@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.9.5",
-  "serial": 188,
+  "serial": 192,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {},
   "resources": [
@@ -685,6 +685,100 @@
           },
           "sensitive_attributes": [],
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "github_repository_environment",
+      "name": "pypi",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "django-commons-playground",
+          "schema_version": 0,
+          "attributes": {
+            "can_admins_bypass": true,
+            "deployment_branch_policy": [],
+            "environment": "pypi",
+            "id": "django-commons-playground:pypi",
+            "prevent_self_review": false,
+            "repository": "django-commons-playground",
+            "reviewers": [
+              {
+                "teams": [
+                  9757650
+                ],
+                "users": []
+              }
+            ],
+            "wait_timer": 0
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "django-fsm-2",
+          "schema_version": 0,
+          "attributes": {
+            "can_admins_bypass": true,
+            "deployment_branch_policy": [],
+            "environment": "pypi",
+            "id": "django-fsm-2:pypi",
+            "prevent_self_review": false,
+            "repository": "django-fsm-2",
+            "reviewers": [
+              {
+                "teams": [
+                  10870432
+                ],
+                "users": []
+              }
+            ],
+            "wait_timer": 0
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "github_repository_environment",
+      "name": "testpypi",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "index_key": "django-commons-playground",
+          "schema_version": 0,
+          "attributes": {
+            "can_admins_bypass": true,
+            "deployment_branch_policy": [],
+            "environment": "testpypi",
+            "id": "django-commons-playground:testpypi",
+            "prevent_self_review": null,
+            "repository": "django-commons-playground",
+            "reviewers": [],
+            "wait_timer": 0
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "django-fsm-2",
+          "schema_version": 0,
+          "attributes": {
+            "can_admins_bypass": true,
+            "deployment_branch_policy": [],
+            "environment": "testpypi",
+            "id": "django-fsm-2:testpypi",
+            "prevent_self_review": null,
+            "repository": "django-fsm-2",
+            "reviewers": [],
+            "wait_timer": 0
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
         }
       ]
     },
