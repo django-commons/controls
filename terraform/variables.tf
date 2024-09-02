@@ -46,10 +46,10 @@ variable "repositories" {
     members = optional(set(string), []) # Members of the repository team. Have triage permissions
 
     # The following are valid combinations for the merge commit title and message: PR_TITLE and PR_BODY, PR_TITLE and BLANK, MERGE_MESAGE and PR_TITLE. (invalid_merge_commit_setting_combo)}]
-    merge_commit_title          = optional(string, "PR_TITLE")
-    merge_commit_message        = optional(string, "PR_BODY")
-    squash_merge_commit_title   = optional(string, "PR_TITLE")
-    squash_merge_commit_message = optional(string, "PR_BODY")
+    merge_commit_title          = optional(string, null)
+    merge_commit_message        = optional(string, null)
+    squash_merge_commit_title   = optional(string, null)
+    squash_merge_commit_message = optional(string, null)
   }))
 }
 

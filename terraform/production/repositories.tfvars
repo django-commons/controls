@@ -69,6 +69,7 @@ repositories = {
     allow_merge_commit = false
     allow_rebase_merge = true
     has_projects       = false
+
     admins = [
       "pfouque",
       "natim",
@@ -77,14 +78,4 @@ repositories = {
     members    = []
   }
 
-
-  "playground2" = {
-    description = "Tests"
-
-    admins = [
-      "cunla",
-    ]
-    committers = []
-    members    = []
-  }
 }
