@@ -1,7 +1,7 @@
 {
   "version": 4,
-  "terraform_version": "1.9.4",
-  "serial": 143,
+  "terraform_version": "1.9.5",
+  "serial": 155,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {},
   "resources": [
@@ -133,7 +133,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": false,
-            "etag": "W/\"bc6c8cd7644606fff4e5e6e4ac9be2980249a8a29f2bfec87fc1be52a0a4c0f8\"",
+            "etag": "W/\"12ca2badd5ff5c455be852651743fb1fdc088e307177346b9953839020844e6b\"",
             "id": "django-commons:maerteijn",
             "role": "member",
             "username": "maerteijn"
@@ -355,7 +355,7 @@
             "default_branch": "main",
             "delete_branch_on_merge": true,
             "description": "The controls for managing Django Commons projects",
-            "etag": "W/\"6c083e99f7392245e7ab9db04c2f265653fde49dd84c14c74c3b516b553650bd\"",
+            "etag": "W/\"b99895454ffaf9b0efbd064d8307432f25f959de48365b717fadc484b8329fd7\"",
             "full_name": "django-commons/controls",
             "git_clone_url": "git://github.com/django-commons/controls.git",
             "gitignore_template": null,
@@ -479,7 +479,7 @@
           "schema_version": 1,
           "attributes": {
             "allow_auto_merge": false,
-            "allow_merge_commit": false,
+            "allow_merge_commit": true,
             "allow_rebase_merge": false,
             "allow_squash_merge": true,
             "allow_update_branch": true,
@@ -489,7 +489,7 @@
             "default_branch": "master",
             "delete_branch_on_merge": true,
             "description": "Schedule async tasks using redis pub/sub.",
-            "etag": "W/\"fe81b9030cd7a47da7ad1ffd705e9794bd3a153886b7f98cbc6ab953ef18f896\"",
+            "etag": "W/\"a3c3ab29b3309f2dce56fcdff9bcbc35b24347c1f88708c7c24e22fb78b69df4\"",
             "full_name": "django-commons/django-tasks-scheduler",
             "git_clone_url": "git://github.com/django-commons/django-tasks-scheduler.git",
             "gitignore_template": null,
@@ -618,6 +618,73 @@
           },
           "sensitive_attributes": [],
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        },
+        {
+          "index_key": "playground2",
+          "schema_version": 1,
+          "attributes": {
+            "allow_auto_merge": false,
+            "allow_merge_commit": false,
+            "allow_rebase_merge": false,
+            "allow_squash_merge": true,
+            "allow_update_branch": true,
+            "archive_on_destroy": true,
+            "archived": false,
+            "auto_init": false,
+            "default_branch": "main",
+            "delete_branch_on_merge": true,
+            "description": "Tests",
+            "etag": "W/\"66f261145ed72396bbb499461ae63aee6a022350d7a9bc6caa7c0355088fa025\"",
+            "full_name": "django-commons/playground2",
+            "git_clone_url": "git://github.com/django-commons/playground2.git",
+            "gitignore_template": null,
+            "has_discussions": true,
+            "has_downloads": true,
+            "has_issues": true,
+            "has_projects": true,
+            "has_wiki": false,
+            "homepage_url": "",
+            "html_url": "https://github.com/django-commons/playground2",
+            "http_clone_url": "https://github.com/django-commons/playground2.git",
+            "id": "playground2",
+            "ignore_vulnerability_alerts_during_read": null,
+            "is_template": false,
+            "license_template": null,
+            "merge_commit_message": "PR_TITLE",
+            "merge_commit_title": "MERGE_MESSAGE",
+            "name": "playground2",
+            "node_id": "R_kgDOMlGmHg",
+            "pages": [],
+            "primary_language": "",
+            "private": false,
+            "repo_id": 844211742,
+            "security_and_analysis": [
+              {
+                "advanced_security": [],
+                "secret_scanning": [
+                  {
+                    "status": "disabled"
+                  }
+                ],
+                "secret_scanning_push_protection": [
+                  {
+                    "status": "disabled"
+                  }
+                ]
+              }
+            ],
+            "squash_merge_commit_message": "PR_BODY",
+            "squash_merge_commit_title": "PR_TITLE",
+            "ssh_clone_url": "git@github.com:django-commons/playground2.git",
+            "svn_url": "https://github.com/django-commons/playground2",
+            "template": [],
+            "topics": [],
+            "visibility": "public",
+            "vulnerability_alerts": true,
+            "web_commit_signoff_required": false
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
         }
       ]
     },
@@ -633,7 +700,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "django-commons administrators",
-            "etag": "W/\"7e413d76516719c4f2511d5ffc09be01e0aff8880f57d98f17e195b7d973b078\"",
+            "etag": "W/\"05ddc18b75af52ab80f8b2015df72accd4697876e43b5889735bcad1758ea75a\"",
             "id": "9763562",
             "ldap_dn": "",
             "members_count": 5,
@@ -654,7 +721,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "django-commons security team",
-            "etag": "W/\"b9c4227400056be9c3578d0f71d637293d26df87dbad32141f152b87099e8177\"",
+            "etag": "W/\"9535899e5ee73c75f72d11506b3e577a179b003d4793923fa114770b45a3dc99\"",
             "id": "10641823",
             "ldap_dn": "",
             "members_count": 2,
@@ -683,7 +750,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Admin team for the django-commons-playground repository",
-            "etag": "W/\"0a851833ddaee5c377f150d5cb5cd4429aa87f2c62b40d7aa354ecbd9336ba2a\"",
+            "etag": "W/\"96159d50b2c5c0b57fd6402205b7cadfdf8e3fd2d5b50fab1e4b893b2af858d3\"",
             "id": "9757650",
             "ldap_dn": "",
             "members_count": 5,
@@ -707,7 +774,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Admin team for the django-tasks-scheduler repository",
-            "etag": "W/\"63eeae022dd6b2ae0ba882cdb9c4eb717989a4a241313c01b0f4d0dcf31baa82\"",
+            "etag": "W/\"868ff43804323cd4366bf917d5006061ace8ee0f07d97bc38ff94404e69339fb\"",
             "id": "10707221",
             "ldap_dn": "",
             "members_count": 1,
@@ -718,6 +785,30 @@
             "parent_team_read_slug": "django-tasks-scheduler",
             "privacy": "closed",
             "slug": "django-tasks-scheduler-admins"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "github_team.repo_team"
+          ]
+        },
+        {
+          "index_key": "playground2",
+          "schema_version": 0,
+          "attributes": {
+            "create_default_maintainer": false,
+            "description": "Admin team for the playground2 repository",
+            "etag": "W/\"30c97d711b38f1ffe055770b6b781c63ec0056cc0649469d5736d734121fa4e4\"",
+            "id": "10869843",
+            "ldap_dn": "",
+            "members_count": 0,
+            "name": "playground2-admins",
+            "node_id": "T_kwDOCaaRBM4ApdxT",
+            "parent_team_id": "10869823",
+            "parent_team_read_id": "10869823",
+            "parent_team_read_slug": "playground2",
+            "privacy": "closed",
+            "slug": "playground2-admins"
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
@@ -739,7 +830,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Committers team for the django-commons-playground repository",
-            "etag": "W/\"f4168028486a28d69c8c50319e88f086a693229c1a9f96ed62bc4f9d2e9cf576\"",
+            "etag": "W/\"cd2bb796c191591a56ef280dc86f68e6decc59c859de01a04220c875a0aa8783\"",
             "id": "9757668",
             "ldap_dn": "",
             "members_count": 1,
@@ -763,7 +854,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Committers team for the django-tasks-scheduler repository",
-            "etag": "W/\"017a8d34e190e0e0496be75b4ed56b7d4be212c2a1edde205c58c34bdcd886a9\"",
+            "etag": "W/\"e8aba3173df2223506f5a346235f80aead54e1ac26c71f079deabc5cc6c00c75\"",
             "id": "10707220",
             "ldap_dn": "",
             "members_count": 0,
@@ -774,6 +865,30 @@
             "parent_team_read_slug": "django-tasks-scheduler",
             "privacy": "closed",
             "slug": "django-tasks-scheduler-committers"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "github_team.repo_team"
+          ]
+        },
+        {
+          "index_key": "playground2",
+          "schema_version": 0,
+          "attributes": {
+            "create_default_maintainer": false,
+            "description": "Committers team for the playground2 repository",
+            "etag": "W/\"7ab33895f83723f1ffe30f72902214cb29ad9a5e9955af188813f528de934da1\"",
+            "id": "10869838",
+            "ldap_dn": "",
+            "members_count": 0,
+            "name": "playground2-committers",
+            "node_id": "T_kwDOCaaRBM4ApdxO",
+            "parent_team_id": "10869823",
+            "parent_team_read_id": "10869823",
+            "parent_team_read_slug": "playground2",
+            "privacy": "closed",
+            "slug": "playground2-committers"
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
@@ -795,7 +910,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Main team for the django-commons-playground repository",
-            "etag": "W/\"43dc1d9634c3fc4a5ef1aac303eef8f2ae164e50b12b564a72cf20cb7bbbd7c0\"",
+            "etag": "W/\"400a1c4f8761430bedd2e0bddf5a09a467c404448846d6dd30013e05cf348010\"",
             "id": "9757678",
             "ldap_dn": "",
             "members_count": 6,
@@ -816,7 +931,7 @@
           "attributes": {
             "create_default_maintainer": false,
             "description": "Main team for the django-tasks-scheduler repository",
-            "etag": "W/\"fa8d0739aad80ae1af0ac2a8dbc6bdfe2e316c99be4c7613b4f48f79fefec1de\"",
+            "etag": "W/\"56bb5b0d1f889c0762d3cc1686c397ec74643142e3e5e167b162abe157035dbd\"",
             "id": "10707217",
             "ldap_dn": "",
             "members_count": 1,
@@ -827,6 +942,27 @@
             "parent_team_read_slug": "",
             "privacy": "closed",
             "slug": "django-tasks-scheduler"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        },
+        {
+          "index_key": "playground2",
+          "schema_version": 0,
+          "attributes": {
+            "create_default_maintainer": false,
+            "description": "Main team for the playground2 repository",
+            "etag": "W/\"8e29ea5ef84ae3d35a13a99550e3a287403b1021bf5d8f4c8a56222747705a1d\"",
+            "id": "10869823",
+            "ldap_dn": "",
+            "members_count": 0,
+            "name": "playground2",
+            "node_id": "T_kwDOCaaRBM4Apdw_",
+            "parent_team_id": "",
+            "parent_team_read_id": "",
+            "parent_team_read_slug": "",
+            "privacy": "closed",
+            "slug": "playground2"
           },
           "sensitive_attributes": [],
           "private": "bnVsbA=="
@@ -960,6 +1096,26 @@
             "github_team.repo_admin_team",
             "github_team.repo_team"
           ]
+        },
+        {
+          "index_key": "playground2",
+          "schema_version": 0,
+          "attributes": {
+            "id": "10869843",
+            "members": [
+              {
+                "role": "maintainer",
+                "username": "cunla"
+              }
+            ],
+            "team_id": "10869843"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "github_team.repo_admin_team",
+            "github_team.repo_team"
+          ]
         }
       ]
     },
@@ -1054,6 +1210,25 @@
           "dependencies": [
             "github_team.repo_team"
           ]
+        },
+        {
+          "index_key": "playground2",
+          "schema_version": 0,
+          "attributes": {
+            "id": "10869823",
+            "members": [
+              {
+                "role": "maintainer",
+                "username": "cunla"
+              }
+            ],
+            "team_id": "10869823"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "github_team.repo_team"
+          ]
         }
       ]
     },
@@ -1084,11 +1259,28 @@
           "index_key": "django-tasks-scheduler",
           "schema_version": 0,
           "attributes": {
-            "etag": "W/\"2220ca27bbccadddd3cc058b51a5d413deff7d9f251630876afc1613e0eb2ea8\"",
+            "etag": "W/\"ecced3356007d60679b99c33b202bdde5e3e34e3954cb0d8f3e5172f81ab3099\"",
             "id": "10707221:django-tasks-scheduler",
             "permission": "admin",
             "repository": "django-tasks-scheduler",
             "team_id": "10707221"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "github_team.repo_admin_team",
+            "github_team.repo_team"
+          ]
+        },
+        {
+          "index_key": "playground2",
+          "schema_version": 0,
+          "attributes": {
+            "etag": "W/\"26318df281d4b442c71baab6f0ac945fbcf6d12e8b1ed1d89d16de28ae7da7b8\"",
+            "id": "10869843:playground2",
+            "permission": "admin",
+            "repository": "playground2",
+            "team_id": "10869843"
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
@@ -1126,11 +1318,28 @@
           "index_key": "django-tasks-scheduler",
           "schema_version": 0,
           "attributes": {
-            "etag": "W/\"2ec18c38f24fab40a1bbc2fa92f8e0465d1b5b5ee5e6f8ae745919a1f238d7b3\"",
+            "etag": "W/\"615e606bb993be6843d71f9d4e33f940c7da3a15546ea1e5e92ae8f32319df28\"",
             "id": "10707220:django-tasks-scheduler",
             "permission": "maintain",
             "repository": "django-tasks-scheduler",
             "team_id": "10707220"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "github_team.repo_committer_team",
+            "github_team.repo_team"
+          ]
+        },
+        {
+          "index_key": "playground2",
+          "schema_version": 0,
+          "attributes": {
+            "etag": "W/\"f0859778c9191faeb4ad64b482e967a5e09c2c0e2f7e115767bd07f358875aa0\"",
+            "id": "10869838:playground2",
+            "permission": "maintain",
+            "repository": "playground2",
+            "team_id": "10869838"
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
@@ -1167,11 +1376,27 @@
           "index_key": "django-tasks-scheduler",
           "schema_version": 0,
           "attributes": {
-            "etag": "W/\"fb67e1c90faf2bdd6b98da1071a067fc79d47c69c2c71d8aec150f6c4bcd8b3c\"",
+            "etag": "W/\"9c66f5c908b19b3b59ff1cf6dcacaebc7109a414a75e9a515928177fb3661fe7\"",
             "id": "10707217:django-tasks-scheduler",
             "permission": "triage",
             "repository": "django-tasks-scheduler",
             "team_id": "10707217"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "github_team.repo_team"
+          ]
+        },
+        {
+          "index_key": "playground2",
+          "schema_version": 0,
+          "attributes": {
+            "etag": "W/\"944694fd7786d420824004ea7eca399c706d2eca35693e1439d01e516119a246\"",
+            "id": "10869823:playground2",
+            "permission": "triage",
+            "repository": "playground2",
+            "team_id": "10869823"
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
@@ -1224,6 +1449,28 @@
             "team_id": "10707217",
             "team_slug": "django-tasks-scheduler",
             "team_uid": "T_kwDOCaaRBM4Ao2ER"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "github_team.repo_team"
+          ]
+        },
+        {
+          "index_key": "playground2",
+          "schema_version": 0,
+          "attributes": {
+            "id": "T_kwDOCaaRBM4Apdw_",
+            "review_request_delegation": [
+              {
+                "algorithm": "LOAD_BALANCE",
+                "member_count": 2,
+                "notify": false
+              }
+            ],
+            "team_id": "10869823",
+            "team_slug": "playground2",
+            "team_uid": "T_kwDOCaaRBM4Apdw_"
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
