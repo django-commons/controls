@@ -68,7 +68,7 @@ repositories = {
     homepage_url       = "https://github.com/django-commons/django-fsm-2"
     allow_merge_commit = false
     allow_rebase_merge = true
-    has_projects = false
+    has_projects       = false
     admins = [
       "pfouque",
       "natim",
