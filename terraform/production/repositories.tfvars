@@ -63,6 +63,19 @@ repositories = {
     members    = []
   }
 
+  "django-fsm-2" = {
+    description        = "Django friendly finite state machine support"    
+    homepage_url       = "https://github.com/django-commons/django-fsm-2"
+    allow_merge_commit = true
+    admins = [
+      "pfouque",
+      "natim",
+    ]
+    committers = []
+    members    = []
+  }
+
+
   "playground2" = {
     description = "Tests"
 
