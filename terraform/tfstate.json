@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.9.5",
-  "serial": 186,
+  "serial": 188,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {},
   "resources": [
@@ -355,7 +355,7 @@
             "default_branch": "main",
             "delete_branch_on_merge": true,
             "description": "The controls for managing Django Commons projects",
-            "etag": "W/\"14ca149d370ef9cf58bce5e342c5ed1c4e173c1379b210a6325a57e0bc1e6b7e\"",
+            "etag": "W/\"87b756ecc5f61a0b661c4436b97e8565a1262b41aba5d1a7d15c096c58fd0945\"",
             "full_name": "django-commons/controls",
             "git_clone_url": "git://github.com/django-commons/controls.git",
             "gitignore_template": null,
@@ -505,8 +505,8 @@
             "ignore_vulnerability_alerts_during_read": null,
             "is_template": false,
             "license_template": null,
-            "merge_commit_message": "BLANK",
-            "merge_commit_title": "PR_TITLE",
+            "merge_commit_message": "PR_TITLE",
+            "merge_commit_title": "MERGE_MESSAGE",
             "name": "django-fsm-2",
             "node_id": "R_kgDOIRc3Iw",
             "pages": [],
@@ -1085,7 +1085,7 @@
             "members": [
               {
                 "role": "member",
-                "username": "natim"
+                "username": "Natim"
               },
               {
                 "role": "member",
@@ -1204,7 +1204,7 @@
             "members": [
               {
                 "role": "member",
-                "username": "natim"
+                "username": "Natim"
               },
               {
                 "role": "member",
