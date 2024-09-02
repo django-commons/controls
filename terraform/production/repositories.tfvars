@@ -77,14 +77,4 @@ repositories = {
     members    = []
   }
 
-
-  "playground2" = {
-    description = "Tests"
-
-    admins = [
-      "cunla",
-    ]
-    committers = []
-    members    = []
-  }
 }
