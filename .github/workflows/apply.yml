@@ -9,7 +9,7 @@ on:
 
 jobs:
   apply-changes:
-    name: "Org changes plan"
+    name: "Org changes apply"
     runs-on: ubuntu-latest
 
     permissions:
