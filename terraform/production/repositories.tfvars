@@ -72,7 +72,7 @@ repositories = {
 
     admins = [
       "pfouque",
-      "natim",
+      "Natim",
     ]
     committers = []
     members    = []
