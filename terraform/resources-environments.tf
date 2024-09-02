@@ -20,6 +20,13 @@ resource "github_repository_environment" "pypi" {
   }
 }
 
+import {
+  for_each = {for k, v in var.repositories : k => v if v.is_django_commons_repo == false}
+
+  id = "${each.key}:testpypi"
+  to = github_repository_environment.testpypi[each.key]
+}
+
 resource "github_repository_environment" "testpypi" {
   for_each = {for k, v in var.repositories : k => v if v.is_django_commons_repo == false}
 
