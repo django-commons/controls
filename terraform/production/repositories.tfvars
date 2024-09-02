@@ -69,7 +69,6 @@ repositories = {
     allow_merge_commit   = false
     allow_rebase_merge   = true
     has_projects         = false
-    merge_commit_message = "BLANK"
 
     admins = [
       "pfouque",
