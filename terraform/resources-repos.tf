@@ -1,6 +1,14 @@
 # Github Repository Resource
 # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository
 
+# Try to import the repository if it already exists
+import {
+  for_each = var.repositories
+
+  id = each.key
+  to = github_repository.this[each.key]
+}
+
 resource "github_repository" "this" {
   for_each = var.repositories
 
