@@ -56,6 +56,7 @@ repositories = {
     description        = "Schedule async tasks using redis pub/sub."
     homepage_url       = "https://django-tasks-scheduler.readthedocs.io/"
     allow_merge_commit = true
+
     admins = [
       "cunla",
     ]
