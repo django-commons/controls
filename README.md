@@ -101,14 +101,10 @@ Django Commons packages.
    with repo owner to transfer repo
 7. Wait for repository transferred in
 8. [Make Terraform changes to add new project](#terraform-changes-to-add-a-new-project)
-9. [Configure environments](https://docs.github.com/en/actions/administering-github-actions/managing-environments-for-deployment#creating-an-environment)
-   pypi and testpypi in the repository to
-   enable [publishing packages via GitHub Actions](https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/#)
-10. For pypi environment, add Deployment protection rule with reviewers as [repo]-admins and enable "Allow
-    administrators to bypass configured protection rules"
-11. Under Actions > General > "Fork pull request workflows from outside collaborators", set "Require approval for
+9. Under Actions > General > "Fork pull request workflows from outside collaborators", set "Require approval for
     first-time contributors"
-12. Set a calendar event or reminder for 30 days in the future to remove previous repository owner from team
+10. Have the maintainer push a new tag and walk them through the release process
+11. Set a calendar event or reminder for 30 days in the future to remove previous repository owner from team
 
 ### Terraform changes to add a new project
 
