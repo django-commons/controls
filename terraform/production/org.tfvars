@@ -22,6 +22,7 @@ members = [
   "Mogost",
   "browniebroke",
   "ddabble",
+  "codein",
 ]
 
 organization_teams = {
