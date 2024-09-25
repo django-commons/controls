@@ -16,7 +16,7 @@ Django Commons packages.
    human and not a spambot. You can explain that by being a member, they can impact repositories immediately.
 3. Add the user's GitHub username to the `members` collection in
    the [`terraform/production/org.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/org.tfvars)
-   file.
+   file. Please keep the list sorted alphabetically.
    ```terraform
      members = [
        # ...
@@ -25,7 +25,7 @@ Django Commons packages.
    ```
 4. If they requested to be on specific repository team(s), in
    the [`terraform/production/repositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/repositories.tfvars)
-   file, add them to the `members` collection.
+   file, add them to the `members` collection. Please keep the list sorted alphabetically.
    ```terraform 
      repositories = {
        "[REPOSITORY]" = {
@@ -47,7 +47,7 @@ Django Commons packages.
    a human and not a spambot. You can explain that by being a member, they can impact repositories immediately.
 2. For the requested repository's team(s), in
    the [`terraform/production/repositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/repositories.tfvars)
-   file, add them to the `members` collection.
+   file, add them to the `members` collection. Please keep the list sorted alphabetically.
    ```terraform
      repositories = {
        "[REPOSITORY]" = {
@@ -71,7 +71,7 @@ Django Commons packages.
    the [`terraform/production/repositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/repositories.tfvars)
    file, for the repository's key under `repositories`, add them to the `admins` collection for the
    correct team. There will be two privileged teams for each repository, `*-admins` and `*-committers`, the user should
-   be added to the requested team.
+   be added to the requested team. Please keep the list sorted alphabetically.
    ```terraform
      repositories = {
        "[REPOSITORY]" = {

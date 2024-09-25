@@ -1,28 +1,28 @@
 # Organization admins
 admins = [
-  "tim-schilling",
-  "williln",
+  "cunla",
   "ryancheley",
   "Stormheg",
-  "cunla",
+  "tim-schilling",
+  "williln",
 ]
 # Organization members
 members = [
+  "browniebroke",
+  "codein",
+  "ddabble",
+  "g-nie",
   "gav-fyi",
   "jcjudkins",
   "joshuadavidthomas",
+  "maerteijn",
   "matthiask",
+  "Mogost",
   "nanorepublica",
   "Natim",
   "pfouque",
   "priyapahwa",
   "testSchilling",
-  "maerteijn",
-  "g-nie",
-  "Mogost",
-  "browniebroke",
-  "ddabble",
-  "codein",
 ]
 
 organization_teams = {
@@ -30,19 +30,19 @@ organization_teams = {
     description = "django-commons administrators"
     # Use maintainers for organizational teams
     maintainers = [
-      "tim-schilling",
-      "williln",
+      "cunla",
       "ryancheley",
       "Stormheg",
-      "cunla",
+      "tim-schilling",
+      "williln",
     ]
   }
   "security-team" = {
     description = "django-commons security team"
     # Use maintainers for organizational teams
     maintainers = [
+      "matthiask",
       "tim-schilling",
-      "matthiask"
     ]
     permission = "push"
   }

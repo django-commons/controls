@@ -37,11 +37,11 @@ repositories = {
     topics      = []
     # People with GitHub admin repo permissions
     admins = [
-      "tim-schilling",
-      "williln",
+      "cunla",
       "ryancheley",
       "Stormheg",
-      "cunla",
+      "tim-schilling",
+      "williln",
     ]
     # People with GitHub maintain repo permissions
     committers = [
@@ -72,8 +72,8 @@ repositories = {
     has_projects       = false
 
     admins = [
-      "pfouque",
       "Natim",
+      "pfouque",
     ]
     committers = []
     members    = []
