@@ -23,6 +23,7 @@ members = [
   "Natim",
   "pfouque",
   "priyapahwa",
+  "rptmat57",
   "testSchilling",
 ]
 
