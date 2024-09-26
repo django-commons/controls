@@ -11,6 +11,7 @@ members = [
   "browniebroke",
   "codein",
   "ddabble",
+  "FlipperPA",
   "g-nie",
   "gav-fyi",
   "jcjudkins",
