@@ -15,6 +15,7 @@ members = [
   "FlipperPA",
   "g-nie",
   "gav-fyi",
+  "jacklinke",
   "jcjudkins",
   "joshuadavidthomas",
   "maerteijn",
