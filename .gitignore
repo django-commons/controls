@@ -4,3 +4,4 @@ notes.txt
 .terraform.lock.hcl
 .idea
 .dflook-terraform-github-actions
+tags
