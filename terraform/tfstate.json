@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.9.6",
-  "serial": 211,
+  "serial": 213,
   "lineage": "425397de-8394-a003-8a6c-bce854d9cc53",
   "outputs": {},
   "resources": [
@@ -159,7 +159,7 @@
           "schema_version": 0,
           "attributes": {
             "downgrade_on_destroy": false,
-            "etag": "W/\"89f42fd2b7815932b746051eb497f0113a3e4dbce2bb3927312c8e8b846af4cf\"",
+            "etag": "W/\"3b4a2e4d0c447d65bd1dd9889f2441b2e830c676a3670306d96d5d9d1209abf4\"",
             "id": "django-commons:jacklinke",
             "role": "member",
             "username": "jacklinke"
@@ -283,6 +283,19 @@
           },
           "sensitive_attributes": [],
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "salty-ivy",
+          "schema_version": 0,
+          "attributes": {
+            "downgrade_on_destroy": false,
+            "etag": "W/\"d112ed34470ec8c4568e475882b7b26899e507238c6305baac54eb1b9829a098\"",
+            "id": "django-commons:salty-ivy",
+            "role": "member",
+            "username": "salty-ivy"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
         },
         {
           "index_key": "testSchilling",
@@ -433,7 +446,7 @@
             "default_branch": "main",
             "delete_branch_on_merge": true,
             "description": "The controls for managing Django Commons projects",
-            "etag": "W/\"c4d662dc01b3682840e8b496886eb7ec6b8bbf6a3fb3f9ef3629744d0640cc6b\"",
+            "etag": "W/\"d2f77130d0c8a05917ab69eaa1bd2fb8ecbf95281b1ed124f367d6debd4c5f10\"",
             "full_name": "django-commons/controls",
             "git_clone_url": "git://github.com/django-commons/controls.git",
             "gitignore_template": null,
@@ -634,7 +647,7 @@
             "default_branch": "master",
             "delete_branch_on_merge": true,
             "description": "Schedule async tasks using redis pub/sub.",
-            "etag": "W/\"b59b53675df1b1cc5a4836f2292ec843fee07ad9853a4f81ac45d066c541c1e4\"",
+            "etag": "W/\"cbcd7cec4c857e71171d784c83beeaea166b7f7ede4aa2b963caca00176c5259\"",
             "full_name": "django-commons/django-tasks-scheduler",
             "git_clone_url": "git://github.com/django-commons/django-tasks-scheduler.git",
             "gitignore_template": null,
@@ -1507,7 +1520,7 @@
           "index_key": "django-tasks-scheduler",
           "schema_version": 0,
           "attributes": {
-            "etag": "W/\"a2059e3d2caaf355436e40d6add84da62ebd3e0f309601750c801bd510252b8e\"",
+            "etag": "W/\"5c5c2855f168a59fa2ca0709d3adc0d702c32854033dc4107bf5b103edca8193\"",
             "id": "10707221:django-tasks-scheduler",
             "permission": "admin",
             "repository": "django-tasks-scheduler",
@@ -1566,7 +1579,7 @@
           "index_key": "django-tasks-scheduler",
           "schema_version": 0,
           "attributes": {
-            "etag": "W/\"4d50e1017bbf8b425c83f43546be3cb16b77f504127d436aabcef24240f22de1\"",
+            "etag": "W/\"abda702c41fd63d07207c174573e57cec2fac112f01ec3b0daefee6f7f08ced7\"",
             "id": "10707220:django-tasks-scheduler",
             "permission": "maintain",
             "repository": "django-tasks-scheduler",
@@ -1623,7 +1636,7 @@
           "index_key": "django-tasks-scheduler",
           "schema_version": 0,
           "attributes": {
-            "etag": "W/\"b05f8fb3bcaa0d8e9894ad0041c184b611d6dd8229d8f01814f86a1ffaed0329\"",
+            "etag": "W/\"b05b621d93a54d8cbb7e994b9771365abe1f9b309afc128e3853682ed01c39cc\"",
             "id": "10707217:django-tasks-scheduler",
             "permission": "triage",
             "repository": "django-tasks-scheduler",
