@@ -26,6 +26,7 @@ members = [
   "pfouque",
   "priyapahwa",
   "rptmat57",
+  "salty-ivy",
   "testSchilling",
 ]
 
