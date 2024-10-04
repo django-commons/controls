@@ -15,7 +15,7 @@ Django Commons packages.
 2. If they are not a real human or not reasonably trustworthy, close the issue, asking for more information they are a
    human and not a spambot. You can explain that by being a member, they can impact repositories immediately.
 3. Add the user's GitHub username to the `members` collection in
-   the [`terraform/production/org.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/org.tfvars)
+   the [`terraform/production/org.tfvars`][1]
    file. Please keep the list sorted alphabetically.
    ```terraform
      members = [
@@ -24,7 +24,7 @@ Django Commons packages.
      ] 
    ```
 4. If they requested to be on specific repository team(s), in
-   the [`terraform/production/repositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/repositories.tfvars)
+   the [`terraform/production/repositories.tfvars`][2]
    file, add them to the `members` collection. Please keep the list sorted alphabetically.
    ```terraform 
      repositories = {
@@ -45,7 +45,7 @@ Django Commons packages.
 
    > Thank you <NAME> for joining! You'll get an invite email from GitHub. You'll have one
    > week to accept that. If you don't mind, after accepting, can you set your
-   > [organization membership as public](https://github.com/orgs/django-commons/people)?
+   > [organization membership as public][people]?
    > This helps Django Commons grow. 
 
 ## Repository Team Change Playbook
@@ -53,7 +53,7 @@ Django Commons packages.
 1. If they are not a real human or not reasonably trustworthy, close the issue, asking for more information if they are
    a human and not a spambot. You can explain that by being a member, they can impact repositories immediately.
 2. For the requested repository's team(s), in
-   the [`terraform/production/repositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/repositories.tfvars)
+   the [`terraform/production/repositories.tfvars`][2]
    file, add them to the `members` collection. Please keep the list sorted alphabetically.
    ```terraform
      repositories = {
@@ -75,7 +75,7 @@ Django Commons packages.
 1. Confirm with all existing admins that they approve changes to the repository admins or committers.
 2. If there's disagreement, close the issue and ask for the admins to come to a consensus
 3. For the requested repository's team(s), in
-   the [`terraform/production/repositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/repositories.tfvars)
+   the [`terraform/production/repositories.tfvars`][2]
    file, for the repository's key under `repositories`, add them to the `admins` collection for the
    correct team. There will be two privileged teams for each repository, `*-admins` and `*-committers`, the user should
    be added to the requested team. Please keep the list sorted alphabetically.
@@ -97,7 +97,7 @@ Django Commons packages.
 ## New Project Playbook
 
 1. Check if repository
-   meets [inbound requirements](https://github.com/django-commons/membership/blob/main/incoming_repo_requirements.md).
+   meets [inbound requirements][3].
 2. Confirm who will be the admins and maintainers for the repository
 3. PyPI project owner must add you (Django Commons admin) as owner in PyPI
 4. (TODO: Determine how this works with transferring out of an org and into the Django Commons org)
@@ -120,7 +120,7 @@ Django Commons packages.
 1. Transfer the existing repository to the Django Commons organization using the GitHub UI, so old information is
    preserved.
 2. Make sure the there are no teams `repo-name`, `repo-name-admins` and `repo-name-committers` in the Django Commons
-   organization. Teams can be viewed [here](https://github.com/orgs/django-commons/teams). The teams will be created by
+   organization. Teams can be viewed [here][teams]. The teams will be created by
    the terraform apply process.
 
 #### Locally
@@ -128,7 +128,7 @@ Django Commons packages.
 Assuming repository name is `repo-name`:
 
 1.
-In [`terraform/production/respositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/respositories.tfvars),
+In [`terraform/production/respositories.tfvars`][2],
 add the new repository to the `repositories` section:
 
 ```terraform
@@ -176,7 +176,7 @@ The expected changes:
 
 1. Confirm there's agreement amongst current project maintainers to move project out of Django Commons
 2. Add new Owner(s) to project in PyPI
-3. [Transfer GitHub repo to new owner or Org](https://github.com/orgs/django-commons/people)
+3. [Transfer GitHub repo to new owner or Org][people]
 4. Wait for repository to be transferred out.
 5. Remove all Django Commons members from PyPI project (except any that are staying on from step 2)
 6. (TODO: Determine how to handle transferring a PyPI project out of an organization)
@@ -184,7 +184,7 @@ The expected changes:
 ### Terraform changes to remove a project
 
 1. Remove the repository from the `repositories` section
-   in [`terraform/production/respositories.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/respositories.tfvars)
+   in [`terraform/production/respositories.tfvars`][2]
 2. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
    executed.
    Review the changes and make sure they align with the request.
@@ -194,3 +194,9 @@ The expected changes:
 
 - The repository will be removed from the organization.
 - The repository's teams will be removed from the organization.
+
+[1]: https://github.com/django-commons/membership/blob/main/terraform/production/org.tfvars
+[2]: https://github.com/django-commons/membership/blob/main/terraform/production/repositories.tfvars
+[3]: https://github.com/django-commons/membership/blob/main/incoming_repo_requirements.md
+[people]: https://github.com/orgs/django-commons/people
+[teams]: https://github.com/orgs/django-commons/teams
