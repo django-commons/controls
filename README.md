@@ -23,7 +23,10 @@ Django Commons packages.
        "new_user"
      ] 
    ```
-4. If they requested to be on specific repository team(s), in
+
+4. Review the [failing invitations](https://github.com/orgs/django-commons/people/failed_invitations), remove members that are in the failing invitations list from the [`terraform/production/org.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/org.tfvars).
+
+5. If they requested to be on specific repository team(s), in
    the [`terraform/production/repositories.tfvars`][2]
    file, add them to the `members` collection. Please keep the list sorted alphabetically.
    ```terraform 
@@ -37,10 +40,10 @@ Django Commons packages.
        }
      }
    ```
-5. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
+6. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
    executed. Review the changes and make sure they align with the request.
-6. Merge the pull request. This will trigger terraform to apply the changes in the organization.
-7. Comment on the issue, thanking the person for joining and reminding them that it helps the
+7. Merge the pull request. This will trigger terraform to apply the changes in the organization.
+8. Comment on the issue, thanking the person for joining and reminding them that it helps the
    organization's reach if they set their membership visibility as public.
 
    > Thank you <NAME> for joining! You'll get an invite email from GitHub. You'll have one
