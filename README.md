@@ -154,9 +154,9 @@ Assuming the repository name is `repo-name`:
         - [ ] New teams `repo-name`, `repo-name-admins`, `repo-name-committers` with the relevant members based on the
           repository's description.
         - [ ] The repository changes are accepted by the project maintainers.
+        - [ ] Repository has two environments: `pypi` and `testpypi`, see example [here][playground-enviroments]
 
 - [ ] Repo changes:
-    - [ ] Create two environments in repository: `pypi` and `testpypi`, see example [here][playground-enviroments]
     - [ ] (project owner) Create/Update the release GitHub workflow in the repository, example can be
       found [here][release-gh-workflow]
     - [ ] Under Actions > General > "Fork pull request workflows from outside collaborators", set "Require approval for
