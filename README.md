@@ -45,7 +45,7 @@ Django Commons packages.
 
    > Thank you <NAME> for joining! You'll get an invite email from GitHub. You'll have one
    > week to accept that. If you don't mind, after accepting, can you set your
-   > [organization membership as public][people]?
+   > [organization membership as public](https://github.com/orgs/django-commons/people)?
    > This helps Django Commons grow. 
 
 ## Repository Team Change Playbook
