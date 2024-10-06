@@ -23,9 +23,8 @@ Django Commons packages.
        "new_user"
      ] 
    ```
-
-4. Review the [failing invitations](https://github.com/orgs/django-commons/people/failed_invitations), remove members that are in the failing invitations list from the [`terraform/production/org.tfvars`](https://github.com/django-commons/controls/blob/main/terraform/production/org.tfvars).
-
+4. Review the [failing invitations][failed-invitations], remove members that are in the failing invitations list from
+   the [`terraform/production/org.tfvars`][1].
 5. If they requested to be on specific repository team(s), in
    the [`terraform/production/repositories.tfvars`][2]
    file, add them to the `members` collection. Please keep the list sorted alphabetically.
@@ -48,8 +47,8 @@ Django Commons packages.
 
    > Thank you <NAME> for joining! You'll get an invite email from GitHub. You'll have one
    > week to accept that. If you don't mind, after accepting, can you set your
-   > [organization membership as public](https://github.com/orgs/django-commons/people)?
-   > This helps Django Commons grow. 
+   > [organization membership as public][people]?
+   > This helps Django Commons grow.
 
 ## Repository Team Change Playbook
 
@@ -112,7 +111,7 @@ Django Commons packages.
 7. Wait for repository transferred in
 8. [Make Terraform changes to add new project](#terraform-changes-to-add-a-new-project)
 9. Under Actions > General > "Fork pull request workflows from outside collaborators", set "Require approval for
-    first-time contributors"
+   first-time contributors"
 10. Have the maintainer push a new tag and walk them through the release process
 11. Set a calendar event or reminder for 30 days in the future to remove previous repository owner from team
 
@@ -131,6 +130,7 @@ Django Commons packages.
 Assuming repository name is `repo-name`:
 
 1.
+
 In [`terraform/production/respositories.tfvars`][2],
 add the new repository to the `repositories` section:
 
@@ -199,7 +199,13 @@ The expected changes:
 - The repository's teams will be removed from the organization.
 
 [1]: https://github.com/django-commons/membership/blob/main/terraform/production/org.tfvars
+
 [2]: https://github.com/django-commons/membership/blob/main/terraform/production/repositories.tfvars
+
 [3]: https://github.com/django-commons/membership/blob/main/incoming_repo_requirements.md
+
 [people]: https://github.com/orgs/django-commons/people
+
 [teams]: https://github.com/orgs/django-commons/teams
+
+[failed-invitations]: https://github.com/orgs/django-commons/people/failed_invitations
