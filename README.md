@@ -206,3 +206,15 @@ The expected changes:
 [teams]: https://github.com/orgs/django-commons/teams
 
 [failed-invitations]: https://github.com/orgs/django-commons/people/failed_invitations
+
+[test-pypi]: https://test.pypi.org/manage/project/django-commons/
+
+[pypi]: https://pypi.org/
+
+[gh-docs-transfer-repo]: https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository
+
+[release-gh-workflow]: https://github.com/django-commons/django-commons-playground/blob/main/.github/workflows/release.yml
+
+[pypi-publishing]: https://test.pypi.org/manage/project/django-tasks-scheduler/settings/publishing/
+
+[playground-environments]: https://github.com/django-commons/django-commons-playground/settings/environments
