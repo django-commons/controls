@@ -213,4 +213,4 @@ The expected changes:
 
 [pypi-publishing]: https://test.pypi.org/manage/project/django-tasks-scheduler/settings/publishing/
 
-[playground-enviroments]: https://github.com/django-commons/django-commons-playground/settings/environments
+[playground-environments]: https://github.com/django-commons/django-commons-playground/settings/environments
