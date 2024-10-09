@@ -163,7 +163,7 @@ Assuming the repository name is `repo-name`:
       first-time contributors"
 
 - [ ] pypi and test-pypi changes:
-    - [ ] Add the release workflow to pypi's package publishing (and test-pypi's package publishing).
+    - [ ] Add the release workflow to pypi.org's package publishing (and test.pypi.org's package publishing).
       Example can be found [here][pypi-publishing]
 
 - [ ] Have the maintainer push a new tag and walk them through the release process
