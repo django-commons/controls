@@ -162,7 +162,7 @@ Assuming the repository name is `repo-name`:
     - [ ] Under Actions > General > "Fork pull request workflows from outside collaborators", set "Require approval for
       first-time contributors"
 
-- [ ] pypi and test-pypi changes:
+- [ ] PyPI and Test PyPI changes:
     - [ ] Add the release workflow to pypi.org's package publishing (and test.pypi.org's package publishing).
       Example can be found [here][pypi-publishing]
 
