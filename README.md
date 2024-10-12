@@ -106,9 +106,8 @@ Assuming the repository name is `repo-name`:
 - [ ] Confirm who will be the admins and maintainers for the repository
 - [ ] Make sure the there are no teams `{repo-name}`, `{repo-name}-admins` and `{repo-name}-committers` in the Django
   Commons organization. Teams can be viewed [here][teams]. The teams will be created by the terraform apply process.
-- [ ] (project owner) PyPI project owner must add the Django Commons pypi's team members as owners in [PyPI][pypi],
+- [ ] (project owner) PyPI project owner must add the Django Commons PyPI Admins as owners in [PyPI][pypi],
   and [test-pypi][test-pypi]
-  (TODO: Determine how this works with transferring out of an org and into the Django Commons org)
 - [ ] [Add repository owner to Django Commons as member](#new-member-playbook) (they'll be added to a team later)
 - [ ] (project owner) Transfer the existing repository to the Django Commons organization using the GitHub UI, so old
   information is preserved. See [GitHub docs][gh-docs-transfer-repo].
