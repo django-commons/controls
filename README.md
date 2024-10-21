@@ -12,9 +12,11 @@ Django Commons packages.
 ## New Member Playbook
 
 1. Review new issues/application at https://github.com/django-commons/membership/issues/
-2. If they are not a real human or not reasonably trustworthy, close the issue, asking for more information they are a
+2. If they are not a real human or not reasonably trustworthy
+   ([new member requirements](https://github.com/django-commons/membership/blob/main/member_requirements.md)),
+   close the issue, asking for more information they are a
    human and not a spambot. You can explain that by being a member, they can impact repositories immediately.
-3. Add the user's GitHub username to the `members` collection in
+4. Add the user's GitHub username to the `members` collection in
    the [`terraform/production/org.tfvars`][1]
    file. Please keep the list sorted alphabetically.
    ```terraform
@@ -23,9 +25,9 @@ Django Commons packages.
        "new_user"
      ] 
    ```
-4. Review the [failing invitations][failed-invitations], remove members that are in the failing invitations list from
+5. Review the [failing invitations][failed-invitations], remove members that are in the failing invitations list from
    the [`terraform/production/org.tfvars`][1].
-5. If they requested to be on specific repository team(s), in
+6. If they requested to be on specific repository team(s), in
    the [`terraform/production/repositories.tfvars`][2]
    file, add them to the `members` collection. Please keep the list sorted alphabetically.
    ```terraform 
@@ -39,10 +41,10 @@ Django Commons packages.
        }
      }
    ```
-6. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
+7. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
    executed. Review the changes and make sure they align with the request.
-7. Merge the pull request. This will trigger terraform to apply the changes in the organization.
-8. Comment on the issue, thanking the person for joining and reminding them that it helps the
+8. Merge the pull request. This will trigger terraform to apply the changes in the organization.
+9. Comment on the issue, thanking the person for joining and reminding them that it helps the
    organization's reach if they set their membership visibility as public.
 
    > Thank you <NAME> for joining! You'll get an invite email from GitHub. You'll have one
