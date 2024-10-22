@@ -100,6 +100,8 @@ Django Commons packages.
 
 ## New Project Playbook
 
+Goal: Publish a new release of the project from django-commons repo to PyPI and Test PyPI, using the release workflow.
+
 Assuming the repository name is `repo-name`:
 
 ### Pre Transfer Steps
@@ -108,15 +110,20 @@ Assuming the repository name is `repo-name`:
 - [ ] Confirm who will be the admins and maintainers for the repository
 - [ ] Make sure the there are no teams `{repo-name}`, `{repo-name}-admins` and `{repo-name}-committers` in the Django
   Commons organization. Teams can be viewed [here][teams]. The teams will be created by the terraform apply process.
-- [ ] (project owner) PyPI project owner must add the Django Commons PyPI Admins as owners in [PyPI][pypi],
-  and [test-pypi][test-pypi]
 - [ ] [Add repository owner to Django Commons as member](#new-member-playbook) (they'll be added to a team later)
-- [ ] (project owner) Transfer the existing repository to the Django Commons organization using the GitHub UI, so old
+
+### Transfer ownership in GitHub, test PyPI and PyPI.
+
+These should be done by the project owner.
+
+- [ ] Transfer the existing repository to the Django Commons organization using the GitHub UI, so old
   information is preserved. See [GitHub docs][gh-docs-transfer-repo].
+    - This step takes time, and therefore it is recommended to do this first.
+- [ ] PyPI project owner must add the Django Commons PyPI Admins as owners in [PyPI][pypi], and [test-pypi][test-pypi]
 
-### Post Transfer Steps
+### Make GitHub repository managed by terraform
 
-- [ ] Terraform changes to add project to organization
+- [ ] Terraform changes to add project to organization, should be included in the issue opened to transfer the project.
     - [ ] In [`terraform/production/respositories.tfvars`][2], add the new repository to the `repositories` section:
 
        ```terraform
@@ -148,16 +155,17 @@ Assuming the repository name is `repo-name`:
          }
        }
        ```
-
-    - [ ] Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to
-      be executed.
-      Review the changes and make sure they align with the request.
+    - [ ] Create a pull-request to `main` branch.
+      This will trigger terraform to plan the changes in the organization to be executed.
+      Review the changes and make sure they align with the project maintainer expectations.
     - [ ] Merge the pull request. This will trigger terraform to apply the changes in the organization.
     - The expected changes:
         - [ ] New teams `repo-name`, `repo-name-admins`, `repo-name-committers` with the relevant members based on the
           repository's description.
         - [ ] The repository changes are accepted by the project maintainers.
         - [ ] Repository has two environments: `pypi` and `testpypi`, see example [here][playground-environments]
+
+### Create new release workflow
 
 - [ ] Repo changes:
     - [ ] (project owner) Create/Update the release GitHub workflow in the repository, example can be
@@ -169,7 +177,14 @@ Assuming the repository name is `repo-name`:
     - [ ] Add the release workflow to pypi.org's package publishing (and test.pypi.org's package publishing).
       Example can be found [here][pypi-publishing]
 
+### Release a new version
+
 - [ ] Have the maintainer push a new tag and walk them through the release process
+    - Find the workflow `Publish Python 🐍 distribution 📦 to PyPI` in the Actions tab.
+    - The job `Publish Python 🐍 distribution 📦 to PyPI` should wait for an approval by a repository admin.
+
+### Follow up
+
 - [ ] Set a calendar event or reminder for 30 days in the future to remove the previous repository owner from PyPI
   project (if applicable)
 
