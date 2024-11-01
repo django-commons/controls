@@ -103,15 +103,16 @@ Django Commons packages.
 Goal: Publish a new release of the project from django-commons repo to PyPI and Test PyPI, using the release workflow.
 
 Assuming the repository name is `repo-name`:
+
 ```terraform
 "your-repo-here" = {
-  description         = "Your project's description here"
-  allow_merge_commit  = true # Allow merge commits on pull requests
-  allow_rebase_merge  = true # Allow rebase and merge commits on pull requests
-  allow_squash_merge  = true # Allow squash and merge commits on pull requests - Recommended
+  description = "Your project's description here"
+  allow_merge_commit = true # Allow merge commits on pull requests
+  allow_rebase_merge = true # Allow rebase and merge commits on pull requests
+  allow_squash_merge = true # Allow squash and merge commits on pull requests - Recommended
   allow_update_branch = true # Allow updating source branch on pull requests
-  has_discussions     = false # Enable discussions in project's repository
-  has_wiki            = false # Enable wiki in project's repository
+  has_discussions = false # Enable discussions in project's repository
+  has_wiki = false # Enable wiki in project's repository
   admins = [
     # Include people who can release new versions
     "your-username-here",
@@ -202,8 +203,8 @@ These should be done by the project owner.
 ### Release a new version
 
 - [ ] Have the maintainer push a new tag and walk them through the release process
-    - Find the workflow `Publish Python 🐍 distribution 📦 to PyPI` in the Actions tab.
-    - The job `Publish Python 🐍 distribution 📦 to PyPI` should wait for an approval by a repository admin.
+    - Find the publishing workflow in the Actions tab (Usually  `Publish Python 🐍 distribution 📦 to PyPI`/`release.yml`)
+    - The publishing to pypi job should wait for an approval by a repository admin.
 
 ### Follow up
 
