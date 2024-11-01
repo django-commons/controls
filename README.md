@@ -103,6 +103,27 @@ Django Commons packages.
 Goal: Publish a new release of the project from django-commons repo to PyPI and Test PyPI, using the release workflow.
 
 Assuming the repository name is `repo-name`:
+```terraform
+"your-repo-here" = {
+  description         = "Your project's description here"
+  allow_merge_commit  = true # Allow merge commits on pull requests
+  allow_rebase_merge  = true # Allow rebase and merge commits on pull requests
+  allow_squash_merge  = true # Allow squash and merge commits on pull requests - Recommended
+  allow_update_branch = true # Allow updating source branch on pull requests
+  has_discussions     = false # Enable discussions in project's repository
+  has_wiki            = false # Enable wiki in project's repository
+  admins = [
+    # Include people who can release new versions
+    "your-username-here",
+  ]
+  committers = [
+    # Include people who can commit to main / merge changes
+  ]
+  members = [
+    # Include people who can assign/triage tickets
+  ]
+}
+```
 
 ### Pre Transfer Steps
 
