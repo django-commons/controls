@@ -140,7 +140,7 @@ These should be done by the project owner.
 
 - [ ] Transfer the existing repository to the Django Commons organization using the GitHub UI, so old
   information is preserved. See [GitHub docs][gh-docs-transfer-repo].
-    - This step takes time, and therefore it is recommended to do this first.
+    - It takes GitHub a couple minutes to process the move, therefore it is highly recommended to do this step first. This will ensure enough time can pass before moving to the 'import into terraform' step.
 - [ ] (project owner) PyPI project owner must add the Django Commons PyPI Admins (`cunla`, `stormheg`) as owners
   in [PyPI][pypi], and [test-pypi][test-pypi]
 
