@@ -143,6 +143,8 @@ These should be done by the project owner.
     - It takes GitHub a couple minutes to process the move, therefore it is highly recommended to do this step first. This will ensure enough time can pass before moving to the 'import into terraform' step.
 - [ ] (project owner) PyPI project owner must add the Django Commons PyPI Admins (`cunla`, `stormheg`) as owners
   in [PyPI][pypi], and [test-pypi][test-pypi]
+- [ ] Review with the project owner the PyPI and Test PyPI project maintainers - consider removing any inactive
+  maintainers from the project.
 
 ### Make GitHub repository managed by terraform
 
@@ -208,8 +210,8 @@ These should be done by the project owner.
 
 ### Follow up
 
-- [ ] Set a calendar event or reminder for 30 days in the future to remove the previous repository owner from PyPI
-  project (if applicable)
+- [ ] Set a calendar event or reminder for 30 days in the future to check in with the project maintainers to see if they
+  need any help or have any questions.
 
 ## Remove Project Playbook
 
