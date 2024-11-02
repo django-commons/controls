@@ -129,6 +129,8 @@ Assuming the repository name is `repo-name`:
 ### Pre Transfer Steps
 
 - [ ] Check if the repository meets [inbound requirements][3].
+- [ ] Create a pull-request for the release workflow in the repository, example can be
+  found [here][release-gh-workflow]. Note this should not be merged before transfering the repository.
 - [ ] Confirm who will be the admins and maintainers for the repository
 - [ ] Make sure the there are no teams `{repo-name}`, `{repo-name}-admins` and `{repo-name}-committers` in the Django
   Commons organization. Teams can be viewed [here][teams]. The teams will be created by the terraform apply process.
@@ -193,8 +195,7 @@ These should be done by the project owner.
 ### Create new release workflow
 
 - [ ] Repo changes:
-    - [ ] (project owner) Create/Update the release GitHub workflow in the repository, example can be
-      found [here][release-gh-workflow]
+    - [ ] (project owner) Merge pull-request implementing the release workflow (created in the pre-transfer steps).
     - [ ] Under Actions > General > "Fork pull request workflows from outside collaborators", set "Require approval for
       first-time contributors"
 
