@@ -134,6 +134,7 @@ Assuming the repository name is `repo-name`:
 - [ ] Confirm who will be the admins and maintainers for the repository
 - [ ] Make sure the there are no teams `{repo-name}`, `{repo-name}-admins` and `{repo-name}-committers` in the Django
   Commons organization. Teams can be viewed [here][teams]. The teams will be created by the terraform apply process.
+- [ ] Review with project-owner the newly created teams roles, as documented in [the membership repository][team-roles].
 - [ ] [Add repository owner to Django Commons as member](#new-member-playbook) (they'll be added to a team later)
 
 ### Transfer ownership in GitHub, test PyPI and PyPI.
@@ -260,3 +261,5 @@ The expected changes:
 [pypi-publishing]: https://test.pypi.org/manage/project/django-tasks-scheduler/settings/publishing/
 
 [playground-environments]: https://github.com/django-commons/django-commons-playground/settings/environments
+
+[team-roles]: https://github.com/django-commons/membership?tab=readme-ov-file#what-is-each-respository-team-for
