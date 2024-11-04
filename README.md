@@ -129,8 +129,10 @@ Assuming the repository name is `repo-name`:
 ### Pre Transfer Steps
 
 - [ ] Check if the repository meets [inbound requirements][3].
-- [ ] Create a pull-request for the release workflow in the repository, example can be
-  found [here][release-gh-workflow]. Note this should not be merged before transfering the repository.
+- [ ] A PR to add the [release workflow][release-gh-workflow] will be necessary. This can be done either by the repo
+  owner OR the Django commons org admins, but should be done prior to the video call. The decision is up to the repo
+  owner.
+  **The PR should NOT be merged before the video call.**
 - [ ] Confirm who will be the admins and maintainers for the repository
 - [ ] Make sure the there are no teams `{repo-name}`, `{repo-name}-admins` and `{repo-name}-committers` in the Django
   Commons organization. Teams can be viewed [here][teams]. The teams will be created by the terraform apply process.
@@ -143,7 +145,8 @@ These should be done by the project owner.
 
 - [ ] Transfer the existing repository to the Django Commons organization using the GitHub UI, so old
   information is preserved. See [GitHub docs][gh-docs-transfer-repo].
-    - It takes GitHub a couple minutes to process the move, therefore it is highly recommended to do this step first. This will ensure enough time can pass before moving to the 'import into terraform' step.
+    - It takes GitHub a couple minutes to process the move, therefore it is highly recommended to do this step first.
+      This will ensure enough time can pass before moving to the 'import into terraform' step.
 - [ ] (project owner) PyPI project owner must add the Django Commons PyPI Admins (`cunla`, `stormheg`) as owners
   in [PyPI][pypi], and [test-pypi][test-pypi]
 - [ ] Review with the project owner the PyPI and Test PyPI project maintainers - consider removing any inactive
