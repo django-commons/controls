@@ -100,23 +100,61 @@ Django Commons packages.
 
 ## New Project Playbook
 
+Goal: Publish a new release of the project from django-commons repo to PyPI and Test PyPI, using the release workflow.
+
 Assuming the repository name is `repo-name`:
+
+```terraform
+"your-repo-here" = {
+  description = "Your project's description here"
+  allow_merge_commit = true # Allow merge commits on pull requests
+  allow_rebase_merge = true # Allow rebase and merge commits on pull requests
+  allow_squash_merge = true # Allow squash and merge commits on pull requests - Recommended
+  allow_update_branch = true # Allow updating source branch on pull requests
+  has_discussions = false # Enable discussions in project's repository
+  has_wiki = false # Enable wiki in project's repository
+  admins = [
+    # Include people who can release new versions
+    "your-username-here",
+  ]
+  committers = [
+    # Include people who can commit to main / merge changes
+  ]
+  members = [
+    # Include people who can assign/triage tickets
+  ]
+}
+```
 
 ### Pre Transfer Steps
 
 - [ ] Check if the repository meets [inbound requirements][3].
+- [ ] A PR to add the [release workflow][release-gh-workflow] will be necessary. This can be done either by the repo
+  owner OR the Django commons org admins, but should be done prior to the video call. The decision is up to the repo
+  owner.
+  **The PR should NOT be merged before the video call.**
 - [ ] Confirm who will be the admins and maintainers for the repository
 - [ ] Make sure the there are no teams `{repo-name}`, `{repo-name}-admins` and `{repo-name}-committers` in the Django
   Commons organization. Teams can be viewed [here][teams]. The teams will be created by the terraform apply process.
-- [ ] (project owner) PyPI project owner must add the Django Commons PyPI Admins (`cunla`, `stormheg`) as owners in [PyPI][pypi],
-  and [test-pypi][test-pypi]
+- [ ] Review with project-owner the newly created teams roles, as documented in [the membership repository][team-roles].
 - [ ] [Add repository owner to Django Commons as member](#new-member-playbook) (they'll be added to a team later)
-- [ ] (project owner) Transfer the existing repository to the Django Commons organization using the GitHub UI, so old
+
+### Transfer ownership in GitHub, test PyPI and PyPI.
+
+These should be done by the project owner.
+
+- [ ] Transfer the existing repository to the Django Commons organization using the GitHub UI, so old
   information is preserved. See [GitHub docs][gh-docs-transfer-repo].
+    - It takes GitHub a couple minutes to process the move, therefore it is highly recommended to do this step first.
+      This will ensure enough time can pass before moving to the 'import into terraform' step.
+- [ ] (project owner) PyPI project owner must add the Django Commons PyPI Admins (`cunla`, `stormheg`) as owners
+  in [PyPI][pypi], and [test-pypi][test-pypi]
+- [ ] Review with the project owner the PyPI and Test PyPI project maintainers - consider removing any inactive
+  maintainers from the project.
 
-### Post Transfer Steps
+### Make GitHub repository managed by terraform
 
-- [ ] Terraform changes to add project to organization
+- [ ] Terraform changes to add project to organization, should be included in the issue opened to transfer the project.
     - [ ] In [`terraform/production/respositories.tfvars`][2], add the new repository to the `repositories` section:
 
        ```terraform
@@ -148,10 +186,9 @@ Assuming the repository name is `repo-name`:
          }
        }
        ```
-
-    - [ ] Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to
-      be executed.
-      Review the changes and make sure they align with the request.
+    - [ ] Create a pull-request to `main` branch.
+      This will trigger terraform to plan the changes in the organization to be executed.
+      Review the changes and make sure they align with the project maintainer expectations.
     - [ ] Merge the pull request. This will trigger terraform to apply the changes in the organization.
     - The expected changes:
         - [ ] New teams `repo-name`, `repo-name-admins`, `repo-name-committers` with the relevant members based on the
@@ -159,9 +196,10 @@ Assuming the repository name is `repo-name`:
         - [ ] The repository changes are accepted by the project maintainers.
         - [ ] Repository has two environments: `pypi` and `testpypi`, see example [here][playground-environments]
 
+### Create new release workflow
+
 - [ ] Repo changes:
-    - [ ] (project owner) Create/Update the release GitHub workflow in the repository, example can be
-      found [here][release-gh-workflow]
+    - [ ] (project owner) Merge pull-request implementing the release workflow (created in the pre-transfer steps).
     - [ ] Under Actions > General > "Fork pull request workflows from outside collaborators", set "Require approval for
       first-time contributors"
 
@@ -169,9 +207,16 @@ Assuming the repository name is `repo-name`:
     - [ ] Add the release workflow to pypi.org's package publishing (and test.pypi.org's package publishing).
       Example can be found [here][pypi-publishing]
 
+### Release a new version
+
 - [ ] Have the maintainer push a new tag and walk them through the release process
-- [ ] Set a calendar event or reminder for 30 days in the future to remove the previous repository owner from PyPI
-  project (if applicable)
+    - Find the publishing workflow in the Actions tab (Usually  `Publish Python 🐍 distribution 📦 to PyPI`/`release.yml`)
+    - The publishing to pypi job should wait for an approval by a repository admin.
+
+### Follow up
+
+- [ ] Set a calendar event or reminder for 30 days in the future to check in with the project maintainers to see if they
+  need any help or have any questions.
 
 ## Remove Project Playbook
 
@@ -219,3 +264,5 @@ The expected changes:
 [pypi-publishing]: https://test.pypi.org/manage/project/django-tasks-scheduler/settings/publishing/
 
 [playground-environments]: https://github.com/django-commons/django-commons-playground/settings/environments
+
+[team-roles]: https://github.com/django-commons/membership?tab=readme-ov-file#what-is-each-respository-team-for
