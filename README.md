@@ -195,7 +195,7 @@ These should be done by the project owner.
         - [ ] New teams `repo-name`, `repo-name-admins`, `repo-name-committers` with the relevant members based on the
           repository's description.
         - [ ] The repository changes are accepted by the project maintainers.
-        - [ ] Repository has two environments: `pypi` and `testpypi`, see example [here][playground-environments]
+        - [ ] Repository has two environments: `pypi` and `testpypi`, see example [here][best-practice-environments]
 
 ### Create new release workflow
 
@@ -279,11 +279,11 @@ The expected changes:
 
 [gh-docs-transfer-repo]: https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository
 
-[release-gh-workflow]: https://github.com/django-commons/django-commons-playground/blob/main/.github/workflows/release.yml
+[release-gh-workflow]: https://github.com/django-commons/best-practices/blob/main/.github/workflows/release.yml
 
 [pypi-publishing]: https://test.pypi.org/manage/project/django-tasks-scheduler/settings/publishing/
 
-[playground-environments]: https://github.com/django-commons/django-commons-playground/settings/environments
+[best-practice-environments]: https://github.com/django-commons/best-practices/settings/environments
 
 [team-roles]: https://github.com/django-commons/membership?tab=readme-ov-file#what-is-each-respository-team-for
 
