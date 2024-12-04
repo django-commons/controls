@@ -8,6 +8,7 @@ Django Commons packages.
 - [New repository admin](#new-repository-admin-playbook)
 - [New project](#new-project-playbook)
 - [Remove project](#remove-project-playbook)
+- [Project checkin](#project-checkin-playbook)
 
 ## New Member Playbook
 
@@ -215,6 +216,7 @@ These should be done by the project owner.
 
 ### Follow up
 
+- [ ] Add project to [Django Commons Project Checkins doc][project-checkins-doc]
 - [ ] Set a calendar event or reminder for 30 days in the future to check in with the project maintainers to see if they
   need any help or have any questions.
 
@@ -241,6 +243,24 @@ The expected changes:
 - The repository will be removed from the organization.
 - The repository's teams will be removed from the organization.
 
+## Project Checkin Playbook
+
+1. Review [Django Commons Project Checkins doc][project-checkins-doc]
+2. Look for the project's [GitHub discussion for checkins][project-checkins-discussions], if it doesn't exist create one
+3. Review any prior discussion, complete previous action items and prepare next discussion comment
+4. Create a new message, tagging the repository's team that is similar to:
+   ```
+   Hi @REPOSITORY_TEAM! I wanted to take a moment and check in with you about how the transition to Django Commons has been.
+
+   - Have you run into any friction having your project in Django Commons, if so, can you describe them?
+   - Is there anything we can do to help your team or repo out?
+   - Do you have any questions or concerns for us?
+
+   If you'd like to chat with us privately, our email is django-commons-admin@googlegroups.com. Thanks!
+   ```
+5. Update the [Django Commons Project Checkins doc][project-checkins-doc]
+6. Follow-up on any responses from the discussion.
+
 [1]: https://github.com/django-commons/membership/blob/main/terraform/production/org.tfvars
 
 [2]: https://github.com/django-commons/membership/blob/main/terraform/production/repositories.tfvars
@@ -266,3 +286,7 @@ The expected changes:
 [playground-environments]: https://github.com/django-commons/django-commons-playground/settings/environments
 
 [team-roles]: https://github.com/django-commons/membership?tab=readme-ov-file#what-is-each-respository-team-for
+
+[project-checkins-doc]: https://docs.google.com/spreadsheets/d/1MV0IGyS32EY_NtEq67MMYj2bqOv05imF5QP6I1KGhF8/edit?usp=sharing
+
+[project-checkins-discussions]: https://github.com/orgs/django-commons/discussions/categories/check-ins
