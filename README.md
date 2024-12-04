@@ -246,7 +246,7 @@ The expected changes:
 ## Project Checkin Playbook
 
 1. Review [Django Commons Project Checkins doc][project-checkins-doc]
-2. Look for the project's [GitHub discussion for checkins][project-checkins-discussions], it it doesn't exist create one
+2. Look for the project's [GitHub discussion for checkins][project-checkins-discussions], if it doesn't exist create one
 3. Review any prior discussion, complete previous action items and prepare next discussion comment
 4. Create a new message, tagging the repository's team that is similar to:
    ```
