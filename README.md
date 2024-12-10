@@ -42,10 +42,14 @@ Django Commons packages.
        }
      }
    ```
-7. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
+   If there are extra users added in the PR when there shouldn't be, it's possible a user
+   deleted their GitHub account. Check to see if that new user has a GitHub account and
+   confirm they had issued a previous request to join Django Commons. Users who haven't
+   accepted the Code of Conduct should not be invited. 
+8. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
    executed. Review the changes and make sure they align with the request.
-8. Merge the pull request. This will trigger terraform to apply the changes in the organization.
-9. Comment on the issue, thanking the person for joining and reminding them that it helps the
+9. Merge the pull request. This will trigger terraform to apply the changes in the organization.
+10. Comment on the issue, thanking the person for joining and reminding them that it helps the
    organization's reach if they set their membership visibility as public.
 
    > Thank you <NAME> for joining! You'll get an invite email from GitHub. You'll have one
