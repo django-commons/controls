@@ -45,7 +45,7 @@ Django Commons packages.
    If there are extra users added in the PR when there shouldn't be, it's possible a user
    deleted their GitHub account. Check to see if that new user has a GitHub account and
    confirm they had issued a previous request to join Django Commons. Users who haven't
-   accepted the Code of Conduct should not be invited. 
+   accepted the Code of Conduct should not be invited.
 6. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
    executed. Review the changes and make sure they align with the request.
 7. Merge the pull request. This will trigger terraform to apply the changes in the organization.
@@ -152,8 +152,10 @@ These should be done by the project owner.
   information is preserved. See [GitHub docs][gh-docs-transfer-repo].
     - It takes GitHub a couple minutes to process the move, therefore it is highly recommended to do this step first.
       This will ensure enough time can pass before moving to the 'import into terraform' step.
-- [ ] (project owner) PyPI project owner must add the Django Commons PyPI Admins (`cunla`, `stormheg`) as owners
+- [ ] (project owner) PyPI project owner must add one of the Django Commons Admins as owners
   in [PyPI][pypi], and [test-pypi][test-pypi]
+    - [ ] Once the project is owned by a member of the Django Commons PyPI organization, the project can be transferred
+      to the Django Commons PyPI organization from the org page [here][pypi-org].
 - [ ] Review with the project owner the PyPI and Test PyPI project maintainers - consider removing any inactive
   maintainers from the project.
 
@@ -293,3 +295,5 @@ The expected changes:
 [project-checkins-doc]: https://docs.google.com/spreadsheets/d/1MV0IGyS32EY_NtEq67MMYj2bqOv05imF5QP6I1KGhF8/edit?usp=sharing
 
 [project-checkins-discussions]: https://github.com/orgs/django-commons/discussions/categories/check-ins
+
+[pypi-org]: https://pypi.org/manage/organization/django-commons/projects/
