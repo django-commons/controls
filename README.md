@@ -133,7 +133,7 @@ Assuming the repository name is `repo-name`:
 
 ### Pre Transfer Steps
 
-- [ ] Check if the repository meets [inbound requirements][3].
+- [ ] Check if the repository meets [inbound requirements][incoming-requirements].
 - [ ] A PR to add the [release workflow][release-gh-workflow] will be necessary. This can be done either by the repo
   owner OR the Django commons org admins, but should be done prior to the video call. The decision is up to the repo
   owner.
@@ -148,6 +148,8 @@ Assuming the repository name is `repo-name`:
 
 These should be done by the project owner.
 
+- [ ] Invite djangocommons@gmail.com to the [readthedocs project][readthedocs] as a maintainer, so the Django Commons
+  admins can manage the readthedocs project.
 - [ ] Transfer the existing repository to the Django Commons organization using the GitHub UI, so old
   information is preserved. See [GitHub docs][gh-docs-transfer-repo].
     - It takes GitHub a couple minutes to process the move, therefore it is highly recommended to do this step first.
@@ -270,7 +272,7 @@ The expected changes:
 
 [2]: https://github.com/django-commons/membership/blob/main/terraform/production/repositories.tfvars
 
-[3]: https://github.com/django-commons/membership/blob/main/incoming_repo_requirements.md
+[incoming-requirements]: https://github.com/django-commons/membership/blob/main/incoming_repo_requirements.md
 
 [people]: https://github.com/orgs/django-commons/people
 
@@ -297,3 +299,5 @@ The expected changes:
 [project-checkins-discussions]: https://github.com/orgs/django-commons/discussions/categories/check-ins
 
 [pypi-org]: https://pypi.org/manage/organization/django-commons/projects/
+
+[readthedocs]: https://readthedocs.org/
