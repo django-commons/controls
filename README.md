@@ -292,7 +292,7 @@ The expected changes:
 
 [best-practice-environments]: https://github.com/django-commons/best-practices/settings/environments
 
-[team-roles]: https://github.com/django-commons/membership?tab=readme-ov-file#what-is-each-respository-team-for
+[team-roles]: https://github.com/django-commons/membership?tab=readme-ov-file#what-is-each-repository-team-for
 
 [project-checkins-doc]: https://docs.google.com/spreadsheets/d/1MV0IGyS32EY_NtEq67MMYj2bqOv05imF5QP6I1KGhF8/edit?usp=sharing
 
