@@ -138,6 +138,8 @@ Assuming the repository name is `repo-name`:
   owner OR the Django commons org admins, but should be done prior to the video call. The decision is up to the repo
   owner.
   **The PR should NOT be merged before the video call.**
+  - [ ] (if applicable) If the package has a JavaScript component published to npm, the workflow will need to be modified to include
+    publishing to npm using [trusted publishing](https://docs.npmjs.com/trusted-publishers#github-actions-configuration)
 - [ ] Confirm who will be the admins and maintainers for the repository
 - [ ] Make sure the there are no teams `{repo-name}`, `{repo-name}-admins` and `{repo-name}-committers` in the Django
   Commons organization. Teams can be viewed [here][teams]. The teams will be created by the terraform apply process.
@@ -159,6 +161,19 @@ These should be done by the project owner.
     - [ ] Once the project is owned by a member of the Django Commons PyPI organization, the project can be transferred
       to the Django Commons PyPI organization from the org page [here][pypi-org].
 - [ ] Review with the project owner the PyPI and Test PyPI project maintainers - consider removing any inactive
+  maintainers from the project.
+
+## NPM (if applicable)
+
+These steps apply if the package has a JavaScript component published to npm. Otherwise, skip this section.
+
+- [ ] (project owner) current NPM project owner must add one of the Django Commons Admins as maintainer
+  to the NPM package
+  - [ ] Once the project is owned by a member of the Django Commons NPM organization, a new team named after the
+    project should be created in the django-commons NPM organization with and the new maintainers invited as members of that team.
+  - [ ] Through the NPM interface, use the 'add existing package' option to transfer the package by clicking the 'packages'
+  button next to the team in the list of teams in the organization.
+  - [ ] Review with the project owner the NPM package maintainers - consider removing any inactive
   maintainers from the project.
 
 ### Make GitHub repository managed by terraform
@@ -214,12 +229,17 @@ These should be done by the project owner.
 - [ ] PyPI and Test PyPI changes:
     - [ ] Add the release workflow to pypi.org's package publishing (and test.pypi.org's package publishing).
       Example can be found [here][pypi-publishing]
+- [ ] NPM changes (if applicable):
+    - [ ] Add a trusted publisher in the NPM package settings for the GitHub Actions workflow to be able to publish
+      to NPM using trusted publishing. See [trusted publishing docs](https://docs.npmjs.com/trusted-publishers#github-actions-configuration).
 
 ### Release a new version
 
 - [ ] Have the maintainer push a new tag and walk them through the release process
     - Find the publishing workflow in the Actions tab (Usually  `Publish Python 🐍 distribution 📦 to PyPI`/`release.yml`)
     - The publishing to pypi job should wait for an approval by a repository admin.
+- [ ] (If applicable) confirm the NPM package can also be published using the Trusted Publisher
+  - [ ] When successful, consider disallowing NPM access tokens be used to control the package, see [docs.npmjs.org | How to configure maximum security](https://docs.npmjs.com/trusted-publishers#how-to-configure-maximum-security)
 
 ### Follow up
 
