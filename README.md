@@ -102,6 +102,8 @@ Django Commons packages.
 4. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
    executed. Review the changes and make sure they align with the request.
 5. Merge the pull request. This will trigger terraform to apply the changes in the organization.
+6. Add the new admin's email [projects' spreadsheet][project-checkins-doc] under the relevant project
+7. Add the new admin to the relevant [Open Collective project][open-collective] as admin
 
 ## New Project Playbook
 
@@ -243,9 +245,11 @@ These steps apply if the package has a JavaScript component published to npm. Ot
 
 ### Follow up
 
+- [ ] Write the admins' emails in the [Django Commons Project Checkins doc][project-checkins-doc]
 - [ ] Add project to [Django Commons Project Checkins doc][project-checkins-doc]
 - [ ] Set a calendar event or reminder for 30 days in the future to check in with the project maintainers to see if they
   need any help or have any questions.
+- [ ] Cretae a project in the [Open Collective dashboard][open-collective] for the repo, and invite the admins to it.
 
 ## Remove Project Playbook
 
@@ -321,3 +325,5 @@ The expected changes:
 [pypi-org]: https://pypi.org/manage/organization/django-commons/projects/
 
 [readthedocs]: https://readthedocs.org/
+
+[open-collective]: https://opencollective.com/dashboard/django-commons/accounts
