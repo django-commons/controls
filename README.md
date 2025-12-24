@@ -245,8 +245,7 @@ These steps apply if the package has a JavaScript component published to npm. Ot
 
 ### Follow up
 
-- [ ] Write the admins' emails in the [Django Commons Project Checkins doc][project-checkins-doc]
-- [ ] Add project to [Django Commons Project Checkins doc][project-checkins-doc]
+- [ ] Add the project and the admins' emails to the [Django Commons Project Checkins doc][project-checkins-doc]
 - [ ] Set a calendar event or reminder for 30 days in the future to check in with the project maintainers to see if they
   need any help or have any questions.
 - [ ] Create a project in the [Open Collective dashboard][open-collective] for the repo, and invite the admins to it.
