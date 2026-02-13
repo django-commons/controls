@@ -18,7 +18,7 @@ Django Commons packages.
    close the issue, asking for more information they are a
    human and not a spambot. You can explain that by being a member, they can impact repositories immediately.
 3. Add the user's GitHub username to the `members` collection in
-   the [`terraform/production/org.tfvars`][1]
+   the [`terraform/org.tfvars`][1]
    file. Please keep the list sorted alphabetically.
    ```terraform
      members = [
@@ -27,9 +27,9 @@ Django Commons packages.
      ] 
    ```
 4. Review the [failing invitations][failed-invitations], remove members that are in the failing invitations list from
-   the [`terraform/production/org.tfvars`][1].
+   the [`terraform/org.tfvars`][1].
 5. If they requested to be on specific repository team(s), in
-   the [`terraform/production/repositories.tfvars`][2]
+   the [`terraform/repositories.tfvars`][2]
    file, add them to the `members` collection. Please keep the list sorted alphabetically.
    ```terraform 
      repositories = {
@@ -62,7 +62,7 @@ Django Commons packages.
 1. If they are not a real human or not reasonably trustworthy, close the issue, asking for more information if they are
    a human and not a spambot. You can explain that by being a member, they can impact repositories immediately.
 2. For the requested repository's team(s), in
-   the [`terraform/production/repositories.tfvars`][2]
+   the [`terraform/repositories.tfvars`][2]
    file, add them to the `members` collection. Please keep the list sorted alphabetically.
    ```terraform
      repositories = {
@@ -84,7 +84,7 @@ Django Commons packages.
 1. Confirm with all existing admins that they approve changes to the repository admins or committers.
 2. If there's disagreement, close the issue and ask for the admins to come to a consensus
 3. For the requested repository's team(s), in
-   the [`terraform/production/repositories.tfvars`][2]
+   the [`terraform/repositories.tfvars`][2]
    file, for the repository's key under `repositories`, add them to the `admins` collection for the
    correct team. There will be two privileged teams for each repository, `*-admins` and `*-committers`, the user should
    be added to the requested team. Please keep the list sorted alphabetically.
@@ -181,7 +181,7 @@ These steps apply if the package has a JavaScript component published to npm. Ot
 ### Make GitHub repository managed by terraform
 
 - [ ] Terraform changes to add project to organization, should be included in the issue opened to transfer the project.
-    - [ ] In [`terraform/production/respositories.tfvars`][2], add the new repository to the `repositories` section:
+    - [ ] In [`terraform/respositories.tfvars`][2], add the new repository to the `repositories` section:
 
        ```terraform
        repositories = {
@@ -262,7 +262,7 @@ These steps apply if the package has a JavaScript component published to npm. Ot
 ### Terraform changes to remove a project
 
 1. Remove the repository from the `repositories` section
-   in [`terraform/production/respositories.tfvars`][2]
+   in [`terraform/respositories.tfvars`][2]
 2. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
    executed.
    Review the changes and make sure they align with the request.
@@ -291,9 +291,9 @@ The expected changes:
 5. Update the [Django Commons Project Checkins doc][project-checkins-doc]
 6. Follow-up on any responses from the discussion.
 
-[1]: https://github.com/django-commons/membership/blob/main/terraform/production/org.tfvars
+[1]: https://github.com/django-commons/membership/blob/main/terraform/org.tfvars
 
-[2]: https://github.com/django-commons/membership/blob/main/terraform/production/repositories.tfvars
+[2]: https://github.com/django-commons/membership/blob/main/terraform/repositories.tfvars
 
 [incoming-requirements]: https://github.com/django-commons/membership/blob/main/incoming_repo_requirements.md
 
