@@ -4,8 +4,8 @@ This repository contains all the information for administrators to manage
 Django Commons packages.
 
 - [New member](#new-member-playbook)
-- [Team change](#team-change-playbook)
-- [New repository admin](#new-repository-admin-playbook)
+- [Repository Team change](#repository-team-change-playbook)
+- [New Repository Admin or Committer](#new-repository-admin-or-committer-playbook)
 - [New project](#new-project-playbook)
 - [Remove project](#remove-project-playbook)
 - [Project checkin](#project-checkin-playbook)
@@ -256,8 +256,11 @@ These steps apply if the package has a JavaScript component published to npm. Ot
 2. Add new Owner(s) to project in PyPI
 3. [Transfer GitHub repo to new owner or Org][people]
 4. Wait for repository to be transferred out.
-5. Remove all Django Commons members from PyPI project (except any that are staying on from step 2)
-6. (TODO: Determine how to handle transferring a PyPI project out of an organization)
+5. Remove the [django-commons PyPI organization](https://pypi.org/org/django-commons/) from the
+   PyPI project.
+6. (If applicable) Transfer the npm package out of the
+   [django-commons npm organization](https://www.npmjs.com/org/django-commons)
+7. (If applicable) django-commons is removed as maintainer from the ReadTheDocs project
 
 ### Terraform changes to remove a project
 
