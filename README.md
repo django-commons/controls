@@ -9,6 +9,7 @@ Django Commons packages.
 - [New project](#new-project-playbook)
 - [Remove project](#remove-project-playbook)
 - [Project checkin](#project-checkin-playbook)
+- [Project status change](#project-status-change-playbook)
 
 ## New Member Playbook
 
@@ -294,6 +295,44 @@ The expected changes:
 5. Update the [Django Commons Project Checkins doc][project-checkins-doc]
 6. Follow-up on any responses from the discussion.
 
+## Project Status Change Playbook
+
+Goal: Make sure downstream users know when a project's maintenance status changes,
+per the states defined in [Project Maintenance Governance][project-maintenance-governance].
+
+This applies any time a project moves between Healthy, Dormant, Commons Stewardship,
+or Archived — in either direction (e.g. a Dormant project regaining an active maintainer
+counts as a status change too).
+
+1. Confirm the new status with the admin team before communicating anything publicly.
+2. Add or update a status badge in the project's `README.md` reflecting the new state,
+placed alongside the project's other badges (build status, PyPI version, etc.), using
+[shields.io](https://shields.io) static badges:
+   - [ ] Healthy: no badge needed (default state)
+   - [ ] Dormant: [![Maintenance Status: Seeking Maintainer](https://img.shields.io/badge/maintenance-seeking%20maintainer-yellow)][project-maintenance-governance]
+         
+```markdown
+[![Maintenance Status: Seeking Maintainer](https://img.shields.io/badge/maintenance-seeking%20maintainer-yellow)][project-maintenance-governance]
+```
+   - [ ] Commons Stewardship: [![Maintenance Status: Commons Stewardship](https://img.shields.io/badge/maintenance-commons%20stewardship-orange)][project-maintenance-governance]
+
+```markdown
+[![Maintenance Status: Commons Stewardship](https://img.shields.io/badge/maintenance-commons%20stewardship-orange)][project-maintenance-governance]
+```
+   - [ ] Archived: rely on GitHub's built-in archived-repository banner; no custom badge needed
+   Each badge should link back to [Project Maintenance Governance][project-maintenance-governance]
+   so readers can look up what the status means.
+3. Post an update to the project's [GitHub discussion for checkins][project-checkins-discussions] explaining the change and what it means for users.
+4. If moving into Dormant or Commons Stewardship, add a short note near the top of the
+`README.md` pointing users to the [Contributor Trust Ladder][contributor-trust-ladder]
+in case they're interested in stepping up as a maintainer.
+5. If moving into Archived, confirm the repository is archived via GitHub settings
+   (Settings > General > Danger Zone > Archive this repository) so it becomes read-only.
+6. Update the [Django Commons Project Checkins doc][project-checkins-doc] to reflect the new status.
+7. (Optional, if the project has meaningful PyPI traffic) Consider adding a note to the
+PyPI project description pointing to the status change, so users discovering the
+package via PyPI also see it.
+
 [1]: https://github.com/django-commons/membership/blob/main/terraform/org.tfvars
 
 [2]: https://github.com/django-commons/membership/blob/main/terraform/repositories.tfvars
@@ -329,3 +368,7 @@ The expected changes:
 [readthedocs]: https://readthedocs.org/
 
 [open-collective]: https://opencollective.com/dashboard/django-commons/accounts
+
+[project-maintenance-governance]: https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md
+
+[contributor-trust-ladder]: https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md#contributor-trust-ladder-for-dormant-and-archived-projects
