@@ -305,7 +305,19 @@ or Archived — in either direction (e.g. a Dormant project regaining an active 
 counts as a status change too).
 
 1. Confirm the new status with the admin team before communicating anything publicly.
-2. Add or update a status badge in the project's `README.md` reflecting the new state,
+2. Notify the current project maintainer(s) directly, with advance notice, before making
+any of the changes below. This is a heads-up, not a request for permission, but it gives
+the maintainer a chance to raise concerns, ask questions, or flag if the timing is off.
+For example:
+
+   > Hi `@project-maintainer`, the Django Commons Admins team determined that this project has
+   > become dormant because of [reason(s) — e.g. lack of recent commits/releases, an
+   > unaddressed security report, etc.] as per our [Project Maintenance doc](https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md). On [date], we will be making the following
+   > changes so the project reflects this status. If you feel like we should hold off
+   > or have questions, please let us know!
+
+   Give a reasonable window between this notice and the date changes actually go in.
+3. Add or update a status badge in the project's `README.md` reflecting the new state,
 placed alongside the project's other badges (build status, PyPI version, etc.), using
 [shields.io](https://shields.io) static badges:
    - [ ] Healthy: no badge needed (default state)
