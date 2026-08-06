@@ -324,12 +324,12 @@ placed alongside the project's other badges (build status, PyPI version, etc.), 
    - [ ] Dormant: [![Maintenance Status: Seeking Maintainer](https://img.shields.io/badge/maintenance-seeking%20maintainer-yellow)][project-maintenance-governance]
          
 ```markdown
-[![Maintenance Status: Seeking Maintainer](https://img.shields.io/badge/maintenance-seeking%20maintainer-yellow)][project-maintenance-governance]
+[![Maintenance Status: Seeking Maintainer](https://img.shields.io/badge/maintenance-seeking%20maintainer-yellow)][https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md]
 ```
    - [ ] Commons Stewardship: [![Maintenance Status: Commons Stewardship](https://img.shields.io/badge/maintenance-commons%20stewardship-orange)][project-maintenance-governance]
 
 ```markdown
-[![Maintenance Status: Commons Stewardship](https://img.shields.io/badge/maintenance-commons%20stewardship-orange)][project-maintenance-governance]
+[![Maintenance Status: Commons Stewardship](https://img.shields.io/badge/maintenance-commons%20stewardship-orange)][https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md]
 ```
    - [ ] Archived: rely on GitHub's built-in archived-repository banner; no custom badge needed
    Each badge should link back to [Project Maintenance Governance][project-maintenance-governance]
