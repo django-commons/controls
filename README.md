@@ -1,7 +1,6 @@
 # Django Commons Controls
 
-This repository contains all the information for administrators to manage
-Django Commons packages.
+This repository contains all the information for administrators to manage Django Commons packages.
 
 - [New member](#new-member-playbook)
 - [Repository Team change](#repository-team-change-playbook)
@@ -10,16 +9,16 @@ Django Commons packages.
 - [Remove project](#remove-project-playbook)
 - [Project checkin](#project-checkin-playbook)
 - [Project status change](#project-status-change-playbook)
+- [Update admin team](#update-admin-team)
 
 ## New Member Playbook
 
 1. Review new issues/application at https://github.com/django-commons/membership/issues/
 2. If they are not a real human or not reasonably trustworthy
-   ([new member requirements](https://github.com/django-commons/membership/blob/main/member_requirements.md)),
-   close the issue, asking for more information they are a
-   human and not a spambot. You can explain that by being a member, they can impact repositories immediately.
-3. Add the user's GitHub username to the `members` collection in
-   the [`terraform/org.tfvars`][1]
+   ([new member requirements](https://github.com/django-commons/membership/blob/main/member_requirements.md)), close the
+   issue, asking for more information they are a human and not a spambot. You can explain that by being a member, they
+   can impact repositories immediately.
+3. Add the user's GitHub username to the `members` collection in the [`terraform/org.tfvars`][1]
    file. Please keep the list sorted alphabetically.
    ```terraform
      members = [
@@ -29,8 +28,7 @@ Django Commons packages.
    ```
 4. Review the [failing invitations][failed-invitations], remove members that are in the failing invitations list from
    the [`terraform/org.tfvars`][1].
-5. If they requested to be on specific repository team(s), in
-   the [`terraform/repositories.tfvars`][2]
+5. If they requested to be on specific repository team (s), in the [`terraform/repositories.tfvars`][2]
    file, add them to the `members` collection. Please keep the list sorted alphabetically.
    ```terraform 
      repositories = {
@@ -43,15 +41,14 @@ Django Commons packages.
        }
      }
    ```
-   If there are extra users added in the PR when there shouldn't be, it's possible a user
-   deleted their GitHub account. Check to see if that new user has a GitHub account and
-   confirm they had issued a previous request to join Django Commons. Users who haven't
-   accepted the Code of Conduct should not be invited.
+   If there are extra users added in the PR when there shouldn't be, it's possible a user deleted their GitHub account.
+   Check to see if that new user has a GitHub account and confirm they had issued a previous request to join Django
+   Commons. Users who haven't accepted the Code of Conduct should not be invited.
 6. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
    executed. Review the changes and make sure they align with the request.
 7. Merge the pull request. This will trigger terraform to apply the changes in the organization.
-8. Comment on the issue, thanking the person for joining and reminding them that it helps the
-   organization's reach if they set their membership visibility as public.
+8. Comment on the issue, thanking the person for joining and reminding them that it helps the organization's reach if
+   they set their membership visibility as public.
 
    > Thank you <NAME> for joining! You'll get an invite email from GitHub. You'll have one
    > week to accept that. If you don't mind, after accepting, can you set your
@@ -62,8 +59,7 @@ Django Commons packages.
 
 1. If they are not a real human or not reasonably trustworthy, close the issue, asking for more information if they are
    a human and not a spambot. You can explain that by being a member, they can impact repositories immediately.
-2. For the requested repository's team(s), in
-   the [`terraform/repositories.tfvars`][2]
+2. For the requested repository's team (s), in the [`terraform/repositories.tfvars`][2]
    file, add them to the `members` collection. Please keep the list sorted alphabetically.
    ```terraform
      repositories = {
@@ -84,11 +80,10 @@ Django Commons packages.
 
 1. Confirm with all existing admins that they approve changes to the repository admins or committers.
 2. If there's disagreement, close the issue and ask for the admins to come to a consensus
-3. For the requested repository's team(s), in
-   the [`terraform/repositories.tfvars`][2]
-   file, for the repository's key under `repositories`, add them to the `admins` collection for the
-   correct team. There will be two privileged teams for each repository, `*-admins` and `*-committers`, the user should
-   be added to the requested team. Please keep the list sorted alphabetically.
+3. For the requested repository's team (s), in the [`terraform/repositories.tfvars`][2]
+   file, for the repository's key under `repositories`, add them to the `admins` collection for the correct team. There
+   will be two privileged teams for each repository, `*-admins` and `*-committers`, the user should be added to the
+   requested team. Please keep the list sorted alphabetically.
    ```terraform
      repositories = {
        "[REPOSITORY]" = {
@@ -139,10 +134,10 @@ Assuming the repository name is `repo-name`:
 - [ ] Check if the repository meets [inbound requirements][incoming-requirements].
 - [ ] A PR to add the [release workflow][release-gh-workflow] will be necessary. This can be done either by the repo
   owner OR the Django commons org admins, but should be done prior to the video call. The decision is up to the repo
-  owner.
-  **The PR should NOT be merged before the video call.**
-  - [ ] (if applicable) If the package has a JavaScript component published to npm, the workflow will need to be modified to include
-    publishing to npm using [trusted publishing](https://docs.npmjs.com/trusted-publishers#github-actions-configuration)
+  owner. **The PR should NOT be merged before the video call.**
+    - [ ] (if applicable) If the package has a JavaScript component published to npm, the workflow will need to be
+      modified to include publishing to npm
+      using [trusted publishing](https://docs.npmjs.com/trusted-publishers#github-actions-configuration)
 - [ ] Confirm who will be the admins and maintainers for the repository
 - [ ] Make sure the there are no teams `{repo-name}`, `{repo-name}-admins` and `{repo-name}-committers` in the Django
   Commons organization. Teams can be viewed [here][teams]. The teams will be created by the terraform apply process.
@@ -155,12 +150,12 @@ These should be done by the project owner.
 
 - [ ] Invite djangocommons@gmail.com to the [readthedocs project][readthedocs] as a maintainer, so the Django Commons
   admins can manage the readthedocs project.
-- [ ] Transfer the existing repository to the Django Commons organization using the GitHub UI, so old
-  information is preserved. See [GitHub docs][gh-docs-transfer-repo].
+- [ ] Transfer the existing repository to the Django Commons organization using the GitHub UI, so old information is
+  preserved. See [GitHub docs][gh-docs-transfer-repo].
     - It takes GitHub a couple minutes to process the move, therefore it is highly recommended to do this step first.
       This will ensure enough time can pass before moving to the 'import into terraform' step.
-- [ ] (project owner) PyPI project owner must add one of the Django Commons Admins as owners
-  in [PyPI][pypi], and [test-pypi][test-pypi]
+- [ ] (project owner) PyPI project owner must add one of the Django Commons Admins as owners in [PyPI][pypi],
+  and [test-pypi][test-pypi]
     - [ ] Once the project is owned by a member of the Django Commons PyPI organization, the project can be transferred
       to the Django Commons PyPI organization from the org page [here][pypi-org].
 - [ ] Review with the project owner the PyPI and Test PyPI project maintainers - consider removing any inactive
@@ -170,14 +165,15 @@ These should be done by the project owner.
 
 These steps apply if the package has a JavaScript component published to npm. Otherwise, skip this section.
 
-- [ ] (project owner) current NPM project owner must add one of the Django Commons Admins as maintainer
-  to the NPM package
-  - [ ] Once the project is owned by a member of the Django Commons NPM organization, a new team named after the
-    project should be created in the django-commons NPM organization with and the new maintainers invited as members of that team.
-  - [ ] Through the NPM interface, use the 'add existing package' option to transfer the package by clicking the 'packages'
-  button next to the team in the list of teams in the organization.
-  - [ ] Review with the project owner the NPM package maintainers - consider removing any inactive
-  maintainers from the project.
+- [ ] (project owner) current NPM project owner must add one of the Django Commons Admins as maintainer to the NPM
+  package
+    - [ ] Once the project is owned by a member of the Django Commons NPM organization, a new team named after the
+      project should be created in the django-commons NPM organization with and the new maintainers invited as members
+      of that team.
+    - [ ] Through the NPM interface, use the 'add existing package' option to transfer the package by clicking the
+      'packages' button next to the team in the list of teams in the organization.
+    - [ ] Review with the project owner the NPM package maintainers - consider removing any inactive maintainers from
+      the project.
 
 ### Make GitHub repository managed by terraform
 
@@ -212,9 +208,8 @@ These steps apply if the package has a JavaScript component published to npm. Ot
          }
        }
        ```
-    - [ ] Create a pull-request to `main` branch.
-      This will trigger terraform to plan the changes in the organization to be executed.
-      Review the changes and make sure they align with the project maintainer expectations.
+    - [ ] Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to
+      be executed. Review the changes and make sure they align with the project maintainer expectations.
     - [ ] Merge the pull request. This will trigger terraform to apply the changes in the organization.
     - The expected changes:
         - [ ] New teams `repo-name`, `repo-name-admins`, `repo-name-committers` with the relevant members based on the
@@ -230,11 +225,12 @@ These steps apply if the package has a JavaScript component published to npm. Ot
       first-time contributors"
 
 - [ ] PyPI and Test PyPI changes:
-    - [ ] Add the release workflow to pypi.org's package publishing (and test.pypi.org's package publishing).
-      Example can be found [here][pypi-publishing]
+    - [ ] Add the release workflow to pypi.org's package publishing (and test.pypi.org's package publishing). Example
+      can be found [here][pypi-publishing]
 - [ ] NPM changes (if applicable):
-    - [ ] Add a trusted publisher in the NPM package settings for the GitHub Actions workflow to be able to publish
-      to NPM using trusted publishing. See [trusted publishing docs](https://docs.npmjs.com/trusted-publishers#github-actions-configuration).
+    - [ ] Add a trusted publisher in the NPM package settings for the GitHub Actions workflow to be able to publish to
+      NPM using trusted publishing.
+      See [trusted publishing docs](https://docs.npmjs.com/trusted-publishers#github-actions-configuration).
 
 ### Release a new version
 
@@ -242,7 +238,8 @@ These steps apply if the package has a JavaScript component published to npm. Ot
     - Find the publishing workflow in the Actions tab (Usually  `Publish Python 🐍 distribution 📦 to PyPI`/`release.yml`)
     - The publishing to pypi job should wait for an approval by a repository admin.
 - [ ] (If applicable) confirm the NPM package can also be published using the Trusted Publisher
-  - [ ] When successful, consider disallowing NPM access tokens be used to control the package, see [docs.npmjs.org | How to configure maximum security](https://docs.npmjs.com/trusted-publishers#how-to-configure-maximum-security)
+    - [ ] When successful, consider disallowing NPM access tokens be used to control the package,
+      see [docs.npmjs.org | How to configure maximum security](https://docs.npmjs.com/trusted-publishers#how-to-configure-maximum-security)
 
 ### Follow up
 
@@ -254,22 +251,19 @@ These steps apply if the package has a JavaScript component published to npm. Ot
 ## Remove Project Playbook
 
 1. Confirm there's agreement amongst current project maintainers to move project out of Django Commons
-2. Add new Owner(s) to project in PyPI
+2. Add new Owner (s) to project in PyPI
 3. [Transfer GitHub repo to new owner or Org][people]
 4. Wait for repository to be transferred out.
-5. Remove the [django-commons PyPI organization](https://pypi.org/org/django-commons/) from the
-   PyPI project.
+5. Remove the [django-commons PyPI organization](https://pypi.org/org/django-commons/) from the PyPI project.
 6. (If applicable) Transfer the npm package out of the
    [django-commons npm organization](https://www.npmjs.com/org/django-commons)
 7. (If applicable) django-commons is removed as maintainer from the ReadTheDocs project
 
 ### Terraform changes to remove a project
 
-1. Remove the repository from the `repositories` section
-   in [`terraform/respositories.tfvars`][2]
+1. Remove the repository from the `repositories` section in [`terraform/respositories.tfvars`][2]
 2. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
-   executed.
-   Review the changes and make sure they align with the request.
+   executed. Review the changes and make sure they align with the request.
 3. Merge the pull request. This will trigger terraform to apply the changes in the organization.
 
 The expected changes:
@@ -338,6 +332,18 @@ in case they're interested in stepping up as a maintainer.
 [1]: https://github.com/django-commons/membership/blob/main/terraform/org.tfvars
 
 [2]: https://github.com/django-commons/membership/blob/main/terraform/repositories.tfvars
+
+[1password]: https://djangocommons.1password.com/
+
+[google-drive]: https://drive.google.com/drive/folders/1N61xE5_f0ePijMm0joT1SeLzDlsXGjKD?usp=sharing
+
+[open-collective]: https://opencollective.com/django-commons
+
+[forum-moderators]: https://forum.djangoproject.com/t/extending-the-forum-for-django-commons/41040
+
+[pypi-org]: https://pypi.org/org/django-commons/
+
+[teams-page]: https://github.com/django-commons/membership/blob/main/docs/team.md
 
 [incoming-requirements]: https://github.com/django-commons/membership/blob/main/incoming_repo_requirements.md
 
