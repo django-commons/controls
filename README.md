@@ -312,7 +312,7 @@ For example:
 
    > Hi `@project-maintainer`, the Django Commons Admins team determined that this project has
    > become dormant because of [reason(s) — e.g. lack of recent commits/releases, an
-   > unaddressed security report, etc.] as per our [Project Maintenance doc](https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md). On [date], we will be making the following
+   > unaddressed security report, etc.] as per our [Project Maintenance doc][project-maintenance-governance]. On [date], we will be making the following
    > changes so the project reflects this status. If you feel like we should hold off
    > or have questions, please let us know!
 
@@ -322,28 +322,18 @@ placed alongside the project's other badges (build status, PyPI version, etc.), 
 [shields.io](https://shields.io) static badges:
    - [ ] Healthy: no badge needed (default state)
    - [ ] Dormant: [![Maintenance Status: Seeking Maintainer](https://img.shields.io/badge/maintenance-seeking%20maintainer-yellow)][project-maintenance-governance]
-         
-```markdown
-[![Maintenance Status: Seeking Maintainer](https://img.shields.io/badge/maintenance-seeking%20maintainer-yellow)][https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md]
-```
    - [ ] Commons Stewardship: [![Maintenance Status: Commons Stewardship](https://img.shields.io/badge/maintenance-commons%20stewardship-orange)][project-maintenance-governance]
-
-```markdown
-[![Maintenance Status: Commons Stewardship](https://img.shields.io/badge/maintenance-commons%20stewardship-orange)][https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md]
-```
    - [ ] Archived: rely on GitHub's built-in archived-repository banner; no custom badge needed
+
    Each badge should link back to [Project Maintenance Governance][project-maintenance-governance]
    so readers can look up what the status means.
-3. Post an update to the project's [GitHub discussion for checkins][project-checkins-discussions] explaining the change and what it means for users.
-4. If moving into Dormant or Commons Stewardship, add a short note near the top of the
+4. Post an update to the project's [GitHub discussion for checkins][project-checkins-discussions] explaining the change and what it means for users.
+5. If moving into Dormant or Commons Stewardship, add a short note near the top of the
 `README.md` pointing users to the [Contributor Trust Ladder][contributor-trust-ladder]
 in case they're interested in stepping up as a maintainer.
-5. If moving into Archived, confirm the repository is archived via GitHub settings
+6. If moving into Archived, confirm the repository is archived via GitHub settings
    (Settings > General > Danger Zone > Archive this repository) so it becomes read-only.
-6. Update the [Django Commons Project Checkins doc][project-checkins-doc] to reflect the new status.
-7. (Optional, if the project has meaningful PyPI traffic) Consider adding a note to the
-PyPI project description pointing to the status change, so users discovering the
-package via PyPI also see it.
+7. Update the [Django Commons Project Checkins doc][project-checkins-doc] to reflect the new status.
 
 [1]: https://github.com/django-commons/membership/blob/main/terraform/org.tfvars
 
