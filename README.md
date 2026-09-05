@@ -8,6 +8,7 @@ This repository contains all the information for administrators to manage Django
 - [New project](#new-project-playbook)
 - [Remove project](#remove-project-playbook)
 - [Project checkin](#project-checkin-playbook)
+- [Project status change](#project-status-change-playbook)
 - [Update admin team](#update-admin-team)
 
 ## New Member Playbook
@@ -288,19 +289,45 @@ The expected changes:
 5. Update the [Django Commons Project Checkins doc][project-checkins-doc]
 6. Follow-up on any responses from the discussion.
 
-## Update admin team
+## Project Status Change Playbook
 
-The following areas need to be updated with the added/removed admin:
+Goal: Make sure downstream users know when a project's maintenance status changes,
+per the states defined in [Project Maintenance Governance][project-maintenance-governance].
 
-- GitHub organization via [membership repo][1]
-- [1Password organization][1password]
-- django-commons-admins Google Group
-- Access to [Google Drive folder][google-drive]
-- [Open Collective team][open-collective]
-- [Optional] Update moderators for Packages area of forum [here][forum-moderators]
-- [Optional] Update [PyPI organization][pypi-org]
-- Update team's page on [django-commons website][teams-page]
+This applies any time a project moves between Healthy, Dormant, Commons Stewardship,
+or Archived — in either direction (e.g. a Dormant project regaining an active maintainer
+counts as a status change too).
 
+1. Confirm the new status with the admin team before communicating anything publicly.
+2. Notify the current project maintainer(s) directly, with advance notice, before making
+any of the changes below. This is a heads-up, not a request for permission, but it gives
+the maintainer a chance to raise concerns, ask questions, or flag if the timing is off.
+For example:
+
+   > Hi `@project-maintainer`, the Django Commons Admins team determined that this project has
+   > become dormant because of [reason(s) — e.g. lack of recent commits/releases, an
+   > unaddressed security report, etc.] as per our [Project Maintenance doc][project-maintenance-governance]. On [date], we will be making the following
+   > changes so the project reflects this status. If you feel like we should hold off
+   > or have questions, please let us know!
+
+   Give a reasonable window between this notice and the date changes actually go in.
+3. Add or update a status badge in the project's `README.md` reflecting the new state,
+placed alongside the project's other badges (build status, PyPI version, etc.), using
+[shields.io](https://shields.io) static badges:
+   - [ ] Healthy: no badge needed (default state)
+   - [ ] Dormant: [![Maintenance Status: Seeking Maintainer](https://img.shields.io/badge/maintenance-seeking%20maintainer-yellow)][project-maintenance-governance]
+   - [ ] Commons Stewardship: [![Maintenance Status: Commons Stewardship](https://img.shields.io/badge/maintenance-commons%20stewardship-orange)][project-maintenance-governance]
+   - [ ] Archived: rely on GitHub's built-in archived-repository banner; no custom badge needed
+
+   Each badge should link back to [Project Maintenance Governance][project-maintenance-governance]
+   so readers can look up what the status means.
+4. Post an update to the project's [GitHub discussion for checkins][project-checkins-discussions] explaining the change and what it means for users.
+5. If moving into Dormant or Commons Stewardship, add a short note near the top of the
+`README.md` pointing users to the [Contributor Trust Ladder][contributor-trust-ladder]
+in case they're interested in stepping up as a maintainer.
+6. If moving into Archived, confirm the repository is archived via GitHub settings
+   (Settings > General > Danger Zone > Archive this repository) so it becomes read-only.
+7. Update the [Django Commons Project Checkins doc][project-checkins-doc] to reflect the new status.
 
 [1]: https://github.com/django-commons/membership/blob/main/terraform/org.tfvars
 
@@ -349,3 +376,7 @@ The following areas need to be updated with the added/removed admin:
 [readthedocs]: https://readthedocs.org/
 
 [open-collective]: https://opencollective.com/dashboard/django-commons/accounts
+
+[project-maintenance-governance]: https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md
+
+[contributor-trust-ladder]: https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md#contributor-trust-ladder-for-dormant-and-archived-projects
