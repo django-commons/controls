@@ -144,11 +144,11 @@ Assuming the repository name is `repo-name`:
 - [ ] Review with project-owner the newly created teams roles, as documented in [the membership repository][team-roles].
 - [ ] [Add repository owner to Django Commons as member](#new-member-playbook) (they'll be added to a team later)
 
-### Transfer ownership in ReadTheDocs, GitHub, test PyPI and PyPI.
+### Transfer ownership in Read the Docs, GitHub, test PyPI and PyPI.
 
 These should be done by the project owner.
 
-- [ ] **ReadTheDocs** Invite djangocommons@gmail.com to the [readthedocs project][readthedocs] as a maintainer, so the
+- [ ] **Read the Docs** Invite djangocommons@gmail.com to the [readthedocs project][readthedocs] as a maintainer, so the
   Django Commons admins can manage the readthedocs project.
 - [ ] **GitHub** Transfer the existing repository to the Django Commons organization using the GitHub UI, so old
   information is preserved. See [GitHub docs][gh-docs-transfer-repo].
@@ -244,7 +244,7 @@ These should be done by the project owner.
 5. Remove the [django-commons PyPI organization](https://pypi.org/org/django-commons/) from the PyPI project.
 6. (If applicable) Transfer the npm package out of the
    [django-commons npm organization](https://www.npmjs.com/org/django-commons)
-7. (If applicable) django-commons is removed as maintainer from the ReadTheDocs project
+7. (If applicable) django-commons is removed as maintainer from the Read the Docs project
 
 ### OpenTofu changes to remove a project
 
