@@ -106,7 +106,7 @@ This repository contains all the information for administrators to manage Django
    executed. Review the changes and make sure they align with the request.
 5. Merge the pull request. This will trigger terraform to apply the changes in the organization.
 6. Add the new admin's email [projects' spreadsheet][project-checkins-doc] under the relevant project
-7. Add the new admin to the relevant [Open Collective project][open-collective] as admin
+7. Add the new admin to the relevant [Open Collective project][open-collective-dashboard] as admin
 
 ## New Project Playbook
 
@@ -253,7 +253,7 @@ These steps apply if the package has a JavaScript component published to npm. Ot
 - [ ] Add the project and the admins' emails to the [Django Commons Project Checkins doc][project-checkins-doc]
 - [ ] Set a calendar event or reminder for 30 days in the future to check in with the project maintainers to see if they
   need any help or have any questions.
-- [ ] Create a project in the [Open Collective dashboard][open-collective] for the repo, and invite the admins to it.
+- [ ] Create a project in the [Open Collective dashboard][open-collective-dashboard] for the repo, and invite the admins to it.
 
 ## Remove Project Playbook
 
@@ -338,7 +338,7 @@ in case they're interested in stepping up as a maintainer.
 
 ## Open Collective Setup Playbook
 
-- [ ] Create a project for the repository in the [Open Collective dashboard][open-collective] and invite the
+- [ ] Create a project for the repository in the [Open Collective dashboard][open-collective-dashboard] and invite the
   repository's admins to it as admins.
 - [ ] Share the [Open Collective guide][open-collective-guide] with the repository's admins.
 - [ ] The repository's admins post answers to the following in the repository's
@@ -371,8 +371,6 @@ in case they're interested in stepping up as a maintainer.
 [open-collective]: https://opencollective.com/django-commons
 
 [forum-moderators]: https://forum.djangoproject.com/t/extending-the-forum-for-django-commons/41040
-
-[pypi-org]: https://pypi.org/org/django-commons/
 
 [teams-page]: https://github.com/django-commons/membership/blob/main/docs/team.md
 
@@ -410,7 +408,7 @@ in case they're interested in stepping up as a maintainer.
 
 [readthedocs]: https://readthedocs.org/
 
-[open-collective]: https://opencollective.com/dashboard/django-commons/accounts
+[open-collective-dashboard]: https://opencollective.com/dashboard/django-commons/accounts
 
 [project-maintenance-governance]: https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md
 
