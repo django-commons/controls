@@ -313,21 +313,84 @@ For example:
    Give a reasonable window between this notice and the date changes actually go in.
 3. Add or update a status badge in the project's `README.md` reflecting the new state,
 placed alongside the project's other badges (build status, PyPI version, etc.), using
-[shields.io](https://shields.io) static badges:
+[shields.io](https://shields.io) static badges. Badges are read-only indicators, not
+links people are expected to click, so the actual CTA is in the
+"Looking to Contribute?" section in step 5, not on the badge itself:
    - [ ] Healthy: no badge needed (default state)
-   - [ ] Dormant: [![Maintenance Status: Seeking Maintainer](https://img.shields.io/badge/maintenance-seeking%20maintainer-yellow)][project-maintenance-governance]
-   - [ ] Commons Stewardship: [![Maintenance Status: Commons Stewardship](https://img.shields.io/badge/maintenance-commons%20stewardship-orange)][project-maintenance-governance]
+   - [ ] Dormant: [![Maintainers Wanted](https://img.shields.io/badge/maintainers-wanted-yellow)][project-maintenance-governance]
+   - [ ] Commons Stewardship: [![Maintainers Wanted](https://img.shields.io/badge/maintainers-wanted-orange)][project-maintenance-governance]
    - [ ] Archived: rely on GitHub's built-in archived-repository banner; no custom badge needed
 
    Each badge should link back to [Project Maintenance Governance][project-maintenance-governance]
    so readers can look up what the status means.
 4. Post an update to the project's [GitHub discussion for checkins][project-checkins-discussions] explaining the change and what it means for users.
-5. If moving into Dormant or Commons Stewardship, add a short note near the top of the
-`README.md` pointing users to the [Contributor Trust Ladder][contributor-trust-ladder]
-in case they're interested in stepping up as a maintainer.
+5. For non-active projects (Dormant, Commons Stewardship, Archived), add a
+"Looking to Contribute?" section to the project's `README.md` explaining what kind
+of help it needs and how to get involved, with content that depends on its
+current state:
+
+   For active/Healthy projects, adding this section is up to the admin's
+   discretion rather than a required step, since a project may already cover this
+   in its own `CONTRIBUTING.md` or elsewhere.
+
+   **Healthy** (optional):
+   ```markdown
+   ## Looking to Contribute?
+
+   This project is actively maintained. Check out [CONTRIBUTING.md](./CONTRIBUTING.md)
+   for how to get involved, or take a look at [open issues](../../issues) to find
+   something to work on.
+   ```
+
+   **Dormant:**
+   ```markdown
+   ## Looking to Contribute?
+
+   This project doesn't have an active maintainer right now. We're looking for
+   someone to help keep it going. If that sounds like you, take a look at the
+   [Contributor Trust Ladder][contributor-trust-ladder] to see how to get involved,
+   or reach out to the Django Commons admins.
+   ```
+
+   **Commons Stewardship:**
+   ```markdown
+   ## Looking to Contribute?
+
+   Django Commons admins are currently keeping this project's lights on with minor
+   releases, but it needs a dedicated maintainer to really thrive. If you're
+   interested in taking it over, see the [Contributor Trust Ladder][contributor-trust-ladder]
+   for how that works.
+   ```
+
+   **Archived:**
+   ```markdown
+   ## Looking to Contribute?
+
+   This project is archived and is no longer accepting contributions in its current
+   form. If you're interested in reviving it, reach out to the Django Commons admins
+   to talk about what that would look like. See
+   [Project Maintenance Governance][project-maintenance-governance] for details.
+   ```
 6. If moving into Archived, confirm the repository is archived via GitHub settings
    (Settings > General > Danger Zone > Archive this repository) so it becomes read-only.
 7. Update the [Django Commons Project Checkins doc][project-checkins-doc] to reflect the new status.
+8. Add a note to the PyPI project description or metadata pointing to the status
+change, per [PEP 792][pep-792], so users discovering the package via PyPI also see
+it. This applies to all projects moving into a non-active state. This requires cutting a release (a no-op release is
+fine if there's no other code change) for the metadata update to take effect.
+
+## Update admin team
+
+The following areas need to be updated with the added/removed admin:
+
+- GitHub organization via [membership repo][1]
+- [1Password organization][1password]
+- django-commons-admins Google Group
+- Access to [Google Drive folder][google-drive]
+- [Open Collective team][open-collective]
+- [Optional] Update moderators for Packages area of forum [here][forum-moderators]
+- [Optional] Update [PyPI organization][pypi-org]
+- Update team's page on [django-commons website][teams-page]
 
 [1]: https://github.com/django-commons/membership/blob/main/terraform/org.tfvars
 
@@ -380,3 +443,5 @@ in case they're interested in stepping up as a maintainer.
 [project-maintenance-governance]: https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md
 
 [contributor-trust-ladder]: https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md#contributor-trust-ladder-for-dormant-and-archived-projects
+
+[pep-792]: https://peps.python.org/pep-0792/
