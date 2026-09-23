@@ -44,9 +44,9 @@ This repository contains all the information for administrators to manage Django
    If there are extra users added in the PR when there shouldn't be, it's possible a user deleted their GitHub account.
    Check to see if that new user has a GitHub account and confirm they had issued a previous request to join Django
    Commons. Users who haven't accepted the Code of Conduct should not be invited.
-6. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
+6. Create a pull-request to `main` branch. This will trigger OpenTofu to plan the changes in the organization to be
    executed. Review the changes and make sure they align with the request.
-7. Merge the pull request. This will trigger terraform to apply the changes in the organization.
+7. Merge the pull request. This will trigger OpenTofu to apply the changes in the organization.
 8. Comment on the issue, thanking the person for joining and reminding them that it helps the organization's reach if
    they set their membership visibility as public.
 
@@ -72,9 +72,9 @@ This repository contains all the information for administrators to manage Django
        }
      }
    ```
-3. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
+3. Create a pull-request to `main` branch. This will trigger OpenTofu to plan the changes in the organization to be
    executed. Review the changes and make sure they align with the request.
-4. Merge the pull request. This will trigger terraform to apply the changes in the organization.
+4. Merge the pull request. This will trigger OpenTofu to apply the changes in the organization.
 
 ## New Repository Admin or Committer Playbook
 
@@ -95,9 +95,9 @@ This repository contains all the information for administrators to manage Django
        }
      }
    ```
-4. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
+4. Create a pull-request to `main` branch. This will trigger OpenTofu to plan the changes in the organization to be
    executed. Review the changes and make sure they align with the request.
-5. Merge the pull request. This will trigger terraform to apply the changes in the organization.
+5. Merge the pull request. This will trigger OpenTofu to apply the changes in the organization.
 6. Add the new admin's email [projects' spreadsheet][project-checkins-doc] under the relevant project
 7. Add the new admin to the relevant [Open Collective project][open-collective] as admin
 
@@ -140,33 +140,32 @@ Assuming the repository name is `repo-name`:
       using [trusted publishing](https://docs.npmjs.com/trusted-publishers#github-actions-configuration)
 - [ ] Confirm who will be the admins and maintainers for the repository
 - [ ] Make sure the there are no teams `{repo-name}`, `{repo-name}-admins` and `{repo-name}-committers` in the Django
-  Commons organization. Teams can be viewed [here][teams]. The teams will be created by the terraform apply process.
+  Commons organization. Teams can be viewed [here][teams]. The teams will be created by the opentofu apply process.
 - [ ] Review with project-owner the newly created teams roles, as documented in [the membership repository][team-roles].
 - [ ] [Add repository owner to Django Commons as member](#new-member-playbook) (they'll be added to a team later)
 
-### Transfer ownership in GitHub, test PyPI and PyPI.
+### Transfer ownership in Read the Docs, GitHub, test PyPI and PyPI.
 
 These should be done by the project owner.
 
-- [ ] Invite djangocommons@gmail.com to the [readthedocs project][readthedocs] as a maintainer, so the Django Commons
-  admins can manage the readthedocs project.
-- [ ] Transfer the existing repository to the Django Commons organization using the GitHub UI, so old information is
-  preserved. See [GitHub docs][gh-docs-transfer-repo].
+- [ ] **Read the Docs** Invite djangocommons@gmail.com to the [readthedocs project][readthedocs] as a maintainer, so the
+  Django Commons admins can manage the readthedocs project.
+- [ ] **GitHub** Transfer the existing repository to the Django Commons organization using the GitHub UI, so old
+  information is preserved. See [GitHub docs][gh-docs-transfer-repo].
     - It takes GitHub a couple minutes to process the move, therefore it is highly recommended to do this step first.
-      This will ensure enough time can pass before moving to the 'import into terraform' step.
-- [ ] (project owner) PyPI project owner must add one of the Django Commons Admins as owners in [PyPI][pypi],
-  and [test-pypi][test-pypi]
-    - [ ] Once the project is owned by a member of the Django Commons PyPI organization, the project can be transferred
-      to the Django Commons PyPI organization from the org page [here][pypi-org].
-- [ ] Review with the project owner the PyPI and Test PyPI project maintainers - consider removing any inactive
-  maintainers from the project.
+      This will ensure enough time can pass before moving to the 'import into OpenTofu' step.
+- [ ] **PyPI** tasks (by project owner):
+    - [ ] PyPI project owner must add one of the Django Commons Admins as owners in [PyPI][pypi],
+      and [test-pypi][test-pypi]
+    - [ ] Review with the project owner the PyPI and Test PyPI project maintainers - consider removing any inactive
+      maintainers from the project.
+    - [ ] Add the release workflow to pypi.org's package publishing (and test.pypi.org's package publishing). Example
+      can be found [here][pypi-publishing]
+- [ ] **PyPI** Once the project is owned by a member of the Django Commons PyPI organization, the project can be
+  transferred to the Django Commons PyPI organization from the org page [here][pypi-org].
 
-## NPM (if applicable)
-
-These steps apply if the package has a JavaScript component published to npm. Otherwise, skip this section.
-
-- [ ] (project owner) current NPM project owner must add one of the Django Commons Admins as maintainer to the NPM
-  package
+- [ ] **NPM** tasks (by project owner. These steps apply if the package has a JavaScript component published to npm.
+  Otherwise, skip this section.):
     - [ ] Once the project is owned by a member of the Django Commons NPM organization, a new team named after the
       project should be created in the django-commons NPM organization with and the new maintainers invited as members
       of that team.
@@ -174,10 +173,13 @@ These steps apply if the package has a JavaScript component published to npm. Ot
       'packages' button next to the team in the list of teams in the organization.
     - [ ] Review with the project owner the NPM package maintainers - consider removing any inactive maintainers from
       the project.
+    - [ ] Add a trusted publisher in the NPM package settings for the GitHub Actions workflow to be able to publish to
+      NPM using trusted publishing. See [trusted publishing docs](https://docs.npmjs.com/trusted-publishers#github-actions-configuration).
 
-### Make GitHub repository managed by terraform
 
-- [ ] Terraform changes to add project to organization, should be included in the issue opened to transfer the project.
+### Make GitHub repository managed by OpenTofu
+
+- [ ] opentofu changes to add project to organization, should be included in the issue opened to transfer the project.
     - [ ] In [`terraform/respositories.tfvars`][2], add the new repository to the `repositories` section:
 
        ```terraform
@@ -208,29 +210,14 @@ These steps apply if the package has a JavaScript component published to npm. Ot
          }
        }
        ```
-    - [ ] Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to
+    - [ ] Create a pull-request to `main` branch. This will trigger OpenTofu to plan the changes in the organization to
       be executed. Review the changes and make sure they align with the project maintainer expectations.
-    - [ ] Merge the pull request. This will trigger terraform to apply the changes in the organization.
+    - [ ] Merge the pull request. This will trigger OpenTofu to apply the changes in the organization.
     - The expected changes:
         - [ ] New teams `repo-name`, `repo-name-admins`, `repo-name-committers` with the relevant members based on the
           repository's description.
         - [ ] The repository changes are accepted by the project maintainers.
         - [ ] Repository has two environments: `pypi` and `testpypi`, see example [here][best-practice-environments]
-
-### Create new release workflow
-
-- [ ] Repo changes:
-    - [ ] (project owner) Merge pull-request implementing the release workflow (created in the pre-transfer steps).
-    - [ ] Under Actions > General > "Fork pull request workflows from outside collaborators", set "Require approval for
-      first-time contributors"
-
-- [ ] PyPI and Test PyPI changes:
-    - [ ] Add the release workflow to pypi.org's package publishing (and test.pypi.org's package publishing). Example
-      can be found [here][pypi-publishing]
-- [ ] NPM changes (if applicable):
-    - [ ] Add a trusted publisher in the NPM package settings for the GitHub Actions workflow to be able to publish to
-      NPM using trusted publishing.
-      See [trusted publishing docs](https://docs.npmjs.com/trusted-publishers#github-actions-configuration).
 
 ### Release a new version
 
@@ -257,14 +244,14 @@ These steps apply if the package has a JavaScript component published to npm. Ot
 5. Remove the [django-commons PyPI organization](https://pypi.org/org/django-commons/) from the PyPI project.
 6. (If applicable) Transfer the npm package out of the
    [django-commons npm organization](https://www.npmjs.com/org/django-commons)
-7. (If applicable) django-commons is removed as maintainer from the ReadTheDocs project
+7. (If applicable) django-commons is removed as maintainer from the Read the Docs project
 
-### Terraform changes to remove a project
+### OpenTofu changes to remove a project
 
 1. Remove the repository from the `repositories` section in [`terraform/respositories.tfvars`][2]
-2. Create a pull-request to `main` branch. This will trigger terraform to plan the changes in the organization to be
+2. Create a pull-request to `main` branch. This will trigger OpenTofu to plan the changes in the organization to be
    executed. Review the changes and make sure they align with the request.
-3. Merge the pull request. This will trigger terraform to apply the changes in the organization.
+3. Merge the pull request. This will trigger OpenTofu to apply the changes in the organization.
 
 The expected changes:
 
@@ -299,34 +286,38 @@ or Archived — in either direction (e.g. a Dormant project regaining an active 
 counts as a status change too).
 
 1. Confirm the new status with the admin team before communicating anything publicly.
-2. Notify the current project maintainer(s) directly, with advance notice, before making
-any of the changes below. This is a heads-up, not a request for permission, but it gives
-the maintainer a chance to raise concerns, ask questions, or flag if the timing is off.
-For example:
+2. Notify the current project maintainer (s) directly, with advance notice, before making
+   any of the changes below. This is a heads-up, not a request for permission, but it gives
+   the maintainer a chance to raise concerns, ask questions, or flag if the timing is off.
+   For example:
 
    > Hi `@project-maintainer`, the Django Commons Admins team determined that this project has
-   > become dormant because of [reason(s) — e.g. lack of recent commits/releases, an
-   > unaddressed security report, etc.] as per our [Project Maintenance doc][project-maintenance-governance]. On [date], we will be making the following
+   > become dormant because of [reason (s) — e.g. lack of recent commits/releases, an
+   > unaddressed security report, etc.] as per our [Project Maintenance doc][project-maintenance-governance]. On [date],
+   we will be making the following
    > changes so the project reflects this status. If you feel like we should hold off
    > or have questions, please let us know!
 
    Give a reasonable window between this notice and the date changes actually go in.
 3. Add or update a status badge in the project's `README.md` reflecting the new state,
-placed alongside the project's other badges (build status, PyPI version, etc.), using
-[shields.io](https://shields.io) static badges:
-   - [ ] Healthy: no badge needed (default state)
-   - [ ] Dormant: [![Maintenance Status: Seeking Maintainer](https://img.shields.io/badge/maintenance-seeking%20maintainer-yellow)][project-maintenance-governance]
-   - [ ] Commons Stewardship: [![Maintenance Status: Commons Stewardship](https://img.shields.io/badge/maintenance-commons%20stewardship-orange)][project-maintenance-governance]
-   - [ ] Archived: rely on GitHub's built-in archived-repository banner; no custom badge needed
+   placed alongside the project's other badges (build status, PyPI version, etc.), using
+   [shields.io](https://shields.io) static badges:
+    - [ ] Healthy: no badge needed (default state)
+    - [ ] 
+      Dormant: [![Maintenance Status: Seeking Maintainer](https://img.shields.io/badge/maintenance-seeking%20maintainer-yellow)][project-maintenance-governance]
+    - [ ] Commons
+      Stewardship: [![Maintenance Status: Commons Stewardship](https://img.shields.io/badge/maintenance-commons%20stewardship-orange)][project-maintenance-governance]
+    - [ ] Archived: rely on GitHub's built-in archived-repository banner; no custom badge needed
 
    Each badge should link back to [Project Maintenance Governance][project-maintenance-governance]
    so readers can look up what the status means.
-4. Post an update to the project's [GitHub discussion for checkins][project-checkins-discussions] explaining the change and what it means for users.
+4. Post an update to the project's [GitHub discussion for checkins][project-checkins-discussions] explaining the change
+   and what it means for users.
 5. If moving into Dormant or Commons Stewardship, add a short note near the top of the
-`README.md` pointing users to the [Contributor Trust Ladder][contributor-trust-ladder]
-in case they're interested in stepping up as a maintainer.
-6. If moving into Archived, confirm the repository is archived via GitHub settings
-   (Settings > General > Danger Zone > Archive this repository) so it becomes read-only.
+   `README.md` pointing users to the [Contributor Trust Ladder][contributor-trust-ladder]
+   in case they're interested in stepping up as a maintainer.
+6. If moving into Archived, confirm the repository is archived via GitHub settings (Settings > General > Danger Zone >
+   Archive this repository) so it becomes read-only.
 7. Update the [Django Commons Project Checkins doc][project-checkins-doc] to reflect the new status.
 
 [1]: https://github.com/django-commons/membership/blob/main/terraform/org.tfvars
