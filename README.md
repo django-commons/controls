@@ -10,6 +10,13 @@ This repository contains all the information for administrators to manage Django
 - [Project checkin](#project-checkin-playbook)
 - [Project status change](#project-status-change-playbook)
 - [Update admin team](#update-admin-team)
+<<<<<<< Updated upstream
+||||||| Stash base
+- [Generate public meeting notes](#generate-public-meeting-notes)
+=======
+- [Open Collective setup](#open-collective-setup-playbook)
+- [Generate public meeting notes](#generate-public-meeting-notes)
+>>>>>>> Stashed changes
 
 ## New Member Playbook
 
@@ -329,6 +336,30 @@ in case they're interested in stepping up as a maintainer.
    (Settings > General > Danger Zone > Archive this repository) so it becomes read-only.
 7. Update the [Django Commons Project Checkins doc][project-checkins-doc] to reflect the new status.
 
+## Open Collective Setup Playbook
+
+- [ ] Create a project for the repository in the [Open Collective dashboard][open-collective] and invite the
+  repository's admins to it as admins.
+- [ ] Share the [Open Collective guide][open-collective-guide] with the repository's admins.
+- [ ] The repository's admins post answers to the following in the repository's
+  [GitHub discussion for checkins][project-checkins-discussions]:
+    - [ ] What the funding is for
+    - [ ] Who can receive funding
+    - [ ] How funding is divided
+- [ ] Review the answers. Eligibility and division must be objective so the Django Commons Admins can settle
+  disputes.
+- [ ] Review the project info at `https://opencollective.com/dashboard/<repository>/info`:
+    - [ ] Logo is set. If they need one, ping [@django-commons/designers][designers].
+    - [ ] Short title is set
+    - [ ] About explains what the funding is for and how it's divided
+    - [ ] About includes the disclaimer that contributions are voluntary donations without guaranteed services or
+      benefits
+- [ ] Review the donor email at `https://opencollective.com/dashboard/<repository>/custom-email`. It should thank
+  donors and include the same disclaimer.
+- [ ] Review the tiers at `https://opencollective.com/dashboard/<repository>/tiers`. Tiers must not promise goods or
+  services in exchange for donations.
+- [ ] Update the [Django Commons Project Checkins doc][project-checkins-doc] to note the project uses Open Collective.
+
 [1]: https://github.com/django-commons/membership/blob/main/terraform/org.tfvars
 
 [2]: https://github.com/django-commons/membership/blob/main/terraform/repositories.tfvars
@@ -370,6 +401,10 @@ in case they're interested in stepping up as a maintainer.
 [project-checkins-doc]: https://docs.google.com/spreadsheets/d/1MV0IGyS32EY_NtEq67MMYj2bqOv05imF5QP6I1KGhF8/edit?usp=sharing
 
 [project-checkins-discussions]: https://github.com/orgs/django-commons/discussions/categories/check-ins
+
+[open-collective-guide]: https://django-commons.org/funding/open-collective/
+
+[designers]: https://github.com/orgs/django-commons/teams/designers
 
 [pypi-org]: https://pypi.org/manage/organization/django-commons/projects/
 
