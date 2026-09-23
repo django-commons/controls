@@ -324,12 +324,16 @@ links people are expected to click, so the actual CTA is in the
    Each badge should link back to [Project Maintenance Governance][project-maintenance-governance]
    so readers can look up what the status means.
 4. Post an update to the project's [GitHub discussion for checkins][project-checkins-discussions] explaining the change and what it means for users.
-5. Every project should have a "Looking to Contribute?" section in its `README.md`
-explaining what kind of help it needs and how to get involved, with content that
-depends on its current state. Add or update this section as part of the status
-change:
+5. For non-active projects (Dormant, Commons Stewardship, Archived), add a
+"Looking to Contribute?" section to the project's `README.md` explaining what kind
+of help it needs and how to get involved, with content that depends on its
+current state:
 
-   **Healthy:**
+   For active/Healthy projects, adding this section is up to the admin's
+   discretion rather than a required step, since a project may already cover this
+   in its own `CONTRIBUTING.md` or elsewhere.
+
+   **Healthy** (optional):
    ```markdown
    ## Looking to Contribute?
 
@@ -344,7 +348,7 @@ change:
 
    This project doesn't have an active maintainer right now. We're looking for
    someone to help keep it going. If that sounds like you, take a look at the
-   [Contributor Trust Ladder][[contributor-trust-ladder](https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md#contributor-trust-ladder-for-dormant-and-archived-projects)] to see how to get involved,
+   [Contributor Trust Ladder][contributor-trust-ladder] to see how to get involved,
    or reach out to the Django Commons admins.
    ```
 
@@ -354,7 +358,7 @@ change:
 
    Django Commons admins are currently keeping this project's lights on with minor
    releases, but it needs a dedicated maintainer to really thrive. If you're
-   interested in taking it over, see the [Contributor Trust Ladder][[contributor-trust-ladder](https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md#contributor-trust-ladder-for-dormant-and-archived-projects)]
+   interested in taking it over, see the [Contributor Trust Ladder][contributor-trust-ladder]
    for how that works.
    ```
 
@@ -365,15 +369,15 @@ change:
    This project is archived and is no longer accepting contributions in its current
    form. If you're interested in reviving it, reach out to the Django Commons admins
    to talk about what that would look like. See
-   [Project Maintenance Governance][[project-maintenance-governance](https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md)] for details.
+   [Project Maintenance Governance][project-maintenance-governance] for details.
    ```
 6. If moving into Archived, confirm the repository is archived via GitHub settings
    (Settings > General > Danger Zone > Archive this repository) so it becomes read-only.
 7. Update the [Django Commons Project Checkins doc][project-checkins-doc] to reflect the new status.
-8. For projects with meaningful PyPI traffic, judged case by case by the admin team,
-add a note to the PyPI project description or metadata pointing to the status
+8. Add a note to the PyPI project description or metadata pointing to the status
 change, per [PEP 792][pep-792], so users discovering the package via PyPI also see
-it. This requires cutting a new release for the change to take effect.
+it. This applies to all projects moving into a non-active state. This requires cutting a release (a no-op release is
+fine if there's no other code change) for the metadata update to take effect.
 
 ## Update admin team
 
