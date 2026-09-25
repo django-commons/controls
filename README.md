@@ -10,6 +10,7 @@ This repository contains all the information for administrators to manage Django
 - [Project checkin](#project-checkin-playbook)
 - [Project status change](#project-status-change-playbook)
 - [Update admin team](#update-admin-team)
+- [Generate public meeting notes](#generate-public-meeting-notes)
 
 ## New Member Playbook
 
@@ -320,6 +321,28 @@ counts as a status change too).
    Archive this repository) so it becomes read-only.
 7. Update the [Django Commons Project Checkins doc][project-checkins-doc] to reflect the new status.
 
+## Generate public meeting notes
+
+1. Highlight the meeting notes and copy it.
+2. From the root of the `membership` repo, run:
+   ```sh
+   just notes-to-md YYYY-MM-DD
+   ```
+   This reads the HTML on your clipboard, converts it to markdown, and writes
+   `docs/blog/posts/meetings/YYYY/YYYY-MM-DD-admins-meeting.md`, printing the
+   result.
+3. Review the generated file:
+   - Confirm attendees/apologies expanded to full names correctly. If a new
+     admin's first name isn't recognized, add them to `NAME_ALIASES` in
+     [`scripts/gdoc2md.py`][gdoc2md] and rerun.
+   - Confirm anything marked `[private]` was removed, and nothing sensitive
+     leaked through.
+   - Confirm nested lists and links rendered correctly.
+4. Commit the change and open a PR on the `membership` repo.
+5. [Deploy the website][deploy-django-commons-site].
+6. Share the published link in the [forum][django-commons-forum] and any other
+   relevant channels.
+
 [1]: https://github.com/django-commons/membership/blob/main/terraform/org.tfvars
 
 [2]: https://github.com/django-commons/membership/blob/main/terraform/repositories.tfvars
@@ -371,3 +394,11 @@ counts as a status change too).
 [project-maintenance-governance]: https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md
 
 [contributor-trust-ladder]: https://github.com/django-commons/membership/blob/main/docs/governance/project-maintenance.md#contributor-trust-ladder-for-dormant-and-archived-projects
+
+[django-commons-blog]: https://django-commons.org/blog/
+
+[django-commons-forum]: https://forum.djangoproject.com/c/packages/30
+
+[gdoc2md]: https://github.com/django-commons/membership/blob/main/scripts/gdoc2md.py
+
+[deploy-django-commons-site]: https://github.com/django-commons/membership/tree/main/django-commons.org#deployment
