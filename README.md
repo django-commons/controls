@@ -349,7 +349,7 @@ current state:
    This project doesn't have an active maintainer right now. We're looking for
    someone to help keep it going. If that sounds like you, take a look at the
    [Contributor Trust Ladder][contributor-trust-ladder] to see how to get involved,
-   or reach out to the Django Commons admins.
+   or reach out to the [Django Commons admins](django-commons-admins@googlegroups.com).
    ```
 
    **Commons Stewardship:**
@@ -359,7 +359,7 @@ current state:
    Django Commons admins are currently keeping this project's lights on with minor
    releases, but it needs a dedicated maintainer to really thrive. If you're
    interested in taking it over, see the [Contributor Trust Ladder][contributor-trust-ladder]
-   for how that works.
+   for how that works and reach out to the [Django Commons admins](django-commons-admins@googlegroups.com).
    ```
 
    **Archived:**
@@ -367,7 +367,7 @@ current state:
    ## Looking to Contribute?
 
    This project is archived and is no longer accepting contributions in its current
-   form. If you're interested in reviving it, reach out to the Django Commons admins
+   form. If you're interested in reviving it, reach out to the [Django Commons admins](django-commons-admins@googlegroups.com)
    to talk about what that would look like. See
    [Project Maintenance Governance][project-maintenance-governance] for details.
    ```
