@@ -10,13 +10,9 @@ This repository contains all the information for administrators to manage Django
 - [Project checkin](#project-checkin-playbook)
 - [Project status change](#project-status-change-playbook)
 - [Update admin team](#update-admin-team)
-<<<<<<< Updated upstream
-||||||| Stash base
-- [Generate public meeting notes](#generate-public-meeting-notes)
-=======
 - [Open Collective setup](#open-collective-setup-playbook)
 - [Generate public meeting notes](#generate-public-meeting-notes)
->>>>>>> Stashed changes
+
 
 ## New Member Playbook
 
