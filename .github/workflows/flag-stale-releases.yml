@@ -1,0 +1,55 @@
+name: Flag stale releases
+
+on:
+  schedule:
+    - cron: "0 9 1 * *" # 09:00 UTC, 1st of each month
+  workflow_dispatch: # allow manual runs
+
+permissions:
+  issues: write # create issues in this repo
+
+jobs:
+  flag:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ORG: django-commons
+      SELF: ${{ github.repository }}
+      # Repos to never flag (not normal project repos). Space-separated.
+      EXCLUDE: "best-practices controls membership playground2 .github django-commons.github.io"
+    steps:
+      - name: Flag repos with no release in 9+ months
+        run: |
+          set -euo pipefail
+          cutoff=$(date -u -d '9 months ago' +%Y-%m-%dT%H:%M:%SZ)
+          echo "Cutoff: $cutoff"
+
+          # Non-archived repos in the org
+          gh api --paginate "orgs/$ORG/repos" \
+            --jq '.[] | select(.archived==false) | .name' |
+          while read -r repo; do
+            # Skip excluded repos
+            case " $EXCLUDE " in *" $repo "*) echo "Excluded: $repo"; continue;; esac
+
+            # Latest release; skip repos that have never cut a release (404)
+            latest=$(gh api "repos/$ORG/$repo/releases/latest" --jq '.published_at' 2>/dev/null) || continue
+            [ -n "$latest" ] || continue
+
+            # ISO-8601 timestamps sort lexically
+            if [[ "$latest" < "$cutoff" ]]; then
+              title="No release in 9+ months: $repo"
+              # Skip if an open issue with this exact title already exists
+              if gh issue list --repo "$SELF" --state open --search "$title in:title" \
+                   --json title --jq '.[].title' | grep -qxF "$title"; then
+                echo "Open issue already exists for $repo, skipping."
+                continue
+              fi
+              echo "Flagging $repo (last release $latest)"
+              gh issue create --repo "$SELF" --title "$title" --body \
+                "\`$ORG/$repo\` has not had a release since \`$latest\` (more than 9 months ago).
+
+          Latest release: https://github.com/$ORG/$repo/releases/latest
+
+          _Opened automatically by the \`flag-stale-releases\` workflow._"
+            fi
+          done
