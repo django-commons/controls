@@ -31,9 +31,8 @@ jobs:
             # Skip excluded repos
             case " $EXCLUDE " in *" $repo "*) echo "Excluded: $repo"; continue;; esac
 
-            # Latest release; skip repos that have never cut a release (404)
-            latest=$(gh api "repos/$ORG/$repo/releases/latest" --jq '.published_at' 2>/dev/null) || continue
-            [ -n "$latest" ] || continue
+            # Skip repos that have never cut a release (404)
+            latest=$(gh api "repos/$ORG/$repo/releases/latest" --jq '.published_at') || continue
 
             # ISO-8601 timestamps sort lexically
             if [[ "$latest" < "$cutoff" ]]; then
