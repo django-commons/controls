@@ -134,12 +134,24 @@ Assuming the repository name is `repo-name`:
 ### Pre Transfer Steps
 
 - [ ] Check if the repository meets [inbound requirements][incoming-requirements].
+- [ ] Post a comment on the open issue with the proposed configuration (see above)
+    - > Hi! Thanks for starting this discussion. The proposed config is below. We can adjust this as much as you'd like. If we're good here, we can move forward with transitioning Read the Docs (if needed), the PyPI project and the GitHub repo.
 - [ ] A PR to add the [release workflow][release-gh-workflow] will be necessary. This can be done either by the repo
   owner OR the Django commons org admins, but should be done prior to the video call. The decision is up to the repo
-  owner. **The PR should NOT be merged before the video call.**
+  owner.
     - [ ] (if applicable) If the package has a JavaScript component published to npm, the workflow will need to be
       modified to include publishing to npm
       using [trusted publishing](https://docs.npmjs.com/trusted-publishers#github-actions-configuration)
+    - A clanker/LLM prompt to use to update the project is:
+      ```text
+      I need to convert this project to use Django Common's release process. Use a django-commons branch. Try to match the existing style of the codebase as much as possible utilizing the release process defined at https://github.com/django-commons/best-practices/blob/main/.github/workflows/release.yml. Add a release.yml github file copied from https://github.com/django-commons/best-practices/blob/main/.github/release.yml.
+      Look for release notes to update. If there is one, add a line for "Switched to trusted publisher release process with Django Commons"
+      Write a short commit, "Switched to trusted publisher release process with Django Commons." No annotation or co-author. Both the change log and commit message should try to match the language maintainers use.
+      Then go through the repo and look for any jazzband mentions and swap them out for django-commons for github. Use Django Commons if it's just for natural language. Write a commit and change log entry for "Switch from Jazzband org to Django Commons".
+      If the code of conduct hasn't been changed over, it can be similar to https://github.com/django-commons/django-debug-toolbar/blob/main/CODE_OF_CONDUCT.md.
+      ```
+    - Review the output of that prompt carefully. It's non-deterministic and will do different things each run
+      and for each project. Call out the oddities in the PR for the maintainers to review.
 - [ ] Confirm who will be the admins and maintainers for the repository
 - [ ] Make sure the there are no teams `{repo-name}`, `{repo-name}-admins` and `{repo-name}-committers` in the Django
   Commons organization. Teams can be viewed [here][teams]. The teams will be created by the opentofu apply process.
@@ -165,6 +177,8 @@ These should be done by the project owner.
       can be found [here][pypi-publishing]
 - [ ] **PyPI** Once the project is owned by a member of the Django Commons PyPI organization, the project can be
   transferred to the Django Commons PyPI organization from the org page [here][pypi-org].
+    - [ ] Add the publishing mechanism to the project for Django Commons. By default it will be `release.yml` for the
+      GitHub action workflow file and `pypi` for the environment. 
 
 - [ ] **NPM** tasks (by project owner. These steps apply if the package has a JavaScript component published to npm.
   Otherwise, skip this section.):
@@ -182,36 +196,7 @@ These should be done by the project owner.
 ### Make GitHub repository managed by OpenTofu
 
 - [ ] opentofu changes to add project to organization, should be included in the issue opened to transfer the project.
-    - [ ] In [`terraform/respositories.tfvars`][2], add the new repository to the `repositories` section:
-
-       ```terraform
-       repositories = {
-         # ...
-         "repo-name" = {
-           description = "repo description"
-           homepage_url = "" # optional, default is ""
-           allow_auto_merge = false # optional, default is false
-           allow_merge_commit = false # optional, default is false
-           allow_rebase_merge = false # optional, default is false
-           allow_squash_merge = true # optional, default is true
-           allow_update_branch = true # optional, default is true
-           delete_branch_on_merge = true # optional, default is true
-           has_discussions = true # optional, default is true
-           has_downloads = true # optional, default is true
-           has_wiki = false # optional, default is false
-           is_template = false # optional, default is false
-           push_allowances = []
-           template = "" # optional, default is ""
-           topics = []
-           visibility = "public" # optional, default is "public"
-           is_django_commons_repo = optional(bool, false) # Do not create teams for repository
-           required_status_checks_contexts = [] # optional, default is []
-           admins = [] # Members of the repository's admin and repository teams. Have admin permissions
-           committers = [] # Members of the repository's committers and repository teams. Have write permissions
-           members = [] # Members of the repository team. Have triage permissions
-         }
-       }
-       ```
+    - [ ] In [`terraform/respositories.tfvars`][2], add the new repository to the `repositories` section
     - [ ] Create a pull-request to `main` branch. This will trigger OpenTofu to plan the changes in the organization to
       be executed. Review the changes and make sure they align with the project maintainer expectations.
     - [ ] Merge the pull request. This will trigger OpenTofu to apply the changes in the organization.
