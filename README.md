@@ -113,12 +113,15 @@ Assuming the repository name is `repo-name`:
 ```terraform
 "your-repo-here" = {
   description = "Your project's description here"
+  homepage_url = "https://project-url here"
+
   allow_merge_commit = true # Allow merge commits on pull requests
   allow_rebase_merge = true # Allow rebase and merge commits on pull requests
   allow_squash_merge = true # Allow squash and merge commits on pull requests - Recommended
   allow_update_branch = true # Allow updating source branch on pull requests
   has_discussions = false # Enable discussions in project's repository
   has_wiki = false # Enable wiki in project's repository
+
   admins = [
     # Include people who can release new versions
     "your-username-here",
