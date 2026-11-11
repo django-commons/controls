@@ -222,6 +222,8 @@ These should be done by the project owner.
 ### Follow up
 
 - [ ] Add the project and the admins' emails to the [Django Commons Project Checkins doc][project-checkins-doc]
+- [ ] Add the project to the website's project list in [`django-commons.org/data/projects.yaml`][website-projects]
+  in the membership repository (newest first).
 - [ ] Set a calendar event or reminder for 30 days in the future to check in with the project maintainers to see if they
   need any help or have any questions.
 - [ ] Create a project in the [Open Collective dashboard][open-collective-dashboard] for the repo, and invite the admins to it.
@@ -454,6 +456,7 @@ The following areas need to be updated with the added/removed admin:
 [team-roles]: https://github.com/django-commons/membership?tab=readme-ov-file#what-is-each-repository-team-for
 
 [project-checkins-doc]: https://docs.google.com/spreadsheets/d/1MV0IGyS32EY_NtEq67MMYj2bqOv05imF5QP6I1KGhF8/edit?usp=sharing
+[website-projects]: https://github.com/django-commons/membership/blob/main/django-commons.org/data/projects.yaml
 
 [project-checkins-discussions]: https://github.com/orgs/django-commons/discussions/categories/check-ins
 
